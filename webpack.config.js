@@ -17,5 +17,9 @@ module.exports = {
             template: path.resolve(__dirname, './src/template.html'),
             filename: 'index.html',
         }),
-    ],
+  ],
+  devServer: {
+     watchFiles: path.resolve(__dirname, '/src'),
+     port: 9000,
+   },
 }
