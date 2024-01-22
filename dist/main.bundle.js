@@ -1,1 +1,1 @@
-(()=>{const e=document.createElement("h1");e.textContent="Как интересно!",document.querySelector("#root").append(e)})();
+document.body.prepend(function(e){const t=document.createElement("h1");return t.textContent="Проект собран на Webpack",t}());

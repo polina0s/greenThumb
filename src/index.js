@@ -1,5 +1,7 @@
-const heading = document.createElement('h1')
-heading.textContent = 'Как интересно!'
+function component(text) {
+  const element = document.createElement('h1');
+  element.textContent = text;
+  return element;
+}
 
-const root = document.querySelector('#root')
-root.append(heading)
+document.body.prepend(component('Проект собран на Webpack'));
