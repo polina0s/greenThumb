@@ -1,69 +1,66 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const FileManagerPlugin = require('filemanager-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: {
-        main: path.resolve(__dirname, './src/index.tsx'),
+  entry: {
+    main: path.resolve(__dirname, './src/index.tsx'),
   },
-  
-  output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: '[name].bundle.js',
-  },
-  
-  module: {
 
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].bundle.js',
+  },
+
+  module: {
     rules: [
-       {
-         test: /\.js$/,
-         use: 'babel-loader',
-         exclude: /node_modules/,
-              },
-            {
-         test: /\.(scss|css)$/,
-         use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader',
-            'postcss-loader',
-            'sass-loader',
-          ],
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
       },
-            {
-       test: /\.([cm]?ts|tsx)$/, 
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.([cm]?ts|tsx)$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
-            
-     ],
+    ],
   },
 
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  
+
   plugins: [
-        new HtmlWebpackPlugin({
-            title: 'webpack Boilerplate',
-            template: path.resolve(__dirname, './src/template.html'),
-            filename: 'index.html',
-        }),
-        new FileManagerPlugin({
-       events: {
-         onStart: {
-           delete: ['dist'],
-         },
-       },
-        }),
-        new MiniCssExtractPlugin({
-       filename: '[name].[contenthash].css',
-     }),
+    new HtmlWebpackPlugin({
+      title: 'webpack Boilerplate',
+      template: path.resolve(__dirname, './src/template.html'),
+      filename: 'index.html',
+    }),
+    new FileManagerPlugin({
+      events: {
+        onStart: {
+          delete: ['dist'],
+        },
+      },
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
   ],
 
   devServer: {
-     watchFiles: path.resolve(__dirname, './src'),
-     port: 3030,
-   },
-}
+    watchFiles: path.resolve(__dirname, './src'),
+    port: 3030,
+  },
+};

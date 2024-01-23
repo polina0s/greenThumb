@@ -1,7 +1,5 @@
 function MyButton({ title }: { title: string }) {
-  return (
-    <button>{title}</button>
-  );
+  return <button>{title}</button>;
 }
 
 export function MyApp() {
