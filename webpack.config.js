@@ -11,7 +11,16 @@ module.exports = {
   output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
-  },
+      },
+  module: {
+     rules: [
+       {
+         test: /\.js$/,
+         use: 'babel-loader',
+         exclude: /node_modules/,
+       },
+     ],
+   },
   plugins: [
         new HtmlWebpackPlugin({
             title: 'webpack Boilerplate',
