@@ -6,15 +6,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, './src/index.js'),
+        main: path.resolve(__dirname, './src/index.ts'),
   },
   
   output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
-      },
+  },
+  
   module: {
-     rules: [
+
+    rules: [
        {
          test: /\.js$/,
          use: 'babel-loader',
@@ -28,9 +30,20 @@ module.exports = {
             'postcss-loader',
             'sass-loader',
           ],
-       },
+      },
+            {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+            
      ],
-   },
+  },
+
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
+  
   plugins: [
         new HtmlWebpackPlugin({
             title: 'webpack Boilerplate',
@@ -48,6 +61,7 @@ module.exports = {
        filename: '[name].[contenthash].css',
      }),
   ],
+
   devServer: {
      watchFiles: path.resolve(__dirname, './src'),
      port: 8000,
