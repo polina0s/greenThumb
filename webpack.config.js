@@ -16,16 +16,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.(scss|css)$/,
+        test: /\.s[ac]ss$/i,
         use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
+          // MiniCssExtractPlugin.loader,
+          'style-loader',
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
+          },
           'sass-loader',
         ],
       },
