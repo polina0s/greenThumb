@@ -3,6 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isProductionMode = process.env.NODE_ENV === 'production';
+const Dotenv = require('dotenv-webpack');
+
+console.log(process.env.NODE_ENV);
 
 module.exports = {
   entry: {
@@ -77,6 +80,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: isProductionMode ? '[name].[contenthash].css' : '[name].css',
     }),
+    new Dotenv(),
   ],
 
   devServer: {
