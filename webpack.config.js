@@ -2,24 +2,25 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const isProductionMode = process.env.NODE_ENV === "production";
 
 module.exports = {
   entry: {
     main: path.resolve(__dirname, './src/index.tsx'),
   },
-
+  
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.js',
   },
-
+  
+  mode: isProductionMode ? "production" : "development",
   module: {
     rules: [
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // MiniCssExtractPlugin.loader,
-          'style-loader',
+          isProductionMode ? MiniCssExtractPlugin.loader : "style-loader",
           {
             loader: "css-loader",
             options: {
@@ -55,7 +56,8 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: isProductionMode ? "[name].[contenthash].css" : "[name].css",
+
     }),
   ],
 
