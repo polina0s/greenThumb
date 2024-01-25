@@ -2,34 +2,53 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const isProductionMode = process.env.NODE_ENV === "production";
+const isProductionMode = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: {
     main: path.resolve(__dirname, './src/index.tsx'),
   },
-  
+
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.js',
+    assetModuleFilename: 'assets/[name][ext]',
   },
-  
-  mode: isProductionMode ? "production" : "development",
+
+  mode: isProductionMode ? 'production' : 'development',
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: '[path]/[name][ext]',
+        },
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.(scss|css)$/i,
         use: [
-          isProductionMode ? MiniCssExtractPlugin.loader : "style-loader",
+          isProductionMode ? MiniCssExtractPlugin.loader : 'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: true,
             },
           },
-          'sass-loader',
+          'resolve-url-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
         ],
       },
+
       {
         test: /\.([cm]?ts|tsx)$/,
         use: 'ts-loader',
@@ -56,13 +75,12 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: isProductionMode ? "[name].[contenthash].css" : "[name].css",
-
+      filename: isProductionMode ? '[name].[contenthash].css' : '[name].css',
     }),
   ],
 
   devServer: {
     watchFiles: path.resolve(__dirname, './src'),
-    port: 3030,
+    port: 9000,
   },
 };

@@ -2,6 +2,11 @@
 
 Design: https://www.figma.com/community/file/1247752125104362087
 
+## Requirements
+
+Node.js 18.12.1
+npm 8.19.2
+
 ## Commands
 
 1. 'dev' - run the webpack
