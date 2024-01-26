@@ -33,6 +33,10 @@ module.exports = {
         use: ['@svgr/webpack'],
       },
       {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      {
         test: /\.(scss|css)$/i,
         use: [
           isProductionMode ? MiniCssExtractPlugin.loader : 'style-loader',

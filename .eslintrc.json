@@ -12,7 +12,7 @@
     "plugin:@tanstack/eslint-plugin-query/recommended",
     "prettier"
   ],
-  "ignorePatterns": ["postcss.config.js"],
+  "ignorePatterns": ["webpack.config.js", "postcss.config.js"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
