@@ -5,8 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isProductionMode = process.env.NODE_ENV === 'production';
 const Dotenv = require('dotenv-webpack');
 
-console.log(process.env.NODE_ENV);
-
 module.exports = {
   entry: {
     main: path.resolve(__dirname, './src/index.tsx'),
@@ -33,7 +31,7 @@ module.exports = {
         use: ['@svgr/webpack'],
       },
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg)$/i,
         type: 'asset/resource',
       },
       {

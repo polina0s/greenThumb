@@ -1,13 +1,2 @@
 @import "./styles/fonts.scss";
 @import "./styles/variables.scss";
-
-:root {
-  --lavender: blue;
-  --font: 1rem
-}
-
-html {
-  font-size: var(--font);
-  color: var(--lavender);
-  font-family: var(--publicSans);
-}
