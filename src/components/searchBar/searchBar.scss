@@ -1,0 +1,30 @@
+.cont {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 57px;
+  margin: 0px 11px 0px 0px;
+  font: 400 17px var(--openSans);
+  color: var(--gray-300);
+}
+
+.searchButton {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background-color: transparent;
+  margin: 0px 25px 0px 0px; 
+}
+
+.basketButton {
+  width: 18px;
+  height: 21px;
+  background-color: transparent;
+  margin: 0px 7px 0px 25px;
+}
+
+.basketValue {
+  font: 400 17px var(--openSans);
+}

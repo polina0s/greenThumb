@@ -1,5 +1,5 @@
-import Search from '../../assets/images/search.svg';
 import { Logo } from '../logo';
+import { SearchBar } from '../searchBar';
 import header from './header.module.scss';
 
 export function Header({ promoTitle }: { promoTitle: string }) {
@@ -26,12 +26,7 @@ export function Header({ promoTitle }: { promoTitle: string }) {
             Contact us
           </a>
         </div>
-        <div className={header.searchBar}>
-          <input className={header.searchInput} type="text" value="Search" />
-          <button className={header.searchButton}>
-            <Search />
-          </button>
-        </div>
+        <SearchBar basketValue={3} />
       </div>
     </>
   );
