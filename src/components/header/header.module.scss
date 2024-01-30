@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.promoCont {
+.border {
   display: flex;
   padding: 10px 148px 13px 473px;
   justify-content: center;
@@ -10,13 +10,13 @@
   background-color: var(--green-400);
 }
 
-.promoTitle {
+.borderTitle {
   font-size: 16px;
   font-weight: 600;
   color: var(--gray-100);
 }
 
-.promoInfo {
+.borderInfo {
   display: flex;
   margin-left: 200px;
 }

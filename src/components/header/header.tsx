@@ -5,9 +5,9 @@ import header from './header.module.scss';
 export function Header({ promoTitle }: { promoTitle: string }) {
   return (
     <div className={header.cont}>
-      <div className={header.promoCont}>
-        <p className={header.promoTitle}>{promoTitle}</p>
-        <div className={header.promoInfo}>
+      <div className={header.border}>
+        <p className={header.borderTitle}>{promoTitle}</p>
+        <div className={header.borderInfo}>
           <p className={header.currency}>USD</p>
           <a className={header.supportLink} href="#">
             Support
