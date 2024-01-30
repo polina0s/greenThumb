@@ -87,6 +87,6 @@ module.exports = {
 
   devServer: {
     watchFiles: path.resolve(__dirname, './src'),
-    port: 9000,
+    port: 8000,
   },
 };

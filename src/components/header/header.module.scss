@@ -1,10 +1,13 @@
-.promoCont {
+.cont {
   width: 100%;
+}
+
+.promoCont {
   display: flex;
+  padding: 10px 148px 13px 473px;
   justify-content: center;
   font-family: var(--openSans);
   background-color: var(--green-400);
-  padding: 10px 0px 13px 0px;
 }
 
 .promoTitle {
@@ -13,10 +16,28 @@
   color: var(--gray-100);
 }
 
+.promoInfo {
+  display: flex;
+  margin-left: 200px;
+}
+
+.currency {
+  font: 400 16px var(--openSans);
+  color: var(--gray-100);
+  margin-right: 23px;
+}
+
+.supportLink {
+  text-decoration: none;
+  font: 700 16px var(--openSans);
+  color: var(--gray-100);
+}
+
 .navigationCont {
   display: flex;
   padding: 0px 87px 0px 148px;
   justify-content: space-between;
+  background-color: var(--gray-100);
   align-items: center;
   height: 61px;
   box-shadow: var(--shadow);
@@ -34,7 +55,7 @@
   font: 400 17px var(--openSans);
 }
 
-.link {
+.navLink {
   text-decoration: none;
   color: var(--gray-600);
 }
