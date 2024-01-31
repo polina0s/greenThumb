@@ -1,7 +1,13 @@
 import { Social } from '../social';
 import footer from './footer.module.scss';
 
-export function Footer() {
+interface FooterProps {
+  variant?: 'white' | 'green';
+}
+
+export function Footer({ variant = 'green' }: FooterProps) {
+  // const containerClassName = clsx(footer.cont, {footer.contGreen: variant === 'green', })
+
   return (
     <div className={footer.cont}>
       <div className={footer.footer}>

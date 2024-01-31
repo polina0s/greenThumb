@@ -1,6 +1,6 @@
-import Basket from '../../assets/images/basket.svg';
-import Line from '../../assets/images/line.svg';
-import Search from '../../assets/images/search.svg';
+import Basket from '../../../../assets/images/basket.svg';
+import Line from '../../../../assets/images/line.svg';
+import Search from '../../../../assets/images/search.svg';
 import search from './searchBar.module.scss';
 
 export function SearchBar({ basketValue }: { basketValue: number }) {

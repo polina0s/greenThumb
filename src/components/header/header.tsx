@@ -1,38 +1,31 @@
-import { Logo } from '../logo';
-import { SearchBar } from '../searchBar';
+import { Logo } from './components/logo';
+import { Promo } from './components/promo';
+import { SearchBar } from './components/searchBar';
 import header from './header.module.scss';
 
 export function Header({ promoTitle }: { promoTitle: string }) {
   return (
-    <div className={header.cont}>
-      <div className={header.border}>
-        <p className={header.borderTitle}>{promoTitle}</p>
-        <div className={header.borderInfo}>
-          <p className={header.currency}>USD</p>
-          <a className={header.supportLink} href="#">
-            Support
-          </a>
+    <div className={header.header}>
+      <Promo title={promoTitle} />
+      <div className={header.navigation}>
+        <div className={header.navContainer}>
+            <Logo />
+          <div className={header.navbar}>
+            <a className={header.navLink} href="#">
+              Home
+            </a>
+            <a className={header.navLink} href="#">
+              Products
+            </a>
+            <a className={header.navLink} href="#">
+              About us
+            </a>
+            <a className={header.navLink} href="#">
+              Contact us
+            </a>
+          </div>
+          <SearchBar basketValue={3} />
         </div>
-      </div>
-      <div className={header.navigationCont}>
-        <div className={header.logo}>
-          <Logo />
-        </div>
-        <div className={header.navbar}>
-          <a className={header.navLink} href="#">
-            Home
-          </a>
-          <a className={header.navLink} href="#">
-            Products
-          </a>
-          <a className={header.navLink} href="#">
-            About us
-          </a>
-          <a className={header.navLink} href="#">
-            Contact us
-          </a>
-        </div>
-        <SearchBar basketValue={3} />
       </div>
     </div>
   );
