@@ -6,7 +6,6 @@ export function Banner() {
   return (
     <>
       <div className={banner.cont}>
-        {/* TODO: alt */}
         <img className={banner.smallImg} src={leafesSmall} alt="" />
         <img className={banner.bigImg} src={leafesBig} alt="" />
         <div className={banner.content}>

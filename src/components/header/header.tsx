@@ -9,7 +9,7 @@ export function Header({ promoTitle }: { promoTitle: string }) {
       <Promo title={promoTitle} />
       <div className={header.navigation}>
         <div className={header.navContainer}>
-            <Logo />
+          <Logo />
           <div className={header.navbar}>
             <a className={header.navLink} href="#">
               Home

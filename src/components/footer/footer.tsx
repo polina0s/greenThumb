@@ -1,16 +1,23 @@
-import { Social } from '../social';
+import classNames from 'classnames/bind';
+
+import { Copyrights } from './components/copyrights';
+import { Social } from './components/social';
 import footer from './footer.module.scss';
 
+const cx = classNames.bind(footer);
 interface FooterProps {
   variant?: 'white' | 'green';
 }
 
-export function Footer({ variant = 'green' }: FooterProps) {
-  // const containerClassName = clsx(footer.cont, {footer.contGreen: variant === 'green', })
+export function Footer({ variant = 'white' }: FooterProps) {
+  const footerVariant = cx({
+    [footer.cont]: true,
+    [footer['footer--green']]: variant === 'green',
+  });
 
   return (
-    <div className={footer.cont}>
-      <div className={footer.footer}>
+    <div>
+      <div className={footerVariant}>
         <div className={footer.navigation}>
           <a className={footer.navLink} href="#">
             Products
@@ -31,11 +38,11 @@ export function Footer({ variant = 'green' }: FooterProps) {
             Contact us
           </a>
         </div>
-        <Social />
+        <div className={footer.social}>
+          <Social />
+        </div>
       </div>
-      <div className={footer.border}>
-        COPYRIGHT GREEN THUMB. ALL RIGHTS RESERVED
-      </div>
+      <Copyrights />
     </div>
   );
 }
