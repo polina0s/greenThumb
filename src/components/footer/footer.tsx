@@ -1,16 +1,15 @@
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 
 import { Copyrights } from './components/copyrights';
 import { Social } from './components/social';
 import footer from './footer.module.scss';
 
-const cx = classNames.bind(footer);
 interface FooterProps {
   variant?: 'white' | 'green';
 }
 
 export function Footer({ variant = 'white' }: FooterProps) {
-  const footerVariant = cx({
+  const footerVariant = classNames({
     [footer.cont]: true,
     [footer['footer--green']]: variant === 'green',
   });

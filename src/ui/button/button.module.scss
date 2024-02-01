@@ -1,0 +1,43 @@
+.sm {
+  width: 242px;
+  height: 64px;
+  border-radius: 8px;
+  box-shadow: var(--shadowGreen);
+  font: 700 20px var(--openSans);
+  color: var(--gray-100);
+} 
+
+.md {
+  width: 344px;
+  height: 64px;
+  border-radius: 8px;
+  box-shadow: var(--shadowGreen);
+  font: 700 20px var(--openSans);
+  color: var(--gray-100);
+}
+
+.lg {
+  width: 350px;
+  height: 50px;
+  border-radius: 12px;
+  letter-spacing: -0.4px;
+  font: 600 16px var(--openSans);
+  color: var(--gray-100);
+}
+
+.xl {
+  width: 264px;
+  height: 70px;
+  border-radius: 20px;
+  font: 600 22px var(--openSans);
+  color: var(--gray-600);
+
+}
+
+.white {
+  background-color: var(--gray-100);
+}
+
+.green {
+  background-color: var(--green-400);
+}
