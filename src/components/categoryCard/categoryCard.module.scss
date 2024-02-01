@@ -1,0 +1,28 @@
+.cont {
+  width: 180px;
+  height: 230px;
+  text-align: center;
+  padding-top: 2.5px;
+}
+
+.imgCont {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0px 8px 23px 0px rgba(80, 107, 82, 0.16);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: none;
+}
+
+.name {
+  width: 100%;
+  height: 22px;
+  font: 700 16px var(--openSans);
+  color: var(--gray-500);
+}
