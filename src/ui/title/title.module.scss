@@ -1,0 +1,46 @@
+// FONT-FAMILY
+.roboto {
+  font-family: var(--roboto);
+}
+
+.publicSans {
+  font-family: var(--publicSans);
+}
+
+.poppins {
+  font-family: var(--poppins);
+}
+
+.openSans {
+  font-family: var(--publicSans);
+}
+
+// COLOR
+.white {
+  color: var(--gray-100);
+}
+
+.gray {
+  color: var(--gray-500);
+}
+
+.black {
+  color: var(--gray-600);
+}
+
+.green {
+  color: var(--green-400);
+}
+
+.red {
+  color: var(--red-100);
+}
+
+// SIZE 
+.sm {
+  font-size: 16px;
+}
+
+.md {
+  font-size: 22px;
+}
