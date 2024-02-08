@@ -1,4 +1,5 @@
 import img from '../../assets/images/Rectangle 51.png';
+import { Text } from '../../ui/text';
 import card from './categoryCard.module.scss';
 
 interface CardProps {
@@ -11,7 +12,9 @@ export function CategoryCard({ name }: CardProps) {
       <div className={card.imgCont}>
         <img className={card.img} src={img} alt="" />
       </div>
-      <p className={card.name}>{name}</p>
+      <Text variant="openSansBold" color="gray" className={card.name}>
+        {name}
+      </Text>
     </div>
   );
 }
