@@ -1,4 +1,4 @@
-import { Text } from '../../ui/text';
+import { Link } from '../../ui/link';
 import { Logo } from './components/logo';
 import { Promo } from './components/promo';
 import { SearchBar } from './components/searchBar';
@@ -12,34 +12,10 @@ export function Header({ promoTitle }: { promoTitle: string }) {
         <div className={header.navContainer}>
           <Logo />
           <div className={header.navbar}>
-            <Text
-              variant="openSansRegularSM"
-              element="a"
-              className={header.navLink}
-            >
-              Home
-            </Text>
-            <Text
-              variant="openSansRegularSM"
-              element="a"
-              className={header.navLink}
-            >
-              Products
-            </Text>
-            <Text
-              variant="openSansRegularSM"
-              element="a"
-              className={header.navLink}
-            >
-              About us
-            </Text>
-            <Text
-              variant="openSansRegularSM"
-              element="a"
-              className={header.navLink}
-            >
-              Contact us
-            </Text>
+            <Link href="#">Home</Link>
+            <Link href="#">Products</Link>
+            <Link href="#"> About us</Link>
+            <Link href="#">Contact us</Link>
           </div>
           <SearchBar basketValue={3} />
         </div>
