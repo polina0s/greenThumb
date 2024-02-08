@@ -1,7 +1,6 @@
 .promo {
   display: flex;
   justify-content: center;
-  font-family: var(--openSans);
   background-color: var(--green-400);
 }
 
@@ -18,25 +17,13 @@
   flex: 1;
 }
 
-.title {
-  width: 454px;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--gray-100);
-}
-
-.info {
+.infoCont {
+  width: 125px;
   display: flex;
+  justify-content: space-between;
   margin-left: 200px;
 }
 
-.currency {
-  font: 400 16px var(--openSans);
-  color: var(--gray-100);
-  margin-right: 23px;
-}
-
-.supportLink {
-  font: 700 16px var(--openSans);
-  color: var(--gray-100);
+.info {
+  font-size: 16px;  
 }

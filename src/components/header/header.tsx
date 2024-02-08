@@ -1,3 +1,4 @@
+import { Text } from '../../ui/text';
 import { Logo } from './components/logo';
 import { Promo } from './components/promo';
 import { SearchBar } from './components/searchBar';
@@ -11,18 +12,38 @@ export function Header({ promoTitle }: { promoTitle: string }) {
         <div className={header.navContainer}>
           <Logo />
           <div className={header.navbar}>
-            <a className={header.navLink} href="#">
+            <Text
+              variant="openSansRegularSM"
+              element="a"
+              color="black"
+              className={header.navLink}
+            >
               Home
-            </a>
-            <a className={header.navLink} href="#">
+            </Text>
+            <Text
+              variant="openSansRegularSM"
+              element="a"
+              color="black"
+              className={header.navLink}
+            >
               Products
-            </a>
-            <a className={header.navLink} href="#">
+            </Text>
+            <Text
+              variant="openSansRegularSM"
+              element="a"
+              color="black"
+              className={header.navLink}
+            >
               About us
-            </a>
-            <a className={header.navLink} href="#">
+            </Text>
+            <Text
+              variant="openSansRegularSM"
+              element="a"
+              color="black"
+              className={header.navLink}
+            >
               Contact us
-            </a>
+            </Text>
           </div>
           <SearchBar basketValue={3} />
         </div>

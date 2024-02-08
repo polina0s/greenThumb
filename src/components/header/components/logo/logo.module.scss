@@ -1,11 +1,8 @@
 .cont {
   width: 195px;
+  display: flex;
 }
 
 .text {
-  font: 600 26px var(--poppins);
-}
-
-.greenText {
-  color: var(--green-400);
+  font-size: 26px;
 }

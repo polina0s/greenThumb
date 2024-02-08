@@ -1,6 +1,7 @@
 import Basket from '../../../../assets/images/basket.svg';
 import Line from '../../../../assets/images/line.svg';
 import Search from '../../../../assets/images/search.svg';
+import { Text } from '../../../../ui/text';
 import search from './searchBar.module.scss';
 
 export function SearchBar({ basketValue }: { basketValue: number }) {
@@ -14,7 +15,9 @@ export function SearchBar({ basketValue }: { basketValue: number }) {
       <button className={search.basketButton}>
         <Basket />
       </button>
-      <p className={search.basketValue}>{basketValue}</p>
+      <Text variant="openSansRegularSM" className={search.basketValue}>
+        {basketValue}
+      </Text>
     </div>
   );
 }

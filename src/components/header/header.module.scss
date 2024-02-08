@@ -13,11 +13,10 @@
 
 .navbar {
   width: 539px;
-  font: 400 17px var(--openSans);
   display: flex;
   justify-content: space-between;
 }
 
 .navLink {
-  color: var(--gray-600);
+  font-size: 17px;
 }
