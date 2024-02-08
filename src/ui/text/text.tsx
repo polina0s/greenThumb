@@ -4,7 +4,7 @@ import text from './text.module.scss';
 
 interface TextProps {
   className?: string;
-  variant:
+  variant?:
     | 'openSansRegularSM'
     | 'openSansRegularLG'
     | 'openSansSemiBold'

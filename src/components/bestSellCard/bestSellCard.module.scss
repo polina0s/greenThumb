@@ -25,10 +25,9 @@
 .title {
   width: 200px;
   letter-spacing: 5px;
-  font: 600 24px var(--openSans);
-  color: var(--gray-100);
-  position: absolute;
+  font-size: 24px;
   text-shadow: var(--shadowBlack-200);
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
