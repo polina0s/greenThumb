@@ -4,7 +4,19 @@ import { Button } from '../../ui/button';
 import { Text } from '../../ui/text';
 import card from './saleCard.module.scss';
 
-export function SaleCard() {
+interface SaleCardProps {
+  saleValue: number;
+  name: string;
+  newPrice: number;
+  oldPrice: number;
+}
+
+export function SaleCard({
+  saleValue,
+  name,
+  newPrice,
+  oldPrice,
+}: SaleCardProps) {
   return (
     <div className={card.cont}>
       <div className={card.imgWrap}>
@@ -16,17 +28,24 @@ export function SaleCard() {
           <div className={card.saleStar}>
             <img src={star} alt="" />
           </div>
-          <div className={card.saleValue}>
-            25% <br /> off
-          </div>
+          <div className={card.saleValue}> {saleValue}% off</div>
         </div>
       </div>
 
       <div className={card.info}>
-        <Text variant="openSansBold">String of Hearts</Text>
-        <p className={card.newPrice}>
-          $ 350 <span className={card.oldPrice}>$ 450</span>
-        </p>
+        <Text variant="openSansBold" color="gray">
+          {name}
+        </Text>
+        <div className={card.price}>
+          <Text variant="openSansRegularLG">$ {newPrice}</Text>
+          <Text
+            variant="openSansSemiBold"
+            color="red"
+            className={card.oldPrice}
+          >
+            $ {oldPrice}
+          </Text>
+        </div>
       </div>
 
       <Button size="sm" color="green">

@@ -52,13 +52,14 @@
   color: var(--gray-500);
 }
 
-.newPrice {
-  font: 400 20px var(--openSans);
-  color: var(--gray-500);
+.price {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .oldPrice {
-  font: 300 16px var(--openSans);
-  color: var(--red-100);
+  font-weight: 300;
   text-decoration: line-through;
 }

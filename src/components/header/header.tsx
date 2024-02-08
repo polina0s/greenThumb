@@ -15,7 +15,6 @@ export function Header({ promoTitle }: { promoTitle: string }) {
             <Text
               variant="openSansRegularSM"
               element="a"
-              color="black"
               className={header.navLink}
             >
               Home
@@ -23,7 +22,6 @@ export function Header({ promoTitle }: { promoTitle: string }) {
             <Text
               variant="openSansRegularSM"
               element="a"
-              color="black"
               className={header.navLink}
             >
               Products
@@ -31,7 +29,6 @@ export function Header({ promoTitle }: { promoTitle: string }) {
             <Text
               variant="openSansRegularSM"
               element="a"
-              color="black"
               className={header.navLink}
             >
               About us
@@ -39,7 +36,6 @@ export function Header({ promoTitle }: { promoTitle: string }) {
             <Text
               variant="openSansRegularSM"
               element="a"
-              color="black"
               className={header.navLink}
             >
               Contact us

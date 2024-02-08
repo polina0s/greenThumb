@@ -19,7 +19,12 @@ export function MyApp() {
         description="Even if you don’t have a green thumb, you can still have a green
             home."
       />
-      <SaleCard />
+      <SaleCard
+        saleValue={25}
+        name="String of Hearts"
+        newPrice={350}
+        oldPrice={450}
+      />
       <CatalogCard />
       <CategoryCard name="BONSAI" />
       <BestSellCard title="INDOOR PLANTS" />
