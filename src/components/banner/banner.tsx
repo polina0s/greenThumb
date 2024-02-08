@@ -3,7 +3,12 @@ import leafesSmall from '../../assets/images/leafesSmall.png';
 import { Text } from '../../ui/text';
 import banner from './banner.module.scss';
 
-export function Banner() {
+interface BannerProps {
+  title: string;
+  description: string;
+}
+
+export function Banner({ title, description }: BannerProps) {
   return (
     <>
       <div className={banner.cont}>
@@ -15,15 +20,14 @@ export function Banner() {
             element="div"
             className={banner.title}
           >
-            Plants are our Passion
+            {title}
           </Text>
           <Text
             variant="poppinsRegular"
             element="div"
             className={banner.description}
           >
-            Even if you don’t have a green thumb, you can still have a green
-            home.
+            {description}
           </Text>
           <button className={banner.button}>GET PLANTING</button>
         </div>
