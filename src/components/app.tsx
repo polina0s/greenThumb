@@ -25,7 +25,7 @@ export function MyApp() {
         newPrice={350}
         oldPrice={450}
       />
-      <CatalogCard />
+      <CatalogCard name="Marble Queen" price={350}/>
       <CategoryCard name="BONSAI" />
       <BestSellCard title="INDOOR PLANTS" />
       <Footer />

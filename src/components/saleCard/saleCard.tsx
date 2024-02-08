@@ -23,15 +23,15 @@ export function SaleCard({
         <div className={card.imgCont}>
           <img className={card.img} src={img} alt="" />
         </div>
-
         <div className={card.saleLabelCont}>
           <div className={card.saleStar}>
             <img src={star} alt="" />
           </div>
-          <div className={card.saleValue}> {saleValue}% off</div>
+          <Text variant="openSansBold" color="white" className={card.saleValue}>
+            {saleValue}% off
+          </Text>
         </div>
       </div>
-
       <div className={card.info}>
         <Text variant="openSansBold" color="gray">
           {name}
@@ -47,7 +47,6 @@ export function SaleCard({
           </Text>
         </div>
       </div>
-
       <Button size="sm" color="green">
         Buy
       </Button>
