@@ -31,7 +31,7 @@ export function Banner({ title, description, linkText }: BannerProps) {
           >
             {description}
           </Text>
-          <Button className={banner.link} element="a" size="xl" color="white">
+          <Button className={banner.link} size="xl" color="white" element="a">
             {linkText}
           </Button>
         </div>

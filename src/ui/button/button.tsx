@@ -3,22 +3,29 @@ import * as React from 'react';
 
 import button from './button.module.scss';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface BaseProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   color?: 'white' | 'green';
-  element?: 'button' | 'a';
-  href?: string;
-  className?: string;
 }
+
+interface AnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  element?: 'a';
+}
+
+interface ButtonProps1 extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  element?: 'button';
+}
+
+type MyButtonProps = (AnchorProps | ButtonProps1) & BaseProps;
 
 export function Button({
   children,
   color = 'white',
   size = 'xl',
   element = 'button',
-  href,
   className,
-}: React.PropsWithChildren<ButtonProps>) {
+  ...props
+}: React.PropsWithChildren<MyButtonProps>) {
   const btnClass = classNames(
     {
       [button.button]: true,
@@ -34,10 +41,20 @@ export function Button({
 
   if (element === 'a')
     return (
-      <a className={btnClass} href={href}>
+      <a
+        className={btnClass}
+        {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
         {children}
       </a>
     );
 
-  return <button className={btnClass}>{children}</button>;
+  return (
+    <button
+      className={btnClass}
+      {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+    >
+      {children}
+    </button>
+  );
 }

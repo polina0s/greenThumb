@@ -2,16 +2,11 @@ import classNames from 'classnames';
 
 import link from './link.module.scss';
 
-interface LinkProps {
-  className?: string;
-  href: string;
-}
-
 export function Link({
   children,
-  href,
   className,
-}: React.PropsWithChildren<LinkProps>) {
+  ...props
+}: React.PropsWithChildren<React.AnchorHTMLAttributes<HTMLAnchorElement>>) {
   const LinkClass = classNames(
     {
       [link.link]: true,
@@ -20,7 +15,7 @@ export function Link({
   );
 
   return (
-    <a href={href} className={LinkClass}>
+    <a className={LinkClass} {...props}>
       {children}
     </a>
   );

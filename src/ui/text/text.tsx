@@ -1,9 +1,9 @@
 import classNames from 'classnames';
+import * as React from 'react';
 
 import text from './text.module.scss';
 
-interface TextProps {
-  className?: string;
+interface BaseProps {
   variant?:
     | 'openSansRegularSM'
     | 'openSansRegularLG'
@@ -21,8 +21,16 @@ interface TextProps {
     | 'lightGreen'
     | 'red';
   fontFamily?: 'roboto' | 'publicSans' | 'poppins' | 'openSans';
-  element?: 'p' | 'div';
 }
+
+interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {
+  element?: 'p';
+}
+interface DivProps extends React.HTMLAttributes<HTMLDivElement> {
+  element?: 'div';
+}
+
+type TextProps = (ParagraphProps | DivProps) & BaseProps;
 
 export function Text({
   children,
@@ -31,6 +39,7 @@ export function Text({
   fontFamily,
   className,
   element = 'p',
+  ...props
 }: React.PropsWithChildren<TextProps>) {
   const textClass = classNames(
     {
@@ -57,7 +66,22 @@ export function Text({
     className,
   );
 
-  if (element === 'div') return <div className={textClass}>{children}</div>;
+  if (element === 'div')
+    return (
+      <div
+        className={textClass}
+        {...(props as React.HTMLAttributes<HTMLDivElement>)}
+      >
+        {children}
+      </div>
+    );
 
-  return <p className={textClass}>{children}</p>;
+  return (
+    <p
+      className={textClass}
+      {...(props as React.HTMLAttributes<HTMLParagraphElement>)}
+    >
+      {children}
+    </p>
+  );
 }
