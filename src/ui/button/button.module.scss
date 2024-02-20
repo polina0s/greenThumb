@@ -1,19 +1,24 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  color: var(--gray-100);
+}
+
 .sm {
   width: 242px;
   height: 64px;
-  border-radius: 8px;
   box-shadow: var(--shadowGreen);
   font: 700 20px var(--openSans);
-  color: var(--gray-100);
 } 
 
 .md {
   width: 344px;
   height: 64px;
-  border-radius: 8px;
   box-shadow: var(--shadowGreen);
   font: 700 20px var(--openSans);
-  color: var(--gray-100);
 }
 
 .lg {
@@ -22,7 +27,6 @@
   border-radius: 12px;
   letter-spacing: -0.4px;
   font: 600 16px var(--openSans);
-  color: var(--gray-100);
 }
 
 .xl {

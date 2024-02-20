@@ -29,7 +29,6 @@
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
-  text-align: center;
 }
 
 .title {
@@ -48,13 +47,8 @@
   margin: 0px auto 38px auto;
 }
 
-.button {
-  border: none;
-  width: 264px;
-  height: 70px;
-  background-color: var(--gray-100);
-  border-radius: 20px;
-  font: 600 22px var(--openSans)
+.link {
+  margin: 0 auto;
 }
 
 .border {

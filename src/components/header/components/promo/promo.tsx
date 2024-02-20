@@ -1,3 +1,4 @@
+import { Link } from '../../../../ui/link';
 import { Text } from '../../../../ui/text';
 import promo from './promo.module.scss';
 
@@ -14,18 +15,13 @@ export function Promo({ title }: { title: string }) {
             <Text
               variant="openSansRegularSM"
               color="white"
-              className={promo.info}
+              className={promo.currency}
             >
               USD
             </Text>
-            <Text
-              element="a"
-              variant="openSansBold"
-              color="white"
-              className={promo.info}
-            >
+            <Link href="#" className={promo.support}>
               Support
-            </Text>
+            </Link>
           </div>
         </div>
       </div>

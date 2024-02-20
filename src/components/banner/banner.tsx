@@ -1,14 +1,16 @@
 import leafesBig from '../../assets/images/leafesBig.png';
 import leafesSmall from '../../assets/images/leafesSmall.png';
+import { Button } from '../../ui/button';
 import { Text } from '../../ui/text';
 import banner from './banner.module.scss';
 
 interface BannerProps {
   title: string;
   description: string;
+  linkText: string;
 }
 
-export function Banner({ title, description }: BannerProps) {
+export function Banner({ title, description, linkText }: BannerProps) {
   return (
     <>
       <div className={banner.cont}>
@@ -29,7 +31,9 @@ export function Banner({ title, description }: BannerProps) {
           >
             {description}
           </Text>
-          <button className={banner.button}>GET PLANTING</button>
+          <Button className={banner.link} element="a" size="xl" color="white">
+            {linkText}
+          </Button>
         </div>
       </div>
       <div className={banner.border} />

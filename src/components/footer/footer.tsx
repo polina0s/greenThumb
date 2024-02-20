@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 
+import { Link } from '../../ui/link';
 import { Copyrights } from './components/copyrights';
 import { Social } from './components/social';
 import footer from './footer.module.scss';
@@ -18,24 +19,24 @@ export function Footer({ variant = 'white' }: FooterProps) {
     <div>
       <div className={footerVariant}>
         <div className={footer.navigation}>
-          <a className={footer.navLink} href="#">
+          <Link href="#" className={footer.navLink}>
             Products
-          </a>
-          <a className={footer.navLink} href="#">
+          </Link>
+          <Link href="#" className={footer.navLink}>
             Returns
-          </a>
-          <a className={footer.navLink} href="#">
+          </Link>
+          <Link href="#" className={footer.navLink}>
             FAQ
-          </a>
-          <a className={footer.navLink} href="#">
+          </Link>
+          <Link href="#" className={footer.navLink}>
             Shipping
-          </a>
-          <a className={footer.navLink} href="#">
+          </Link>
+          <Link href="#" className={footer.navLink}>
             About us
-          </a>
-          <a className={footer.navLink} href="#">
+          </Link>
+          <Link href="#" className={footer.navLink}>
             Contact us
-          </a>
+          </Link>
         </div>
         <div className={footer.social}>
           <Social />

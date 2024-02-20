@@ -21,7 +21,7 @@ interface TextProps {
     | 'lightGreen'
     | 'red';
   fontFamily?: 'roboto' | 'publicSans' | 'poppins' | 'openSans';
-  element?: 'p' | 'div' | 'a';
+  element?: 'p' | 'div';
 }
 
 export function Text({
@@ -58,7 +58,6 @@ export function Text({
   );
 
   if (element === 'div') return <div className={textClass}>{children}</div>;
-  if (element === 'a') return <a className={textClass}>{children}</a>;
 
   return <p className={textClass}>{children}</p>;
 }

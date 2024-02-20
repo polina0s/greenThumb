@@ -15,6 +15,7 @@ export function MyApp() {
     <QueryClientProvider client={queryClient}>
       <Header promoTitle="FREE SHIPPING ON ALL FULL SUN PLANTS! FEB. 25–28." />
       <Banner
+        linkText="GET PLANTING"
         title="Plants are our Passion"
         description="Even if you don’t have a green thumb, you can still have a green
             home."

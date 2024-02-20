@@ -16,7 +16,7 @@ export function BestSellCard({ title }: CardProps) {
           {title}
         </Text>
       </div>
-      <Button color="green" size="md">
+      <Button element="a" color="green" size="md">
         Buy
       </Button>
     </div>
