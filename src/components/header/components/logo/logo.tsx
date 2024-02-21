@@ -1,13 +1,13 @@
 import { Text } from '../../../../ui/text';
-import logo from './logo.module.scss';
+import classes from './logo.module.scss';
 
 export function Logo() {
   return (
-    <div className={logo.cont}>
-      <Text variant="poppinsSemiBold" color="green" className={logo.text}>
+    <div className={classes.cont}>
+      <Text variant="poppinsSemiBold" color="green" className={classes.text}>
         Green
       </Text>
-      <Text variant="poppinsSemiBold" className={logo.text}>
+      <Text variant="poppinsSemiBold" className={classes.text}>
         Thumb
       </Text>
     </div>

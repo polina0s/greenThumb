@@ -1,9 +1,9 @@
 import { Text } from '../../../../ui/text';
-import copy from './copyrights.module.scss';
+import classes from './copyrights.module.scss';
 
 export function Copyrights() {
   return (
-    <div className={copy.cont}>
+    <div className={classes.cont}>
       <Text color="lightGreen" fontFamily="publicSans">
         COPYRIGHT GREEN THUMB. ALL RIGHTS RESERVED
       </Text>

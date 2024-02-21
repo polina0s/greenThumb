@@ -1,6 +1,6 @@
 import { Button } from '../../ui/button';
 import { Text } from '../../ui/text';
-import card from './bestSellCard.module.scss';
+import classes from './bestSellCard.module.scss';
 
 interface CardProps {
   title: string;
@@ -9,10 +9,14 @@ interface CardProps {
 
 export function BestSellCard({ title, imgSrc }: CardProps) {
   return (
-    <div className={card.cont}>
-      <div className={card.imgCont}>
-        <img className={card.img} src={imgSrc} alt={title} />
-        <Text variant="openSansSemiBold" color="white" className={card.title}>
+    <div className={classes.cont}>
+      <div className={classes.imgCont}>
+        <img className={classes.img} src={imgSrc} alt={title} />
+        <Text
+          variant="openSansSemiBold"
+          color="white"
+          className={classes.title}
+        >
           {title}
         </Text>
       </div>

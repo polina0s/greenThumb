@@ -1,6 +1,6 @@
 import { Button } from '../../ui/button';
 import { Text } from '../../ui/text';
-import card from './catalogCard.module.scss';
+import classes from './catalogCard.module.scss';
 
 interface CatalogCardProps {
   title: string;
@@ -10,11 +10,11 @@ interface CatalogCardProps {
 
 export function CatalogCard({ title, price, imgSrc }: CatalogCardProps) {
   return (
-    <div className={card.cont}>
-      <div className={card.imgCont}>
-        <img className={card.img} src={imgSrc} alt={title} />
+    <div className={classes.cont}>
+      <div className={classes.imgCont}>
+        <img className={classes.img} src={imgSrc} alt={title} />
       </div>
-      <div className={card.info}>
+      <div className={classes.info}>
         <Text variant="openSansBold" color="gray">
           {title}
         </Text>

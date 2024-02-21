@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import * as React from 'react';
 
-import text from './text.module.scss';
+import classes from './text.module.scss';
 
 interface BaseProps {
   variant?:
@@ -43,25 +43,25 @@ export function Text({
 }: React.PropsWithChildren<TextProps>) {
   const textClass = classNames(
     {
-      [text.text]: true,
-      [text['white']]: color === 'white',
-      [text['gray']]: color === 'gray',
-      [text['lightGray']]: color === 'lightGray',
-      [text['black']]: color === 'black',
-      [text['green']]: color === 'green',
-      [text['lightGreen']]: color === 'lightGreen',
-      [text['red']]: color === 'red',
-      [text['openSansRegularSM']]: variant === 'openSansRegularSM',
-      [text['openSansRegularLG']]: variant === 'openSansRegularLG',
-      [text['openSansSemiBold']]: variant === 'openSansSemiBold',
-      [text['openSansBold']]: variant === 'openSansBold',
-      [text['poppinsRegular']]: variant === 'poppinsRegular',
-      [text['poppinsMedium']]: variant === 'poppinsMedium',
-      [text['poppinsSemiBold']]: variant === 'poppinsSemiBold',
-      [text['roboto']]: fontFamily === 'roboto',
-      [text['publicSans']]: fontFamily === 'publicSans',
-      [text['poppins']]: fontFamily === 'poppins',
-      [text['openSans']]: fontFamily === 'openSans',
+      [classes.text]: true,
+      [classes['white']]: color === 'white',
+      [classes['gray']]: color === 'gray',
+      [classes['lightGray']]: color === 'lightGray',
+      [classes['black']]: color === 'black',
+      [classes['green']]: color === 'green',
+      [classes['lightGreen']]: color === 'lightGreen',
+      [classes['red']]: color === 'red',
+      [classes['openSansRegularSM']]: variant === 'openSansRegularSM',
+      [classes['openSansRegularLG']]: variant === 'openSansRegularLG',
+      [classes['openSansSemiBold']]: variant === 'openSansSemiBold',
+      [classes['openSansBold']]: variant === 'openSansBold',
+      [classes['poppinsRegular']]: variant === 'poppinsRegular',
+      [classes['poppinsMedium']]: variant === 'poppinsMedium',
+      [classes['poppinsSemiBold']]: variant === 'poppinsSemiBold',
+      [classes['roboto']]: fontFamily === 'roboto',
+      [classes['publicSans']]: fontFamily === 'publicSans',
+      [classes['poppins']]: fontFamily === 'poppins',
+      [classes['openSans']]: fontFamily === 'openSans',
     },
     className,
   );

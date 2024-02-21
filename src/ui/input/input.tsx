@@ -1,5 +1,12 @@
-import input from './input.module.scss';
+import classes from './input.module.scss';
 
-export function Input() {
-  return <input className={input.input} type="text" defaultValue="Search" />;
+interface InputProps {
+  defaultValue: string;
+  type: string;
+}
+
+export function Input({ defaultValue, type }: InputProps) {
+  return (
+    <input className={classes.input} type={type} defaultValue={defaultValue} />
+  );
 }

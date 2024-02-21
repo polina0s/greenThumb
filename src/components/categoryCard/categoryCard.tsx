@@ -1,5 +1,5 @@
 import { Text } from '../../ui/text';
-import card from './categoryCard.module.scss';
+import classes from './categoryCard.module.scss';
 
 interface CardProps {
   title: string;
@@ -8,11 +8,11 @@ interface CardProps {
 
 export function CategoryCard({ title, imgSrc }: CardProps) {
   return (
-    <div className={card.cont}>
-      <div className={card.imgCont}>
-        <img className={card.img} src={imgSrc} alt={title} />
+    <div className={classes.cont}>
+      <div className={classes.imgCont}>
+        <img className={classes.img} src={imgSrc} alt={title} />
       </div>
-      <Text variant="openSansBold" color="gray" className={card.name}>
+      <Text variant="openSansBold" color="gray" className={classes.name}>
         {title}
       </Text>
     </div>

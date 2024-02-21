@@ -1,7 +1,7 @@
 import star from '../../assets/images/Star 1.png';
 import { Button } from '../../ui/button';
 import { Text } from '../../ui/text';
-import card from './saleCard.module.scss';
+import classes from './saleCard.module.scss';
 
 interface SaleCardProps {
   saleValue: number;
@@ -19,30 +19,34 @@ export function SaleCard({
   imgSrc,
 }: SaleCardProps) {
   return (
-    <div className={card.cont}>
-      <div className={card.imgWrap}>
-        <div className={card.imgCont}>
-          <img className={card.img} src={imgSrc} alt={title} />
+    <div className={classes.cont}>
+      <div className={classes.imgWrap}>
+        <div className={classes.imgCont}>
+          <img className={classes.img} src={imgSrc} alt={title} />
         </div>
-        <div className={card.saleLabelCont}>
-          <div className={card.saleStar}>
+        <div className={classes.saleLabelCont}>
+          <div className={classes.saleStar}>
             <img src={star} alt="" />
           </div>
-          <Text variant="openSansBold" color="white" className={card.saleValue}>
+          <Text
+            variant="openSansBold"
+            color="white"
+            className={classes.saleValue}
+          >
             {saleValue}% off
           </Text>
         </div>
       </div>
-      <div className={card.info}>
+      <div className={classes.info}>
         <Text variant="openSansBold" color="gray">
           {title}
         </Text>
-        <div className={card.price}>
+        <div className={classes.price}>
           <Text variant="openSansRegularLG">$ {newPrice}</Text>
           <Text
             variant="openSansSemiBold"
             color="red"
-            className={card.oldPrice}
+            className={classes.oldPrice}
           >
             $ {oldPrice}
           </Text>

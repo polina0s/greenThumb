@@ -3,11 +3,11 @@ import Instagram from '../../../../assets/images/instagram.svg';
 import Linkedin from '../../../../assets/images/linkedin.svg';
 import Twitter from '../../../../assets/images/twitter.svg';
 import Youtube from '../../../../assets/images/youtube.svg';
-import social from './social.module.scss';
+import classes from './social.module.scss';
 
 export function Social() {
   return (
-    <div className={social.cont}>
+    <div className={classes.cont}>
       <a href="">
         <Youtube />
       </a>

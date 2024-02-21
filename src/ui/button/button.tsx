@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import * as React from 'react';
 
-import button from './button.module.scss';
+import classes from './button.module.scss';
 
 interface BaseProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -28,13 +28,13 @@ export function Button({
 }: React.PropsWithChildren<MyButtonProps>) {
   const btnClass = classNames(
     {
-      [button.button]: true,
-      [button['white']]: color === 'white',
-      [button['green']]: color === 'green',
-      [button['sm']]: size === 'sm',
-      [button['md']]: size === 'md',
-      [button['lg']]: size === 'lg',
-      [button['xl']]: size === 'xl',
+      [classes.button]: true,
+      [classes['white']]: color === 'white',
+      [classes['green']]: color === 'green',
+      [classes['sm']]: size === 'sm',
+      [classes['md']]: size === 'md',
+      [classes['lg']]: size === 'lg',
+      [classes['xl']]: size === 'xl',
     },
     className,
   );

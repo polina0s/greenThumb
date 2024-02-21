@@ -3,20 +3,20 @@ import Line from '../../../../assets/images/line.svg';
 import Search from '../../../../assets/images/search.svg';
 import { Input } from '../../../../ui/input';
 import { Text } from '../../../../ui/text';
-import search from './searchBar.module.scss';
+import classes from './searchBar.module.scss';
 
 export function SearchBar({ basketValue }: { basketValue: number }) {
   return (
-    <div className={search.cont}>
-      <Input />
-      <button className={search.searchButton}>
+    <div className={classes.cont}>
+      <Input defaultValue="Search" type="text" />
+      <button className={classes.searchButton}>
         <Search />
       </button>
       <Line />
-      <button className={search.basketButton}>
+      <button className={classes.basketButton}>
         <Basket />
       </button>
-      <Text variant="openSansRegularSM" className={search.basketValue}>
+      <Text variant="openSansRegularSM" className={classes.basketValue}>
         {basketValue}
       </Text>
     </div>

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Link } from '../../ui/link';
 import { Copyrights } from './components/copyrights';
 import { Social } from './components/social';
-import footer from './footer.module.scss';
+import classes from './footer.module.scss';
 
 interface FooterProps {
   variant?: 'white' | 'green';
@@ -11,34 +11,34 @@ interface FooterProps {
 
 export function Footer({ variant = 'white' }: FooterProps) {
   const footerVariant = classNames({
-    [footer.cont]: true,
-    [footer['footer--green']]: variant === 'green',
+    [classes.cont]: true,
+    [classes['footer--green']]: variant === 'green',
   });
 
   return (
     <div>
       <div className={footerVariant}>
-        <div className={footer.navigation}>
-          <Link href="#" className={footer.navLink}>
+        <div className={classes.navigation}>
+          <Link href="#" className={classes.navLink}>
             Products
           </Link>
-          <Link href="#" className={footer.navLink}>
+          <Link href="#" className={classes.navLink}>
             Returns
           </Link>
-          <Link href="#" className={footer.navLink}>
+          <Link href="#" className={classes.navLink}>
             FAQ
           </Link>
-          <Link href="#" className={footer.navLink}>
+          <Link href="#" className={classes.navLink}>
             Shipping
           </Link>
-          <Link href="#" className={footer.navLink}>
+          <Link href="#" className={classes.navLink}>
             About us
           </Link>
-          <Link href="#" className={footer.navLink}>
+          <Link href="#" className={classes.navLink}>
             Contact us
           </Link>
         </div>
-        <div className={footer.social}>
+        <div className={classes.social}>
           <Social />
         </div>
       </div>

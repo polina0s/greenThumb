@@ -1,25 +1,25 @@
 import { Link } from '../../../../ui/link';
 import { Text } from '../../../../ui/text';
-import promo from './promo.module.scss';
+import classes from './promo.module.scss';
 
 export function Promo({ title }: { title: string }) {
   return (
-    <div className={promo.promo}>
-      <div className={promo.cont}>
-        <div className={promo.section} />
+    <div className={classes.promo}>
+      <div className={classes.cont}>
+        <div className={classes.section} />
         <Text variant="openSansSemiBold" color="white">
           {title}
         </Text>
-        <div className={promo.section}>
-          <div className={promo.infoCont}>
+        <div className={classes.section}>
+          <div className={classes.infoCont}>
             <Text
               variant="openSansRegularSM"
               color="white"
-              className={promo.currency}
+              className={classes.currency}
             >
               USD
             </Text>
-            <Link href="#" className={promo.support}>
+            <Link href="#" className={classes.support}>
               Support
             </Link>
           </div>
