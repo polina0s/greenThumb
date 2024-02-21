@@ -1,13 +1,14 @@
 import Basket from '../../../../assets/images/basket.svg';
 import Line from '../../../../assets/images/line.svg';
 import Search from '../../../../assets/images/search.svg';
+import { Input } from '../../../../ui/input';
 import { Text } from '../../../../ui/text';
 import search from './searchBar.module.scss';
 
 export function SearchBar({ basketValue }: { basketValue: number }) {
   return (
     <div className={search.cont}>
-      <input className={search.input} type="text" defaultValue="Search" />
+      <Input />
       <button className={search.searchButton}>
         <Search />
       </button>

@@ -1,22 +1,22 @@
-import img from '../../assets/images/Rectangle 51.png';
 import { Button } from '../../ui/button';
 import { Text } from '../../ui/text';
 import card from './catalogCard.module.scss';
 
 interface CatalogCardProps {
-  name: string;
+  title: string;
   price: number;
+  imgSrc: string;
 }
 
-export function CatalogCard({ name, price }: CatalogCardProps) {
+export function CatalogCard({ title, price, imgSrc }: CatalogCardProps) {
   return (
     <div className={card.cont}>
       <div className={card.imgCont}>
-        <img className={card.img} src={img} alt="" />
+        <img className={card.img} src={imgSrc} alt={title} />
       </div>
       <div className={card.info}>
         <Text variant="openSansBold" color="gray">
-          {name}
+          {title}
         </Text>
         <Text variant="openSansRegularLG" color="gray">
           $ {price}

@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+import img from '../assets/images/Rectangle 51.png';
 import { Banner } from './banner/banner';
 import { BestSellCard } from './bestSellCard';
 import { CatalogCard } from './catalogCard';
@@ -22,13 +23,14 @@ export function MyApp() {
       />
       <SaleCard
         saleValue={25}
-        name="String of Hearts"
+        title="String of Hearts"
         newPrice={350}
         oldPrice={450}
+        imgSrc={img}
       />
-      <CatalogCard name="Marble Queen" price={350} />
-      <CategoryCard name="BONSAI" />
-      <BestSellCard title="INDOOR PLANTS" />
+      <CatalogCard title="Marble Queen" price={350} imgSrc={img} />
+      <CategoryCard title="BONSAI" imgSrc={img} />
+      <BestSellCard title="INDOOR PLANTS" imgSrc={img} />
       <Footer />
     </QueryClientProvider>
   );

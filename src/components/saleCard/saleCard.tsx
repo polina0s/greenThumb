@@ -1,4 +1,3 @@
-import img from '../../assets/images/Rectangle 51.png';
 import star from '../../assets/images/Star 1.png';
 import { Button } from '../../ui/button';
 import { Text } from '../../ui/text';
@@ -6,22 +5,24 @@ import card from './saleCard.module.scss';
 
 interface SaleCardProps {
   saleValue: number;
-  name: string;
+  title: string;
   newPrice: number;
   oldPrice: number;
+  imgSrc: string;
 }
 
 export function SaleCard({
   saleValue,
-  name,
+  title,
   newPrice,
   oldPrice,
+  imgSrc,
 }: SaleCardProps) {
   return (
     <div className={card.cont}>
       <div className={card.imgWrap}>
         <div className={card.imgCont}>
-          <img className={card.img} src={img} alt="" />
+          <img className={card.img} src={imgSrc} alt={title} />
         </div>
         <div className={card.saleLabelCont}>
           <div className={card.saleStar}>
@@ -34,7 +35,7 @@ export function SaleCard({
       </div>
       <div className={card.info}>
         <Text variant="openSansBold" color="gray">
-          {name}
+          {title}
         </Text>
         <div className={card.price}>
           <Text variant="openSansRegularLG">$ {newPrice}</Text>
