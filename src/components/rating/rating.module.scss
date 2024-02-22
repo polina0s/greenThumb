@@ -1,0 +1,17 @@
+.star {
+  width: 23px;
+  height: 23px;
+}
+
+.starsCont {
+  width: 142px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--green-200);
+}
+
+.svgHidden {
+    position: absolute;
+    z-index: -1000;
+    opacity: 0;
+}

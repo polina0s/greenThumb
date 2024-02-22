@@ -16,6 +16,7 @@ interface BaseProps {
     | 'white'
     | 'gray'
     | 'lightGray'
+    | 'darkGray'
     | 'black'
     | 'green'
     | 'lightGreen'
@@ -47,6 +48,7 @@ export function Text({
       [classes['white']]: color === 'white',
       [classes['gray']]: color === 'gray',
       [classes['lightGray']]: color === 'lightGray',
+      [classes['darkGray']]: color === 'darkGray',
       [classes['black']]: color === 'black',
       [classes['green']]: color === 'green',
       [classes['lightGreen']]: color === 'lightGreen',

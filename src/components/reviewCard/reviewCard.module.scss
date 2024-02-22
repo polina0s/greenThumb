@@ -1,0 +1,28 @@
+.card {
+  width: 340px;
+  height: 290px;
+  background-color: var(--gray-100);
+  border-radius: 6px;
+  box-shadow: var(--shadowGreen-300);
+}
+
+.imgCont {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  margin-bottom: 13px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.name {
+  font-size: 18px;
+}
