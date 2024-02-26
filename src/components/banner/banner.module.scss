@@ -1,0 +1,57 @@
+.cont {
+  height: 700px;
+  background-color: var(--green-200);
+  position: relative;
+  z-index: 0;
+}
+
+.smallImg {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+}
+
+.bigImg {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+}
+
+.content {
+  width: 594px;
+  height: 700px;
+  position: absolute;
+  z-index: 100;
+  background: rgba(80, 128, 107, 0.20);
+  backdrop-filter: blur(20px);
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
+.title {
+  width: 542px;
+  height: 188px;
+  margin: 151px auto 27px auto;
+  text-align: center;
+  font-size: 80px;
+  line-height: 80px;
+}
+
+.description {
+  width: 430px;
+  height: 92px;
+  text-align: center;
+  margin: 0px auto 38px auto;
+}
+
+.link {
+  margin: 0 auto;
+}
+
+.border {
+  height: 39px;
+  background-color: var(--green-400);
+}

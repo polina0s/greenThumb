@@ -1,0 +1,22 @@
+.navContainer {
+  margin: 0 auto;
+  width: 1250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation {
+  padding: 7px 0px;
+  box-shadow: var(--shadowBlack-100);
+}
+
+.navbar {
+  width: 539px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLink {
+  font-size: 17px;
+}

@@ -1,0 +1,84 @@
+// DEFAULT
+.text {
+  color: var(--gray-600);
+}
+
+// FONT-FAMILY
+.roboto {
+  font-family: var(--roboto);
+}
+
+.publicSans {
+  font-family: var(--publicSans);
+}
+
+.poppins {
+  font-family: var(--poppins);
+}
+
+.openSans {
+  font-family: var(--publicSans);
+}
+
+// COLOR
+.white {
+  color: var(--gray-100);
+}
+
+.gray {
+  color: var(--gray-500);
+}
+
+.lightGray {
+  color: var(--gray-400);
+}
+
+.darkGray {
+  color: var(--gray-800);
+}
+
+.black {
+  color: var(--gray-700);
+}
+
+.green {
+  color: var(--green-400);
+}
+
+.lightGreen {
+  color: var(--green-200);
+}
+
+
+.red {
+  color: var(--red-100);
+}
+
+// VARIANTS
+.openSansRegularSM {
+  font: 400 18px var(--openSans)
+}
+
+.openSansRegularLG {
+  font: 400 20px var(--openSans)
+}
+
+.openSansSemiBold {
+  font: 600 16px var(--openSans);
+}
+
+.openSansBold {
+  font: 700 20px var(--openSans)
+}
+
+.poppinsRegular {
+  font: 400 22px var(--poppins)
+}
+
+.poppinsMedium {
+  font: 500 36px var(--poppins)
+}
+
+.poppinsSemiBold {
+  font: 600 56px var(--poppins)
+}

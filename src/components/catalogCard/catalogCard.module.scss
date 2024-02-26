@@ -1,0 +1,34 @@
+.cont {
+  width: 282px;
+  height: 418px;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--gray-100);
+  box-shadow: var(--shadowGreen-200);
+}
+
+.imgCont {
+  width: 242px;
+  height: 224px;
+  border-radius: 8px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.name {
+  font: 700 20px var(--openSans);
+  color: var(--gray-500);
+}
+
+.price {
+  font: 400 20px var(--openSans);
+  color: var(--gray-500);
+}

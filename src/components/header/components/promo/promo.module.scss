@@ -1,0 +1,35 @@
+.promo {
+  display: flex;
+  justify-content: center;
+  background-color: var(--green-400);
+}
+
+.cont {
+  margin: 0 auto;
+  padding: 12px 20px;
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  flex: 1;
+}
+
+.infoCont {
+  width: 125px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 200px;
+}
+
+.curency {
+  font-size: 16px;  
+}
+
+.support {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-100)
+}

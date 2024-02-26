@@ -1,0 +1,1 @@
+export { BestSellCard } from './bestSellCard';

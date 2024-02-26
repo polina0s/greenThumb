@@ -12,6 +12,8 @@
  --gray-400: #7C8087;
  --gray-500: #343434;
  --gray-600: #000000;
+ --gray-700: #0D0D0D;
+ --gray-800: #1D293F;
 
  --green-100: #F7F8FA;
  --green-200: #E8EDDE;
@@ -22,4 +24,13 @@
  --red-100: #D11F1F;
 
  --blue-100: #1D293F;
+
+ --shadowBlack-100: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+ --shadowBlack-200: 0px 4px 4px rgba(52, 52, 52, 0.25);
+ --shadowBlack-300: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+ --shadowGreen-100: 0px 8px 23px 0px rgba(80, 107, 82, 0.16); 
+ --shadowGreen-200: 0px 8px 23px 0px rgba(80, 107, 82, 0.13); 
+ --shadowGreen-300: 0px 4px 24px 0px rgba(139, 167, 178, 0.16);
+ 
 }
