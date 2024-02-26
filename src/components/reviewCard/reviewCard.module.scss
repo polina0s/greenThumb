@@ -4,12 +4,15 @@
   background-color: var(--gray-100);
   border-radius: 6px;
   box-shadow: var(--shadowGreen-300);
+  padding-top: 32px;
+  text-align: center;
 }
 
 .imgCont {
   width: 82px;
   height: 82px;
   border-radius: 50%;
+  margin: 0 auto;
   margin-bottom: 13px;
 }
 
@@ -19,8 +22,18 @@
   border-radius: 50%;
 }
 
+.rating {
+  width: 142px;
+  margin: 0 auto;
+  margin-bottom: 21px;
+}
+
 .title {
   font-weight: 500;
+  line-height: 29px;
+  width: 295px;
+  margin: 0 auto;
+  margin-bottom: 6px;
 }
 
 .name {
