@@ -1,20 +1,24 @@
 import { createBrowserRouter } from 'react-router-dom';
 
+import { CatalogPage } from '../pages/catalogPage';
 import { ErrorPage } from '../pages/errorPage';
+import { MainPage } from '../pages/mainPage';
+import { ProductPage } from '../pages/productPage';
 
 export const Router = createBrowserRouter(
   [
     {
       path: '/',
-      async lazy() {
-        const { MainPage } = await import('../pages/mainPage');
-        return { Component: MainPage };
-      },
+      Component: () => <MainPage />,
       errorElement: <ErrorPage />,
     },
     {
-      path: 'card',
-      Component: () => <div>pizda</div>,
+      path: 'catalog',
+      Component: () => <CatalogPage />,
+    },
+    {
+      path: ':id',
+      Component: () => <ProductPage />,
     },
   ],
   { basename: '/' },
