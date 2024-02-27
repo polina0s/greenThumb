@@ -14,6 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.js',
     assetModuleFilename: 'assets/[name][ext]',
+    publicPath: "/"
   },
 
   mode: isProductionMode ? 'production' : 'development',
@@ -88,6 +89,6 @@ module.exports = {
   devServer: {
     watchFiles: path.resolve(__dirname, './src'),
     port: 8000,
-    historyApiFallback: { index: "/" },
+    historyApiFallback: true,
   },
 };
