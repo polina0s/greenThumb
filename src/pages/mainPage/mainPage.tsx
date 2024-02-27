@@ -1,6 +1,7 @@
 import { Banner } from '../../components/banner/banner';
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
+import { Categories } from '../../widgets/categories';
 
 export function MainPage() {
   return (
@@ -11,6 +12,7 @@ export function MainPage() {
         description="Even if you don’t have a green thumb, you can still have a green home."
         linkText="GET PLANTING"
       />
+      <Categories />
       <Footer />
     </>
   );
