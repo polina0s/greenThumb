@@ -4,11 +4,15 @@
   border-bottom: 1px solid var(--gray-600);
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 } 
 
 .title {
-  width: 511px;
-  display: flex;
-  justify-content: space-between;
+  display: inline-block;
+}
+
+.shopArticle {
+  font-size: 30px;
+  text-transform: uppercase;
 }

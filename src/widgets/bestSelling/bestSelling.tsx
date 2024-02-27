@@ -1,6 +1,6 @@
-import { CategoryCard } from '../../components/categoryCard';
+import { BestSellCard } from '../../components/bestSellCard';
 import { SectionHeader } from '../../ui/sectionHeader';
-import classes from './categories.module.scss';
+import classes from './bestSelling.module.scss';
 
 type Card = {
   id: string;
@@ -8,27 +8,27 @@ type Card = {
   title: string;
 };
 
-interface CategoresProps {
+interface BestSelingProps {
   cards: Card[];
 }
 
-export function Categories({ cards }: CategoresProps) {
+export function BestSelling({ cards }: BestSelingProps) {
   return (
     <>
       <div className={classes.headerCont}>
         <SectionHeader
-          firstWord="Shop&nbsp;"
-          secondWord="by Categories"
-          shopArticle={false}
+          firstWord="Best&nbsp;"
+          secondWord="Selling"
+          shopArticle={true}
         />
       </div>
       <div className={classes.cards}>
         {cards.map((card) => {
           return (
-            <CategoryCard
-              key={card.id}
-              imgSrc={card.imgSrc}
+            <BestSellCard
               title={card.title}
+              imgSrc={card.imgSrc}
+              key={card.id}
             />
           );
         })}
