@@ -1,10 +1,25 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { MainPage } from '../../src/pages/mainPage';
+import { CatalogPage } from '../pages/catalogPage';
+import { ErrorPage } from '../pages/errorPage';
+import { MainPage } from '../pages/mainPage';
+import { ProductPage } from '../pages/productPage';
 
-export const Router = createBrowserRouter([
-  {
-    path: '/',
-    element: <MainPage />,
-  },
-]);
+export const Router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      Component: () => <MainPage />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: 'catalog',
+      Component: () => <CatalogPage />,
+    },
+    {
+      path: '/catalog/:id',
+      Component: () => <ProductPage />,
+    },
+  ],
+  { basename: '/' },
+);
