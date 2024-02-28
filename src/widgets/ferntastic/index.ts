@@ -1,0 +1,1 @@
+export { Ferntastic } from './ferntastic';

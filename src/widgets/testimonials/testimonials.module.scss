@@ -1,0 +1,27 @@
+.cont {
+  text-align: center;
+  background-color: var(--green-200);
+  padding: 88px 0px 88px 0px;
+}
+
+.headerCont {
+  margin-bottom: 27px;
+}
+
+.headerTitle {
+  font-size: 56px;
+  line-height: 62px;
+  letter-spacing: -2.4px;
+  padding-bottom: 14px;
+}
+
+.headerDesc {
+  font-size: 18px;
+}
+
+.cards {
+  width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
