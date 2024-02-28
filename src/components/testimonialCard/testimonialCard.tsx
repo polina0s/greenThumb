@@ -1,6 +1,6 @@
 import { Text } from '../../ui/text';
 import { Rating } from '../rating';
-import classes from './reviewCard.module.scss';
+import classes from './testimonialCard.module.scss';
 
 interface ReviewCardProps {
   imgSrc: string;
@@ -8,7 +8,7 @@ interface ReviewCardProps {
   name: string;
 }
 
-export function ReviewCard({ imgSrc, title, name }: ReviewCardProps) {
+export function TestimonialCard({ imgSrc, title, name }: ReviewCardProps) {
   return (
     <div className={classes.card}>
       <div className={classes.imgCont}>

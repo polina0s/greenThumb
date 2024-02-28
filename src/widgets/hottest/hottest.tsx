@@ -15,8 +15,8 @@ interface HottestProps {
 
 export function Hottest({ cards }: HottestProps) {
   return (
-    <>
-      <div>
+    <div className={classes.cont}>
+      <div className={classes.headerCont}>
         <SectionHeader
           firstWord="Hottest&nbsp;"
           secondWord="Plants"
@@ -35,6 +35,6 @@ export function Hottest({ cards }: HottestProps) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
