@@ -1,5 +1,5 @@
-import { Link } from '../../../../ui/link';
-import { Text } from '../../../../ui/text';
+import { Link } from '../../../link';
+import { Text } from '../../../text';
 import classes from './promo.module.scss';
 
 export function Promo({ title }: { title: string }) {

@@ -1,4 +1,4 @@
-import { Link } from '../../ui/link';
+import { Link } from '../link';
 import { Logo } from './components/logo';
 import { Promo } from './components/promo';
 import { SearchBar } from './components/searchBar';

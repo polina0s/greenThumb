@@ -1,5 +1,5 @@
-import { Button } from '../../ui/button';
-import { Text } from '../../ui/text';
+import { Button } from '../button';
+import { Text } from '../text';
 import classes from './catalogCard.module.scss';
 
 interface CatalogCardProps {

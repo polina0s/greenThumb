@@ -1,8 +1,8 @@
 import Basket from '../../../../assets/images/basket.svg';
 import Line from '../../../../assets/images/line.svg';
 import Search from '../../../../assets/images/search.svg';
-import { Input } from '../../../../ui/input';
-import { Text } from '../../../../ui/text';
+import { Input } from '../../../input';
+import { Text } from '../../../text';
 import classes from './searchBar.module.scss';
 
 export function SearchBar({ basketValue }: { basketValue: number }) {
