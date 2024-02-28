@@ -1,19 +1,25 @@
+import img from '../../assets/images/Rectangle 51.png';
 import { TestimonialCard } from '../../components/testimonialCard';
 import { Text } from '../../ui/text';
 import classes from './testimonials.module.scss';
 
-type Card = {
-  imgSrc: string;
-  title: string;
-  name: string;
-  id: string;
-};
+const cards = [
+  { imgSrc: img, title: 'Healthy, happy\nplants', name: 'Luisa', id: '1' },
+  {
+    imgSrc: img,
+    title: 'Recommend to all my plant friends',
+    name: 'Edoardo',
+    id: '2',
+  },
+  {
+    imgSrc: img,
+    title: 'I turned my house into my dream jungle',
+    name: 'Mart',
+    id: '3',
+  },
+];
 
-interface TestimonialsProps {
-  cards: Card[];
-}
-
-export function Testimonials({ cards }: TestimonialsProps) {
+export function Testimonials() {
   return (
     <div className={classes.cont}>
       <div className={classes.headerCont}>

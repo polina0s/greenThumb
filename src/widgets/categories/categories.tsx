@@ -1,18 +1,18 @@
+import img from '../../assets/images/Rectangle 51.png';
 import { CategoryCard } from '../../components/categoryCard';
 import { SectionHeader } from '../../ui/sectionHeader';
 import classes from './categories.module.scss';
 
-type Card = {
-  id: string;
-  imgSrc: string;
-  title: string;
-};
+const cards = [
+  { imgSrc: img, title: 'bonsai', id: '1' },
+  { imgSrc: img, title: 'bonsai', id: '2' },
+  { imgSrc: img, title: 'bonsai', id: '3' },
+  { imgSrc: img, title: 'bonsai', id: '4' },
+  { imgSrc: img, title: 'bonsai', id: '5' },
+  { imgSrc: img, title: 'bonsai', id: '6' },
+];
 
-interface CategoresProps {
-  cards: Card[];
-}
-
-export function Categories({ cards }: CategoresProps) {
+export function Categories() {
   return (
     <>
       <div className={classes.headerCont}>

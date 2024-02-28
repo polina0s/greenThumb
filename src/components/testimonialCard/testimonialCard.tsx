@@ -18,7 +18,7 @@ export function TestimonialCard({ imgSrc, title, name }: ReviewCardProps) {
         <Rating value={2.5} />
       </div>
       <Text color="darkGray" variant="poppinsRegular" className={classes.title}>
-        ”{title}”
+        {title}
       </Text>
       <Text color="lightGray" variant="poppinsRegular" className={classes.name}>
         {name}

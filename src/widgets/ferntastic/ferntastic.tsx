@@ -1,21 +1,44 @@
+import img from '../../assets/images/Rectangle 51.png';
 import { SaleCard } from '../../components/saleCard';
 import { SectionHeader } from '../../ui/sectionHeader';
 import classes from './ferntastic.module.scss';
 
-type Card = {
-  id: string;
-  saleValue: number;
-  title: string;
-  newPrice: number;
-  oldPrice: number;
-  imgSrc: string;
-};
+const cards = [
+  {
+    id: '1',
+    saleValue: 25,
+    title: 'String of Hearts',
+    newPrice: 350,
+    oldPrice: 450,
+    imgSrc: img,
+  },
+  {
+    id: '2',
+    saleValue: 25,
+    title: 'Red Secret Alocasia',
+    newPrice: 350,
+    oldPrice: 450,
+    imgSrc: img,
+  },
+  {
+    id: '3',
+    saleValue: 25,
+    title: 'Jewel Alocasia',
+    newPrice: 350,
+    oldPrice: 450,
+    imgSrc: img,
+  },
+  {
+    id: '4',
+    saleValue: 25,
+    title: 'Hoya Retusa',
+    newPrice: 350,
+    oldPrice: 450,
+    imgSrc: img,
+  },
+];
 
-interface FerntasticProps {
-  cards: Card[];
-}
-
-export function Ferntastic({ cards }: FerntasticProps) {
+export function Ferntastic() {
   return (
     <>
       <div className={classes.headerCont}>
