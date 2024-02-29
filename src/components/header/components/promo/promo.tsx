@@ -7,7 +7,11 @@ export function Promo({ title }: { title: string }) {
     <div className={classes.promo}>
       <div className={classes.cont}>
         <div className={classes.section} />
-        <Text variant="openSansSemiBold" color="white">
+        <Text
+          className={classes.title}
+          variant="openSansSemiBold"
+          color="white"
+        >
           {title}
         </Text>
         <div className={classes.section}>

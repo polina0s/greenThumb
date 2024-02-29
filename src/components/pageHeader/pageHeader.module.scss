@@ -1,0 +1,29 @@
+.cont {
+  width: 100%;
+  height: 184px;
+  padding: 0px 0px 49px 110px;
+  background-color: var(--green-200);
+  display: flex;
+  justify-content: flex-start;
+  align-items: end;
+}
+
+.title {
+  height: 86px;
+  font-size: 80px;
+  line-height: 80px;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 46px;
+    background-color: var(--gray-600);
+    margin: 0px 21px 0px 32px;
+    border-radius: 1px;
+  }
+}
+
+.description {
+  height: 49px;
+}

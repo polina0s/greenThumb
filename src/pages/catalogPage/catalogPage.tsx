@@ -1,5 +1,17 @@
-import classes from './catalogPage.module.scss';
+import { Footer } from '../../components/footer';
+import { Header } from '../../components/header';
+import { PageHeader } from '../../components/pageHeader';
+// import classes from './catalogPage.module.scss';
 
 export function CatalogPage() {
-  return <div className={classes.cont}>catalog</div>;
+  return (
+    <>
+      <Header promoTitle="FREE SHIPPING ON ALL FULL SUN PLANTS! FEB. 25–28." />
+      <PageHeader
+        title="Shop"
+        description="Find the perfect plant for your space"
+      />
+      <Footer />
+    </>
+  );
 }
