@@ -1,5 +1,5 @@
 import { Text } from '../text';
-import classes from './pageHeader.module.scss';
+import classes from './sectionBanner.module.scss';
 
 interface SectionBannerProps {
   title: string;
