@@ -1,13 +1,12 @@
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
-import { PageHeader } from '../../components/pageHeader';
-// import classes from './catalogPage.module.scss';
+import { SectionBanner } from '../../components/sectionBanner';
 
 export function CatalogPage() {
   return (
     <>
       <Header promoTitle="FREE SHIPPING ON ALL FULL SUN PLANTS! FEB. 25–28." />
-      <PageHeader
+      <SectionBanner
         title="Shop"
         description="Find the perfect plant for your space"
       />

@@ -16,10 +16,10 @@
   &::after {
     content: '';
     display: inline-block;
-    width: 1px;
     height: 46px;
     background-color: var(--gray-600);
     margin: 0px 21px 0px 32px;
+    border: 1px solid var(--gray-600);
     border-radius: 1px;
   }
 }

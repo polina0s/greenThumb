@@ -1,12 +1,12 @@
 import { Text } from '../text';
 import classes from './pageHeader.module.scss';
 
-interface PageHeaderProps {
+interface SectionBannerProps {
   title: string;
   description: string;
 }
 
-export function PageHeader({ title, description }: PageHeaderProps) {
+export function SectionBanner({ title, description }: SectionBannerProps) {
   return (
     <div className={classes.cont}>
       <Text variant="poppinsRegular" className={classes.title}>
