@@ -1,7 +1,7 @@
 import leafesBig from '../../assets/images/leafesBig.png';
 import leafesSmall from '../../assets/images/leafesSmall.png';
-import { Button } from '../../ui/button';
-import { Text } from '../../ui/text';
+import { Button } from '../button';
+import { Text } from '../text';
 import classes from './banner.module.scss';
 
 interface BannerProps {

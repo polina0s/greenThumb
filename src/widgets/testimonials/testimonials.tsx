@@ -1,6 +1,6 @@
 import img from '../../assets/images/Rectangle 51.png';
 import { TestimonialCard } from '../../components/testimonialCard';
-import { Text } from '../../ui/text';
+import { Text } from '../../components/text';
 import classes from './testimonials.module.scss';
 
 const cards = [

@@ -1,4 +1,4 @@
-import { Text } from '../../../../ui/text';
+import { Text } from '../../../text';
 import classes from './copyrights.module.scss';
 
 export function Copyrights() {

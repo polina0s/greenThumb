@@ -1,6 +1,6 @@
 import star from '../../assets/images/Star 1.png';
-import { Button } from '../../ui/button';
-import { Text } from '../../ui/text';
+import { Button } from '../button';
+import { Text } from '../text';
 import classes from './saleCard.module.scss';
 
 interface SaleCardProps {

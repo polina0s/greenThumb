@@ -1,6 +1,6 @@
 import img from '../../assets/images/Rectangle 51.png';
 import { CategoryCard } from '../../components/categoryCard';
-import { SectionHeader } from '../../ui/sectionHeader';
+import { SectionHeader } from '../../components/sectionHeader';
 import classes from './categories.module.scss';
 
 const cards = [

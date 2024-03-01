@@ -1,6 +1,6 @@
 import img from '../../assets/images/Rectangle 51.png';
 import { BestSellCard } from '../../components/bestSellCard';
-import { SectionHeader } from '../../ui/sectionHeader';
+import { SectionHeader } from '../../components/sectionHeader';
 import classes from './bestSelling.module.scss';
 
 const cards = [

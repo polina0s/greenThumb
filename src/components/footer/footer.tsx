@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { Link } from '../../ui/link';
+import { Link } from '../link';
 import { Copyrights } from './components/copyrights';
 import { Social } from './components/social';
 import classes from './footer.module.scss';

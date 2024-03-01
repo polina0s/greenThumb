@@ -1,5 +1,5 @@
-import { Text } from '../../ui/text';
 import { Rating } from '../rating';
+import { Text } from '../text';
 import classes from './testimonialCard.module.scss';
 
 interface ReviewCardProps {
