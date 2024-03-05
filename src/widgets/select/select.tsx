@@ -1,4 +1,6 @@
-import { Text } from '../../components/text';
+import Select, { components, DropdownIndicatorProps } from 'react-select';
+
+import Arrow from '../../assets/images/arrow.svg';
 import classes from './select.module.scss';
 
 interface SelectProps {
@@ -6,35 +8,41 @@ interface SelectProps {
 }
 
 const options = [
-  { value: 'Popular', id: 1 },
-  { value: 'Price: High to low', id: 2 },
-  { value: 'Price: Low to high', id: 3 },
+  { value: 'popular', label: 'Popular' },
+  { value: 'priceToLow', label: 'Price ⇓' },
+  { value: 'priceToHigh', label: 'Price ⇑' },
 ];
 
-export function Select({ title }: SelectProps) {
+const DropdownIndicator = (props: DropdownIndicatorProps) => {
   return (
-    <label className={classes.cont}>
-      <Text className={classes.title}>{title}</Text>
-      <select name="" id="">
-        {options.map((opt) => {
-          return (
-            <option key={opt.id} value={opt.value}>
-              {opt.value}
-            </option>
-          );
-        })}
-      </select>
-    </label>
+    <components.DropdownIndicator {...props}>
+      <Arrow />
+    </components.DropdownIndicator>
   );
-}
+};
 
-{
-  /* <label>
-  <p></p>
-  <select>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-  </select>
-</label> */
+const IndicatorSeparator = () => {
+  return <span />;
+};
+
+export function SelectSort({ title }: SelectProps) {
+  return (
+    <Select
+      options={options}
+      className={classes.cont}
+      defaultValue={options[0]}
+      components={{ DropdownIndicator, IndicatorSeparator }}
+      theme={(theme) => ({
+        ...theme,
+        borderRadius: 0,
+        colors: {
+          ...theme.colors,
+          primary50: 'white',
+          neutral20: 'black',
+          primary25: 'lightGray',
+          primary: 'black',
+        },
+      })}
+    />
+  );
 }

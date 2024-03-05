@@ -1,7 +1,7 @@
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
 import { SectionBanner } from '../../components/sectionBanner';
-import { Select } from '../../widgets/select';
+import { SelectSort } from '../../widgets/select';
 
 export function CatalogPage() {
   return (
@@ -11,7 +11,7 @@ export function CatalogPage() {
         title="Shop"
         description="Find the perfect plant for your space"
       />
-      <Select title="Sort By" />
+      <SelectSort title="Sort By" />
       <Footer />
     </>
   );
