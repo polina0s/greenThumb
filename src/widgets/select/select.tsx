@@ -1,11 +1,13 @@
-import Select, { components, DropdownIndicatorProps } from 'react-select';
+import Select, {
+  components,
+  ControlProps,
+  DropdownIndicatorProps,
+  SingleValueProps,
+} from 'react-select';
 
 import Arrow from '../../assets/images/arrow.svg';
+import { Text } from '../../components/text';
 import classes from './select.module.scss';
-
-interface SelectProps {
-  title: string;
-}
 
 const options = [
   { value: 'popular', label: 'Popular' },
@@ -15,9 +17,20 @@ const options = [
 
 const DropdownIndicator = (props: DropdownIndicatorProps) => {
   return (
-    <components.DropdownIndicator {...props}>
+    <components.DropdownIndicator {...props} className={classes.indicator}>
       <Arrow />
     </components.DropdownIndicator>
+  );
+};
+
+const Control = ({ children, ...props }: ControlProps) => {
+  return (
+    <components.Control {...props}>
+      <Text variant="openSansRegularSM" className={classes.control}>
+        Sort by
+      </Text>
+      {children}
+    </components.Control>
   );
 };
 
@@ -25,13 +38,22 @@ const IndicatorSeparator = () => {
   return <span />;
 };
 
-export function SelectSort({ title }: SelectProps) {
+const SingleValue = ({ children, ...props }: SingleValueProps) => (
+  <components.SingleValue {...props}>{children}</components.SingleValue>
+);
+
+export function SelectSort() {
   return (
     <Select
       options={options}
       className={classes.cont}
       defaultValue={options[0]}
-      components={{ DropdownIndicator, IndicatorSeparator }}
+      components={{
+        DropdownIndicator,
+        IndicatorSeparator,
+        Control,
+        SingleValue,
+      }}
       theme={(theme) => ({
         ...theme,
         borderRadius: 0,
@@ -43,6 +65,15 @@ export function SelectSort({ title }: SelectProps) {
           primary: 'black',
         },
       })}
+      styles={{
+        singleValue: (base) => ({
+          ...base,
+          padding: 0,
+          margin: 0,
+          letterSpacing: '-0.3px',
+          lineHeight: '26px',
+        }),
+      }}
     />
   );
 }

@@ -1,7 +1,12 @@
 .cont {
   height: 37px;
-  width: 160px;
+  width: 175px;
   color: var(--gray-600);
   font: 700 14px var(--openSans);
 }
 
+.control {
+  margin: 0px 12px 0px 12px;
+  font-size: 13px;
+  color: var(--gray-400);
+}

@@ -11,7 +11,7 @@ export function CatalogPage() {
         title="Shop"
         description="Find the perfect plant for your space"
       />
-      <SelectSort title="Sort By" />
+      <SelectSort />
       <Footer />
     </>
   );
