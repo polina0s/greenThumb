@@ -17,7 +17,7 @@ const options = [
 
 const DropdownIndicator = (props: DropdownIndicatorProps) => {
   return (
-    <components.DropdownIndicator {...props} className={classes.indicator}>
+    <components.DropdownIndicator {...props}>
       <Arrow />
     </components.DropdownIndicator>
   );
@@ -54,6 +54,7 @@ export function SelectSort() {
         Control,
         SingleValue,
       }}
+      classNamePrefix="react-select"
       theme={(theme) => ({
         ...theme,
         borderRadius: 0,
@@ -66,12 +67,34 @@ export function SelectSort() {
         },
       })}
       styles={{
+        control: (base) => ({
+          ...base,
+          padding: '0 12px',
+        }),
         singleValue: (base) => ({
           ...base,
           padding: 0,
           margin: 0,
+          width: 53,
           letterSpacing: '-0.3px',
           lineHeight: '26px',
+        }),
+        valueContainer: (base) => ({
+          ...base,
+          padding: 0,
+          width: 53,
+        }),
+        dropdownIndicator: (base) => ({
+          ...base,
+          padding: 0,
+          width: 24,
+          height: 24,
+        }),
+        input: (base) => ({
+          ...base,
+          padding: 0,
+          margin: 0,
+          width: 53,
         }),
       }}
     />
