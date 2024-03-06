@@ -1,18 +1,22 @@
+import classNames from 'classnames';
+
 import classes from './radioInput.module.scss';
 
 interface RadioInputProps {
   value: string;
-  id: string;
   name: string;
+  className?: string;
 }
 
-export function RadioInput({ value, id, name }: RadioInputProps) {
+export function RadioInput({ value, name, className }: RadioInputProps) {
+  const ContClass = classNames(classes.cont, className);
+
   return (
-    <>
-      <input className={classes.input} type="radio" value={value} id={id} />
+    <div className={ContClass}>
+      <input className={classes.input} type="radio" value={value} id={value} />
       <label className={classes.name} htmlFor={value}>
         {name}
       </label>
-    </>
+    </div>
   );
 }

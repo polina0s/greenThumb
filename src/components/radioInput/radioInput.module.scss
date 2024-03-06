@@ -1,0 +1,16 @@
+.cont {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 16px;
+  height: 16px;
+  color: var(--gray-500);
+  margin-right: 10px;
+}
+
+.name {
+  font: 400 16px var(--openSans);
+  color: var(--gray-500);
+}
