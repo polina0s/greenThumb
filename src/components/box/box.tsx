@@ -1,7 +1,7 @@
 import { Text } from '../text';
 import classes from './box.module.scss';
 
-interface BoxProps {
+export interface BoxProps {
   title: string;
 }
 

@@ -1,4 +1,4 @@
-import { Box } from '../../components/box';
+import { Box, BoxProps } from '../../components/box';
 import { RadioInput } from '../../components/radioInput';
 import classes from './radioFilter.module.scss';
 
@@ -9,11 +9,7 @@ const filters = [
   { name: 'Heat pack', value: 'heatPack', id: '4' },
 ];
 
-interface RadioFilterProps {
-  title: string;
-}
-
-export function RadioFilter({ title }: RadioFilterProps) {
+export function RadioFilter({ title }: BoxProps) {
   return (
     <Box title={title}>
       <div className={classes.filters}>
