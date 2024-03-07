@@ -1,9 +1,9 @@
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
 import { SectionBanner } from '../../components/sectionBanner';
-// import { RadioFilter } from '../../widgets/radioFitler';
+import { RadioFilter } from '../../widgets/radioFitler';
 import { RangeFilter } from '../../widgets/rangeFilter';
-// import { SelectSort } from '../../widgets/select';
+import { SelectSort } from '../../widgets/select';
 
 export function CatalogPage() {
   return (
@@ -13,9 +13,9 @@ export function CatalogPage() {
         title="Shop"
         description="Find the perfect plant for your space"
       />
-      {/* <SelectSort /> */}
-      {/* <RadioFilter title="Include" /> */}
-      <RangeFilter title="Price" min={100} max={1000} />
+      <SelectSort />
+      <RadioFilter title="Include" />
+      <RangeFilter title="Price" min="100" max="1000" />
       <Footer />
     </>
   );
