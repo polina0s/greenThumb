@@ -1,6 +1,7 @@
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
 import { SectionBanner } from '../../components/sectionBanner';
+import { Dropdown } from '../../widgets/dropdown';
 import { RadioFilter } from '../../widgets/radioFitler';
 import { RangeFilter } from '../../widgets/rangeFilter';
 import { SelectSort } from '../../widgets/select';
@@ -16,6 +17,7 @@ export function CatalogPage() {
       <SelectSort />
       <RadioFilter title="Include" />
       <RangeFilter title="Price" min="100" max="1000" />
+      <Dropdown title="All Categories" />
       <Footer />
     </>
   );
