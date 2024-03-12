@@ -4,8 +4,8 @@ import classes from './rangeFilter.module.scss';
 
 interface RangeFilterProps {
   title: string;
-  min: string;
-  max: string;
+  min: number;
+  max: number;
   text: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
