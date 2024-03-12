@@ -12,7 +12,7 @@ export function CatalogPage() {
         title="Shop"
         description="Find the perfect plant for your space"
       />
-      <CatalogFilters minPrice="100" maxPrice="1000" />
+      <CatalogFilters />
       <SelectSort />
 
       <Footer />

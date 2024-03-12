@@ -4,22 +4,25 @@ import { Dropdown } from '../../components/dropdown';
 import { RadioFilter } from '../../components/radioFitler';
 import { RangeFilter } from '../../components/rangeFilter';
 
-interface CatalogFiltersProps {
-  minPrice: string;
-  maxPrice: string;
-}
+export function CatalogFilters() {
+  const [price, setPrice] = useState('100');
+  const [open, setOpen] = useState(false);
 
-export function CatalogFilters({ minPrice, maxPrice }: CatalogFiltersProps) {
-  const [price, setPrice] = useState(minPrice);
+  // onDropdownClick;
 
   return (
     <div>
-      <Dropdown title="All Categories" />
+      <Dropdown
+        open={open}
+        title="All Categories"
+        onChange={(e) => console.log(e.target.value)}
+        onClick={(e) => setOpen(!open)}
+      />
       <RangeFilter
         title="Price"
-        min={minPrice}
-        max={maxPrice}
-        text={`from ${minPrice} to ${price}`}
+        min="100"
+        max="1000"
+        text={`from 100 to ${price}`}
         onChange={(e) => setPrice(e.target.value)}
       />
       <RadioFilter

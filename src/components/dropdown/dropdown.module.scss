@@ -1,4 +1,23 @@
+.button {
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
 .title {
   margin-bottom: 8px;
   letter-spacing: 2.75%;
+}
+
+.options {
+  padding-left: 10px;
+}
+.input {
+  margin-bottom: 4px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
 }

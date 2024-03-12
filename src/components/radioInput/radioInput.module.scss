@@ -14,3 +14,7 @@
   font: 400 16px var(--openSans);
   color: var(--gray-500);
 }
+
+input[type='radio'] {
+    accent-color: var(--green-500);
+}
