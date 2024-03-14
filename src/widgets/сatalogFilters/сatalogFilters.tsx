@@ -1,24 +1,42 @@
-import { useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 
 import { DropdownFilter } from '../../components/dropdownFilter';
 import { RadioFilter } from '../../components/radioFitler';
 import { RangeFilter } from '../../components/rangeFilter';
 
 export function CatalogFilters() {
-  const [price, setPrice] = useState('100');
+  const { control, watch } = useForm({
+    defaultValues: {
+      category: '',
+      price: 100,
+      type: '',
+    },
+  });
+
   return (
     <div>
-      <DropdownFilter onChange={(e) => console.log(e.target.value)} />
-      <RangeFilter
-        title="Price"
-        min={100}
-        max={1000}
-        text={`from 100 to ${price}`}
-        onChange={(e) => setPrice(e.target.value)}
+      <Controller
+        render={({ field }) => <DropdownFilter {...field} />}
+        control={control}
+        name="category"
       />
-      <RadioFilter
-        title="Include"
-        onChange={(e) => console.log(e.target.value)}
+      <Controller
+        render={({ field }) => (
+          <RangeFilter
+            {...field}
+            title="Price"
+            min={100}
+            max={1000}
+            text={`from 100 to ${watch('price')}`}
+          />
+        )}
+        control={control}
+        name="price"
+      />
+      <Controller
+        render={({ field }) => <RadioFilter {...field} title="Include" />}
+        control={control}
+        name="type"
       />
     </div>
   );
