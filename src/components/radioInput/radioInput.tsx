@@ -6,30 +6,29 @@ import classes from './radioInput.module.scss';
 interface RadioInputProps {
   value: string;
   name: string;
+  label: string;
   className?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
+export const RadioInput = React.forwardRef<HTMLInputElement, RadioInputProps>(
+  function RadioInput({ value, name, label, className, onChange }, ref) {
+    const ContClass = classNames(classes.cont, className);
 
-export function RadioInput({
-  value,
-  name,
-  className,
-  onChange,
-}: RadioInputProps) {
-  const ContClass = classNames(classes.cont, className);
-
-  return (
-    <div className={ContClass}>
-      <input
-        className={classes.input}
-        type="radio"
-        value={value}
-        id={value}
-        onChange={onChange}
-      />
-      <label className={classes.name} htmlFor={value}>
-        {name}
-      </label>
-    </div>
-  );
-}
+    return (
+      <div className={ContClass}>
+        <input
+          name={name}
+          ref={ref}
+          className={classes.input}
+          type="radio"
+          value={value}
+          id={value}
+          onChange={onChange}
+        />
+        <label className={classes.name} htmlFor={value}>
+          {label}
+        </label>
+      </div>
+    );
+  },
+);
