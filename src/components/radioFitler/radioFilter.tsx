@@ -6,10 +6,10 @@ import { Text } from '../../components/text';
 import classes from './radioFilter.module.scss';
 
 const filters = [
-  { label: 'Planter', value: 'planter', id: '1' },
-  { label: 'Flowers', value: 'flowers', id: '2' },
-  { label: 'Care', value: 'care', id: '3' },
-  { label: 'Heat pack', value: 'heatPack', id: '4' },
+  { label: 'Planter', value: 'planter' },
+  { label: 'Flowers', value: 'flowers' },
+  { label: 'Care', value: 'care' },
+  { label: 'Heat pack', value: 'heatPack' },
 ];
 interface FilterProps {
   name: string;
@@ -36,7 +36,7 @@ export const RadioFilter = forwardRef<HTMLDivElement, FilterProps>(
                 className={classes.input}
                 value={filter.value}
                 label={filter.label}
-                key={filter.id}
+                key={filter.value}
                 onChange={onChange}
               />
             );

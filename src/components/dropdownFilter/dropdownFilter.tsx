@@ -5,12 +5,12 @@ import { RadioInput } from '../radioInput';
 import classes from './dropdownFilter.module.scss';
 
 const filters = [
-  { value: 'bonsai', label: 'Bonsai', id: '1' },
-  { value: 'cacti', label: 'Cacti', id: '2' },
-  { value: 'creepers', label: 'Creepers', id: '3' },
-  { value: 'succulents', label: 'Succulents', id: '4' },
-  { value: 'seeds', label: 'Seeds', id: '5' },
-  { value: 'gifts', label: 'Gifts', id: '6' },
+  { value: 'bonsai', label: 'Bonsa' },
+  { value: 'cacti', label: 'Cacti' },
+  { value: 'creepers', label: 'Creepers' },
+  { value: 'succulents', label: 'Succulents' },
+  { value: 'seeds', label: 'Seeds' },
+  { value: 'gifts', label: 'Gifts' },
 ];
 
 interface DropdownFilterProps {
@@ -31,7 +31,7 @@ export const DropdownFilter = forwardRef<HTMLDivElement, DropdownFilterProps>(
                 className={classes.input}
                 value={filter.value}
                 label={filter.label}
-                key={filter.id}
+                key={filter.value}
               />
             );
           })}
