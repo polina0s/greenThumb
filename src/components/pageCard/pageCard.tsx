@@ -37,6 +37,20 @@ export function PageCard({ name, price, description }: PageCardProps) {
             {description}
           </Text>
         </div>
+        <div className={classes.size}>
+          <Text
+            variant="poppinsRegular"
+            color="lightGray"
+            className={classes.sizeTitle}
+          >
+            Size
+          </Text>
+          <div className={classes.sizeOptions}>
+            <div className={classes.sizeOption}>S</div>
+            <div className={classes.sizeOption}>M</div>
+            <div className={classes.sizeOption}>L</div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -28,6 +28,10 @@
   width: 520px;
 }
 
+.info {
+  margin-bottom: 50px;
+}
+
 .name {
   margin-bottom: 6px;
   letter-spacing: -1.5px;
@@ -42,4 +46,24 @@
 
 .description {
   letter-spacing: -0.4px;
+}
+
+.sizeTitle {
+  font-size: 18px;
+  margin-bottom: 11px;
+}
+
+.sizeOptions {
+  display: flex;
+}
+
+.sizeOption {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--gray-600);
+  font: 600 16px var(--publicSans);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
 }
