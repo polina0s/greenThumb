@@ -1,4 +1,7 @@
 import img from '../../assets/images/Rectangle 51.png';
+import { Button } from '../button';
+import { QuanitySelector } from '../quanitySelector';
+import { SizePicker } from '../sizePicker';
 import { Text } from '../text';
 import classes from './pageCard.module.scss';
 
@@ -37,20 +40,20 @@ export function PageCard({ name, price, description }: PageCardProps) {
             {description}
           </Text>
         </div>
-        <div className={classes.size}>
-          <Text
-            variant="poppinsRegular"
-            color="lightGray"
-            className={classes.sizeTitle}
-          >
-            Size
-          </Text>
-          <div className={classes.sizeOptions}>
-            <div className={classes.sizeOption}>S</div>
-            <div className={classes.sizeOption}>M</div>
-            <div className={classes.sizeOption}>L</div>
-          </div>
+        <SizePicker />
+        <div className={classes.buttonsCont}>
+          <Button color="green" size="lg" className={classes.cartButton}>
+            ADD TO CART
+          </Button>
+          <QuanitySelector />
         </div>
+        <Text
+          variant="openSansRegularSM"
+          color="lightGray"
+          className={classes.shippingText}
+        >
+          Free standard shipping
+        </Text>
       </div>
     </div>
   );

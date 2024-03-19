@@ -3,18 +3,18 @@ import classes from './sizePicker.module.scss';
 
 export function SizePicker() {
   return (
-    <div className={classes.size}>
+    <div>
       <Text
         variant="poppinsRegular"
         color="lightGray"
-        className={classes.sizeTitle}
+        className={classes.title}
       >
         Size
       </Text>
-      <div className={classes.sizeOptions}>
-        <div className={classes.sizeOption}>S</div>
-        <div className={classes.sizeOption}>M</div>
-        <div className={classes.sizeOption}>L</div>
+      <div className={classes.optionsCont}>
+        <button className={classes.optionButton}>S</button>
+        <button className={classes.optionButton}>M</button>
+        <button className={classes.optionButton}>L</button>
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ export function ProductPage() {
         price={350}
         description="Marble queen pothos is a popular houseplant that is known for its beautiful foliage. It is a relatively easy plant to care for, making it a good choice for beginners."
       />
-      <Footer />
+      <Footer variant="green" />
     </div>
   );
 }

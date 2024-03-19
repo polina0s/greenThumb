@@ -14,7 +14,6 @@ export function CatalogPage() {
       />
       <CatalogFilters />
       <SelectSort />
-
       <Footer />
     </>
   );
