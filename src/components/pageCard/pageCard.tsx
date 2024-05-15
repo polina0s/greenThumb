@@ -44,7 +44,7 @@ export function PageCard({ name, price, description }: PageCardProps) {
             {description}
           </Text>
         </div>
-        <SizePicker />
+        <SizePicker defaultValue="" />
         <div className={classes.buttonsCont}>
           <Button color="green" size="lg" className={classes.cartButton}>
             ADD TO CART
