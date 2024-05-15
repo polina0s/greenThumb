@@ -17,6 +17,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
+  position: relative;
 }
 
 .img {
@@ -63,4 +64,14 @@
 .shippingText {
   font-size: 14px;
   letter-spacing: -0.4px;
+}
+
+.zoomButton {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: transparent;
+  cursor: pointer;
 }

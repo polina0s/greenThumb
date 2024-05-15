@@ -1,4 +1,5 @@
 import img from '../../assets/images/Rectangle 51.png';
+import zoomIn from '../../assets/images/zoom-in.png';
 import { Button } from '../button';
 import { QuanitySelector } from '../quanitySelector';
 import { SizePicker } from '../sizePicker';
@@ -27,6 +28,9 @@ export function PageCard({ name, price, description }: PageCardProps) {
         <div className={classes.imgCont}>
           <img className={classes.img} src={img} alt="img" />
         </div>
+        <button className={classes.zoomButton}>
+          <img className={classes.zoomButtonImg} src={zoomIn} />
+        </button>
       </div>
       <div className={classes.infoCont}>
         <div className={classes.info}>
