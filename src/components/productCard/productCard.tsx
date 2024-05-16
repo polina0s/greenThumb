@@ -1,37 +1,33 @@
-import img from '../../assets/images/Rectangle 51.png';
-import zoomIn from '../../assets/images/zoom-in.png';
+import ZoomIn from '../../assets/images/zoom-in.svg';
 import { Button } from '../button';
+import { ImageGallery } from '../imageGallery';
 import { QuanitySelector } from '../quanitySelector';
 import { SizePicker } from '../sizePicker';
 import { Text } from '../text';
-import classes from './pageCard.module.scss';
+import classes from './productCard.module.scss';
 
 interface PageCardProps {
   name: string;
   price: number;
   description: string;
+  img1: string;
+  img2: string;
+  img3: string;
+  img4: string;
 }
 
-export function PageCard({ name, price, description }: PageCardProps) {
+export function ProductCard({
+  name,
+  price,
+  description,
+  img1,
+  img2,
+  img3,
+  img4,
+}: PageCardProps) {
   return (
     <div className={classes.cont}>
-      <div className={classes.imgWrapper}>
-        <div className={classes.imgCont}>
-          <img className={classes.img} src={img} alt="img" />
-        </div>
-        <div className={classes.imgCont}>
-          <img className={classes.img} src={img} alt="img" />
-        </div>
-        <div className={classes.imgCont}>
-          <img className={classes.img} src={img} alt="img" />
-        </div>
-        <div className={classes.imgCont}>
-          <img className={classes.img} src={img} alt="img" />
-        </div>
-        <button className={classes.zoomButton}>
-          <img className={classes.zoomButtonImg} src={zoomIn} />
-        </button>
-      </div>
+      <ImageGallery img1={img1} img2={img2} img3={img3} img4={img4} />
       <div className={classes.infoCont}>
         <div className={classes.info}>
           <Text variant="poppinsMedium" className={classes.name}>
@@ -44,7 +40,7 @@ export function PageCard({ name, price, description }: PageCardProps) {
             {description}
           </Text>
         </div>
-        <SizePicker defaultValue="" />
+        <SizePicker />
         <div className={classes.buttonsCont}>
           <Button color="green" size="lg" className={classes.cartButton}>
             ADD TO CART

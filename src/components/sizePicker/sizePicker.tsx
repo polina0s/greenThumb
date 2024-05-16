@@ -4,11 +4,11 @@ import { Text } from '../text';
 import classes from './sizePicker.module.scss';
 
 interface SizePickerProps {
-  defaultValue: string;
+  defaultValue?: string;
 }
 
 export const SizePicker = forwardRef<HTMLDivElement, SizePickerProps>(
-  function SizePicker({ defaultValue }, ref) {
+  function SizePicker({ defaultValue = '' }, ref) {
     const [checked, setChecked] = useState(defaultValue);
 
     return (
