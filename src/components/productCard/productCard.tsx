@@ -1,4 +1,3 @@
-import ZoomIn from '../../assets/images/zoom-in.svg';
 import { Button } from '../button';
 import { ImageGallery } from '../imageGallery';
 import { QuanitySelector } from '../quanitySelector';
@@ -27,7 +26,16 @@ export function ProductCard({
 }: PageCardProps) {
   return (
     <div className={classes.cont}>
-      <ImageGallery img1={img1} img2={img2} img3={img3} img4={img4} />
+      <ImageGallery
+        img1={img1}
+        img2={img2}
+        img3={img3}
+        img4={img4}
+        alt1={name}
+        alt2={name}
+        alt3={name}
+        alt4={name}
+      />
       <div className={classes.infoCont}>
         <div className={classes.info}>
           <Text variant="poppinsMedium" className={classes.name}>

@@ -3,18 +3,45 @@
   align-items: center;
 }
 
-.input {
+.simpleOption {
   width: 16px;
   height: 16px;
   color: var(--gray-500);
   margin-right: 10px;
+  accent-color: var(--green-500);
 }
 
-.name {
+.simpleOptionName {
   font: 400 16px var(--openSans);
   color: var(--gray-500);
 }
 
-input[type='radio'] {
-    accent-color: var(--green-500);
+.buttonOption {
+  display: none;
+    &:checked {
+      + .optionBox {
+        background-color: var(--green-400);
+        &:before {
+            opacity: 1;
+          }
+      }
+    }
+}
+
+.optionButtonBox {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--gray-600);
+  margin-right: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.optionButtonSize {
+  margin: 0 auto;
+  font: 600 16px var(--publicSans);
+  &:before {
+        opacity: 0;
+      }
 }

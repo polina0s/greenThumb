@@ -1,15 +1,29 @@
 import { forwardRef, useState } from 'react';
+import * as React from 'react';
 
+import { RadioInput } from '../radioInput';
 import { Text } from '../text';
 import classes from './sizePicker.module.scss';
 
 interface SizePickerProps {
   defaultValue?: string;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
+const options = [
+  { value: 'S', disabled: false },
+  { value: 'M', disabled: false },
+  { value: 'L', disabled: false },
+];
+
 export const SizePicker = forwardRef<HTMLDivElement, SizePickerProps>(
-  function SizePicker({ defaultValue = '' }, ref) {
+  function SizePicker({ defaultValue = '', onChange }, ref) {
     const [checked, setChecked] = useState(defaultValue);
+
+    const handleSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setChecked(e.target.value);
+      onChange?.(e);
+    };
 
     return (
       <div ref={ref}>
@@ -21,42 +35,18 @@ export const SizePicker = forwardRef<HTMLDivElement, SizePickerProps>(
           Size
         </Text>
         <div className={classes.optionsCont}>
-          <label>
-            <input
-              type="radio"
+          {options.map(({ value, disabled }) => (
+            <RadioInput
+              key={value}
+              variant="buttonOption"
+              value={value}
               name="size"
-              value="S"
-              onChange={(e) => setChecked(e.target.value)}
-              checked={checked === 'S'}
+              label={value}
+              disabled={disabled}
+              checked={checked === value}
+              onChange={handleSizeChange}
             />
-            <div className={classes.optionBox}>
-              <span className={classes.optionSize}>S</span>
-            </div>
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="size"
-              value="M"
-              onChange={(e) => setChecked(e.target.value)}
-              checked={checked === 'M'}
-            />
-            <div className={classes.optionBox}>
-              <span className={classes.optionSize}>M</span>
-            </div>
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="size"
-              value="L"
-              onChange={(e) => setChecked(e.target.value)}
-              checked={checked === 'L'}
-            />
-            <div className={classes.optionBox}>
-              <span className={classes.optionSize}>L</span>
-            </div>
-          </label>
+          ))}
         </div>
       </div>
     );
