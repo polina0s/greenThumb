@@ -19,7 +19,7 @@
 .buttonOption {
   display: none;
     &:checked {
-      + .optionBox {
+      + .optionButtonBox {
         background-color: var(--green-400);
         &:before {
             opacity: 1;
