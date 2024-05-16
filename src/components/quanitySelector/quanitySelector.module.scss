@@ -24,6 +24,13 @@
 }
 
 .quanity {
+  text-align: center;
   color: var(--gray-700);
   font: 400 18px var(--openSans);
+
+  &::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			appearance: none;
+			margin: 0;
+		}
 }

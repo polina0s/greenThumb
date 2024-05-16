@@ -53,7 +53,7 @@ export function ProductCard({
           <Button color="green" size="lg" className={classes.cartButton}>
             ADD TO CART
           </Button>
-          <QuanitySelector />
+          <QuanitySelector min={1} max={10} defaultValue={1} />
         </div>
         <Text
           variant="openSansRegularSM"
