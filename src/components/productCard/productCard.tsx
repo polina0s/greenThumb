@@ -1,6 +1,6 @@
 import { Button } from '../button';
 import { ImageGallery } from '../imageGallery';
-import { QuanitySelector } from '../quanitySelector';
+import { QuantitySelector } from '../quantitySelector';
 import { SizePicker } from '../sizePicker';
 import { Text } from '../text';
 import classes from './productCard.module.scss';
@@ -53,7 +53,7 @@ export function ProductCard({
           <Button color="green" size="lg" className={classes.cartButton}>
             ADD TO CART
           </Button>
-          <QuanitySelector min={1} max={10} defaultValue={1} />
+          <QuantitySelector min={1} max={10} defaultValue={1} />
         </div>
         <Text
           variant="openSansRegularSM"
