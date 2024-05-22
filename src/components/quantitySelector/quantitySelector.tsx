@@ -32,12 +32,17 @@ export function QuantitySelector({
   };
 
   const changeQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let newQnt = +e.target.value;
-    if (newQnt < min) {
-      newQnt = min;
-    } else if (newQnt > max) newQnt = max;
-    setQuantity(newQnt);
-    e.preventDefault();
+    setQuantity(e.target.valueAsNumber);
+  };
+
+  const hanleBlur = () => {
+    console.log(quantity);
+
+    if (quantity < min) {
+      setQuantity(min);
+    } else if (quantity > max) {
+      setQuantity(max);
+    }
   };
 
   return (
@@ -61,6 +66,7 @@ export function QuantitySelector({
           max={max}
           step={1}
           value={quantity}
+          onBlur={hanleBlur}
           onChange={changeQuantity}
         ></input>
         <button className={classes.pickerButton} onClick={increaseQuantity}>
