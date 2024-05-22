@@ -10,11 +10,10 @@ interface QuantitySelectorProps {
   defaultValue: number;
 }
 
-export function QuantitySelector({
-  min,
-  max,
-  defaultValue,
-}: QuantitySelectorProps) {
+export const QuantitySelector = React.forwardRef<
+  HTMLDivElement,
+  QuantitySelectorProps
+>(function QuantitySelector({ min, max, defaultValue }, ref) {
   const [quantity, setQuantity] = useState(defaultValue);
 
   const decreaseQuantity = () => {
@@ -36,8 +35,6 @@ export function QuantitySelector({
   };
 
   const hanleBlur = () => {
-    console.log(quantity);
-
     if (quantity < min) {
       setQuantity(min);
     } else if (quantity > max) {
@@ -46,7 +43,7 @@ export function QuantitySelector({
   };
 
   return (
-    <div>
+    <div ref={ref}>
       <Text
         variant="poppinsRegular"
         color="lightGray"
@@ -75,4 +72,4 @@ export function QuantitySelector({
       </div>
     </div>
   );
-}
+});

@@ -1,4 +1,3 @@
-import ZoomIn from '../../assets/images/zoom-in.svg';
 import classes from './imageGallery.module.scss';
 
 interface ImageGalleryProps {
@@ -36,9 +35,7 @@ export function ImageGallery({
       <div className={classes.imgCont}>
         <img className={classes.img} src={img4} alt={alt4} />
       </div>
-      <button className={classes.zoomButton}>
-        <ZoomIn className={classes.zoomButtonImg} />
-      </button>
+    
     </div>
   );
 }
