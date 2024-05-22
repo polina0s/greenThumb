@@ -8,12 +8,14 @@ interface QuantitySelectorProps {
   min: number;
   max: number;
   defaultValue: number;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
 }
 
 export const QuantitySelector = React.forwardRef<
   HTMLDivElement,
   QuantitySelectorProps
->(function QuantitySelector({ min, max, defaultValue }, ref) {
+>(function QuantitySelector({ min, max, defaultValue, onChange, onBlur }, ref) {
   const [quantity, setQuantity] = useState(defaultValue);
 
   const decreaseQuantity = () => {
@@ -32,14 +34,16 @@ export const QuantitySelector = React.forwardRef<
 
   const changeQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuantity(e.target.valueAsNumber);
+    onChange?.(e);
   };
 
-  const hanleBlur = () => {
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     if (quantity < min) {
       setQuantity(min);
     } else if (quantity > max) {
       setQuantity(max);
     }
+    onBlur?.(e);
   };
 
   return (
@@ -63,7 +67,7 @@ export const QuantitySelector = React.forwardRef<
           max={max}
           step={1}
           value={quantity}
-          onBlur={hanleBlur}
+          onBlur={handleBlur}
           onChange={changeQuantity}
         ></input>
         <button className={classes.pickerButton} onClick={increaseQuantity}>
