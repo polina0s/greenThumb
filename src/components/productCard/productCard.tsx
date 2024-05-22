@@ -1,7 +1,7 @@
 import { Controller, useForm } from 'react-hook-form';
 
 import { Button } from '../button';
-import { ImageGallery } from '../imageGallery';
+import { GalleryImg, ImageGallery } from '../imageGallery';
 import { QuantitySelector } from '../quantitySelector';
 import { SizePicker } from '../sizePicker';
 import { Text } from '../text';
@@ -11,20 +11,14 @@ interface PageCardProps {
   name: string;
   price: number;
   description: string;
-  img1: string;
-  img2: string;
-  img3: string;
-  img4: string;
+  images: GalleryImg[];
 }
 
 export function ProductCard({
   name,
   price,
   description,
-  img1,
-  img2,
-  img3,
-  img4,
+  images,
 }: PageCardProps) {
   const { control } = useForm({
     defaultValues: {
@@ -35,16 +29,7 @@ export function ProductCard({
 
   return (
     <div className={classes.cont}>
-      <ImageGallery
-        img1={img1}
-        img2={img2}
-        img3={img3}
-        img4={img4}
-        alt1={name}
-        alt2={name}
-        alt3={name}
-        alt4={name}
-      />
+      <ImageGallery images={images} />
       <div className={classes.infoCont}>
         <div className={classes.info}>
           <Text variant="poppinsMedium" className={classes.name}>
