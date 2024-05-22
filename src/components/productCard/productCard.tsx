@@ -1,3 +1,5 @@
+import { Controller, useForm } from 'react-hook-form';
+
 import { Button } from '../button';
 import { ImageGallery } from '../imageGallery';
 import { QuantitySelector } from '../quantitySelector';
@@ -24,6 +26,13 @@ export function ProductCard({
   img3,
   img4,
 }: PageCardProps) {
+  const { control } = useForm({
+    defaultValues: {
+      defaultSize: 'S',
+      quantity: 1,
+    },
+  });
+
   return (
     <div className={classes.cont}>
       <ImageGallery
@@ -48,12 +57,22 @@ export function ProductCard({
             {description}
           </Text>
         </div>
-        <SizePicker />
+        <Controller
+          render={() => <SizePicker />}
+          name="defaultSize"
+          control={control}
+        />
         <div className={classes.buttonsCont}>
           <Button color="green" size="lg" className={classes.cartButton}>
             ADD TO CART
           </Button>
-          <QuantitySelector min={1} max={10} defaultValue={1} />
+          <Controller
+            render={() => (
+              <QuantitySelector min={1} max={10} defaultValue={1} />
+            )}
+            name="quantity"
+            control={control}
+          />
         </div>
         <Text
           variant="openSansRegularSM"

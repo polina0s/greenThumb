@@ -6,7 +6,7 @@ import { Text } from '../text';
 import classes from './sizePicker.module.scss';
 
 interface SizePickerProps {
-  defaultValue?: string;
+  defaultSize?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
@@ -17,8 +17,8 @@ const options = [
 ];
 
 export const SizePicker = forwardRef<HTMLDivElement, SizePickerProps>(
-  function SizePicker({ defaultValue = '', onChange }, ref) {
-    const [checked, setChecked] = useState(defaultValue);
+  function SizePicker({ defaultSize = '', onChange }, ref) {
+    const [checked, setChecked] = useState(defaultSize);
 
     const handleSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setChecked(e.target.value);
