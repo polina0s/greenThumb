@@ -1,0 +1,29 @@
+.buttonOption {
+  display: none;
+    &:checked {
+      + .optionButtonBox {
+        background-color: var(--green-400);
+        &:before {
+            opacity: 1;
+          }
+      }
+    }
+}
+
+.optionButtonBox {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--gray-600);
+  margin-right: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.optionButtonSize {
+  margin: 0 auto;
+  font: 600 16px var(--publicSans);
+  &:before {
+        opacity: 0;
+      }
+}

@@ -1,7 +1,7 @@
 import { forwardRef, useState } from 'react';
 import * as React from 'react';
 
-import { RadioInput } from '../radioInput';
+import { ButtonOption } from '../buttonOption';
 import { Text } from '../text';
 import classes from './sizePicker.module.scss';
 
@@ -36,12 +36,10 @@ export const SizePicker = forwardRef<HTMLDivElement, SizePickerProps>(
         </Text>
         <div className={classes.optionsCont}>
           {sizes.map(({ value, disabled }) => (
-            <RadioInput
+            <ButtonOption
               key={value}
-              variant="buttonOption"
               value={value}
               name="size"
-              label={value}
               disabled={disabled}
               checked={checked === value}
               onChange={handleSizeChange}
