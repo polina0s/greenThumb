@@ -1,25 +1,32 @@
 import { Controller, useForm } from 'react-hook-form';
 
+import img from '../../assets/images/Rectangle 51.png';
 import { Button } from '../button';
-import { GalleryImg, ImageGallery } from '../imageGallery';
+import { ImageGallery } from '../imageGallery';
 import { QuantitySelector } from '../quantitySelector';
 import { SizePicker } from '../sizePicker';
 import { Text } from '../text';
 import classes from './productCard.module.scss';
 
-interface PageCardProps {
-  name: string;
-  price: number;
-  description: string;
-  images: GalleryImg[];
-}
+const plant = {
+  name: 'Marble Queen Pothos',
+  price: 350,
+  description:
+    'Marble queen pothos is a popular houseplant that is known for its beautiful foliage. It is a relatively easy plant to care for, making it a good choice for beginners.',
+  images: [
+    { src: img, alt: 'Marble Queen Pothos', id: 1 },
+    { src: img, alt: 'Marble Queen Pothos', id: 2 },
+    { src: img, alt: 'Marble Queen Pothos', id: 3 },
+    { src: img, alt: 'Marble Queen Pothos', id: 4 },
+  ],
+  sizes: [
+    { value: 'S', disabled: false },
+    { value: 'M', disabled: false },
+    { value: 'L', disabled: false },
+  ],
+};
 
-export function ProductCard({
-  name,
-  price,
-  description,
-  images,
-}: PageCardProps) {
+export function ProductCard() {
   const { control } = useForm({
     defaultValues: {
       defaultSize: 'S',
@@ -29,21 +36,21 @@ export function ProductCard({
 
   return (
     <div className={classes.cont}>
-      <ImageGallery images={images} />
+      <ImageGallery images={plant.images} />
       <div className={classes.infoCont}>
         <div className={classes.info}>
           <Text variant="poppinsMedium" className={classes.name}>
-            {name}
+            {plant.name}
           </Text>
           <Text variant="openSansRegularSM" className={classes.price}>
-            ${price}
+            ${plant.price}
           </Text>
           <Text variant="openSansRegularLG" className={classes.description}>
-            {description}
+            {plant.description}
           </Text>
         </div>
         <Controller
-          render={() => <SizePicker />}
+          render={() => <SizePicker sizes={plant.sizes} />}
           name="defaultSize"
           control={control}
         />

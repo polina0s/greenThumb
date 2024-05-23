@@ -5,19 +5,19 @@ import { RadioInput } from '../radioInput';
 import { Text } from '../text';
 import classes from './sizePicker.module.scss';
 
+export type SizeOptions = {
+  value: string;
+  disabled: boolean;
+};
+
 interface SizePickerProps {
   defaultSize?: string;
+  sizes: SizeOptions[];
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const options = [
-  { value: 'S', disabled: false },
-  { value: 'M', disabled: false },
-  { value: 'L', disabled: false },
-];
-
 export const SizePicker = forwardRef<HTMLDivElement, SizePickerProps>(
-  function SizePicker({ defaultSize = '', onChange }, ref) {
+  function SizePicker({ defaultSize = '', sizes, onChange }, ref) {
     const [checked, setChecked] = useState(defaultSize);
 
     const handleSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +35,7 @@ export const SizePicker = forwardRef<HTMLDivElement, SizePickerProps>(
           Size
         </Text>
         <div className={classes.optionsCont}>
-          {options.map(({ value, disabled }) => (
+          {sizes.map(({ value, disabled }) => (
             <RadioInput
               key={value}
               variant="buttonOption"

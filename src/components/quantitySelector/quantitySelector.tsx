@@ -19,17 +19,17 @@ export const QuantitySelector = React.forwardRef<
   const [quantity, setQuantity] = useState(defaultValue);
 
   const decreaseQuantity = () => {
-    let newQnt = quantity - 1;
-    if (newQnt < min) {
-      newQnt = min;
-    } else if (newQnt > max) newQnt = max;
-    setQuantity(newQnt);
+    setQuantity((oldValue) => {
+      const newValue = oldValue - 1;
+      return newValue < min ? min : newValue;
+    });
   };
 
   const increaseQuantity = () => {
-    let newQnt = quantity + 1;
-    if (newQnt > max) newQnt = max;
-    setQuantity(newQnt);
+    setQuantity((oldValue) => {
+      const newValue = oldValue + 1;
+      return newValue > max ? max : newValue;
+    });
   };
 
   const changeQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
