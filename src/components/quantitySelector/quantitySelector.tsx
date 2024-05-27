@@ -21,17 +21,19 @@ export const QuantitySelector = React.forwardRef<
 
   const decreaseQuantity = () => {
     setQuantity((oldValue) => {
-      const newValue = oldValue - 1;
-      onChange?.(newValue < min ? min : newValue);
-      return newValue < min ? min : newValue;
+      const decrement = oldValue - 1;
+      const newValue = decrement < min ? min : decrement;
+      onChange?.(newValue);
+      return newValue;
     });
   };
 
   const increaseQuantity = () => {
     setQuantity((oldValue) => {
-      const newValue = oldValue + 1;
-      onChange?.(newValue > max ? max : newValue);
-      return newValue > max ? max : newValue;
+      const increment = oldValue + 1;
+      const newValue = increment > max ? max : increment;
+      onChange?.(newValue);
+      return newValue;
     });
   };
 
