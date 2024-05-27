@@ -8,8 +8,9 @@ interface QuantitySelectorProps {
   min: number;
   max: number;
   defaultValue: number;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  // onChange?: React.ChangeEventHandler<HTMLInputElement>;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
+  onChange?: (value: number) => void;
 }
 
 export const QuantitySelector = React.forwardRef<
@@ -21,6 +22,7 @@ export const QuantitySelector = React.forwardRef<
   const decreaseQuantity = () => {
     setQuantity((oldValue) => {
       const newValue = oldValue - 1;
+      onChange?.(newValue < min ? min : newValue);
       return newValue < min ? min : newValue;
     });
   };
@@ -28,13 +30,14 @@ export const QuantitySelector = React.forwardRef<
   const increaseQuantity = () => {
     setQuantity((oldValue) => {
       const newValue = oldValue + 1;
+      onChange?.(newValue > max ? max : newValue);
       return newValue > max ? max : newValue;
     });
   };
 
   const changeQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuantity(e.target.valueAsNumber);
-    onChange?.(e);
+    onChange?.(e.target.valueAsNumber);
   };
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -42,8 +45,8 @@ export const QuantitySelector = React.forwardRef<
       setQuantity(min);
     } else if (quantity > max) {
       setQuantity(max);
+      onBlur?.(e);
     }
-    onBlur?.(e);
   };
 
   return (
@@ -56,7 +59,11 @@ export const QuantitySelector = React.forwardRef<
         Quantity
       </Text>
       <div className={classes.pickerCont}>
-        <button className={classes.pickerButton} onClick={decreaseQuantity}>
+        <button
+          className={classes.pickerButton}
+          onClick={decreaseQuantity}
+          type="button"
+        >
           &ndash;
         </button>
         <input
@@ -70,7 +77,11 @@ export const QuantitySelector = React.forwardRef<
           onBlur={handleBlur}
           onChange={changeQuantity}
         ></input>
-        <button className={classes.pickerButton} onClick={increaseQuantity}>
+        <button
+          className={classes.pickerButton}
+          onClick={increaseQuantity}
+          type="button"
+        >
           +
         </button>
       </div>

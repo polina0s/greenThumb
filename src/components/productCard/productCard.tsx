@@ -26,13 +26,20 @@ const plant = {
   ],
 };
 
+interface ProductValues {
+  defaultSize: string;
+  quantity: number;
+}
+
 export function ProductCard() {
-  const { control } = useForm({
+  const { control, handleSubmit } = useForm<ProductValues>({
     defaultValues: {
       defaultSize: 'S',
       quantity: 1,
     },
   });
+
+  const onSubmit = (data: ProductValues) => console.log(data);
 
   return (
     <div className={classes.cont}>
@@ -49,23 +56,44 @@ export function ProductCard() {
             {plant.description}
           </Text>
         </div>
-        <Controller
-          render={() => <SizePicker sizes={plant.sizes} />}
-          name="defaultSize"
-          control={control}
-        />
-        <div className={classes.buttonsCont}>
-          <Button color="green" size="lg" className={classes.cartButton}>
-            ADD TO CART
-          </Button>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <Controller
-            render={() => (
-              <QuantitySelector min={1} max={10} defaultValue={1} />
+            render={({ field }) => (
+              <SizePicker
+                sizes={plant.sizes}
+                ref={field.ref}
+                defaultSize={field.value}
+                onChange={field.onChange}
+                name={field.name}
+              />
             )}
-            name="quantity"
+            name="defaultSize"
             control={control}
           />
-        </div>
+          <div className={classes.buttonsCont}>
+            <Button
+              color="green"
+              size="lg"
+              className={classes.cartButton}
+              type="submit"
+            >
+              ADD TO CART
+            </Button>
+            <Controller
+              render={({ field }) => (
+                <QuantitySelector
+                  min={1}
+                  max={10}
+                  defaultValue={field.value}
+                  onChange={field.onChange}
+                  onBlur={field.onBlur}
+                />
+              )}
+              name="quantity"
+              control={control}
+            />
+          </div>
+        </form>
         <Text
           variant="openSansRegularSM"
           color="lightGray"

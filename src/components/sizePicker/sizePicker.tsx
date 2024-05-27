@@ -14,10 +14,11 @@ interface SizePickerProps {
   defaultSize?: string;
   sizes: SizeOptions[];
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  name?: string;
 }
 
 export const SizePicker = forwardRef<HTMLDivElement, SizePickerProps>(
-  function SizePicker({ defaultSize = '', sizes, onChange }, ref) {
+  function SizePicker({ defaultSize = '', sizes, onChange, name }, ref) {
     const [checked, setChecked] = useState(defaultSize);
 
     const handleSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +40,7 @@ export const SizePicker = forwardRef<HTMLDivElement, SizePickerProps>(
             <ButtonOption
               key={value}
               value={value}
-              name="size"
+              name={name}
               disabled={disabled}
               checked={checked === value}
               onChange={handleSizeChange}
