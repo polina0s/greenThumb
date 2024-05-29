@@ -8,7 +8,6 @@ interface QuantitySelectorProps {
   min: number;
   max: number;
   defaultValue: number;
-  // onChange?: React.ChangeEventHandler<HTMLInputElement>;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onChange?: (value: number) => void;
 }
