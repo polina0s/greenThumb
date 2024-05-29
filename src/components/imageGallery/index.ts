@@ -1,1 +1,1 @@
-export { GalleryImg, ImageGallery } from './imageGallery';
+export { ImageGallery } from './imageGallery';

@@ -1,3 +1,4 @@
+import ZoomIn from '../../assets/images/zoom-in.svg';
 import classes from './imageGallery.module.scss';
 
 export type GalleryImg = {
@@ -20,6 +21,9 @@ export function ImageGallery({ images }: ImageGalleryProps) {
           </div>
         );
       })}
+      <button className={classes.zoomButton}>
+        <ZoomIn />
+      </button>
     </div>
   );
 }
