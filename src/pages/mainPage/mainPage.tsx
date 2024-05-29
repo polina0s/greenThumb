@@ -10,7 +10,7 @@ import classes from './main.page.module.scss';
 
 export function MainPage() {
   return (
-    <>
+    <div className={classes.wrapper}>
       <Header promoTitle="FREE SHIPPING ON ALL FULL SUN PLANTS! FEB. 25–28." />
       <div className={classes.banner}>
         <Banner
@@ -35,6 +35,6 @@ export function MainPage() {
         <Testimonials />
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

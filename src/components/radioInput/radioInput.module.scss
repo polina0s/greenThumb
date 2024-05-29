@@ -8,13 +8,10 @@
   height: 16px;
   color: var(--gray-500);
   margin-right: 10px;
+  accent-color: var(--green-500);
 }
 
-.name {
+.inputName {
   font: 400 16px var(--openSans);
   color: var(--gray-500);
-}
-
-input[type='radio'] {
-    accent-color: var(--green-500);
 }

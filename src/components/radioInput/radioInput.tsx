@@ -8,6 +8,8 @@ interface RadioInputProps {
   name: string;
   label: string;
   className?: string;
+  checked?: boolean;
+  disabled?: boolean;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 export const RadioInput = React.forwardRef<HTMLInputElement, RadioInputProps>(
@@ -25,7 +27,7 @@ export const RadioInput = React.forwardRef<HTMLInputElement, RadioInputProps>(
           id={value}
           onChange={onChange}
         />
-        <label className={classes.name} htmlFor={value}>
+        <label className={classes.inputName} htmlFor={value}>
           {label}
         </label>
       </div>
