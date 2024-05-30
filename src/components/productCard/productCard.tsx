@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import img from '../../assets/images/Rectangle 51.png';
@@ -31,7 +32,11 @@ interface ProductValues {
   quantity: number;
 }
 
-export function ProductCard() {
+interface ProductCardProps {
+  onZoomButtonClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export function ProductCard({ onZoomButtonClick }: ProductCardProps) {
   const { control, handleSubmit } = useForm<ProductValues>({
     defaultValues: {
       defaultSize: 'S',
@@ -43,7 +48,10 @@ export function ProductCard() {
 
   return (
     <div className={classes.cont}>
-      <ImageGallery images={plant.images} onClick={() => console.log(';;;')} />
+      <ImageGallery
+        images={plant.images}
+        onZoomButtonClick={onZoomButtonClick}
+      />
       <div className={classes.infoCont}>
         <div className={classes.info}>
           <Text variant="poppinsMedium" className={classes.name}>

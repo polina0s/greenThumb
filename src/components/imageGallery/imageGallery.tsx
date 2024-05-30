@@ -11,10 +11,10 @@ type GalleryImg = {
 
 interface ImageGalleryProps {
   images: GalleryImg[];
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onZoomButtonClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export function ImageGallery({ images, onClick }: ImageGalleryProps) {
+export function ImageGallery({ images, onZoomButtonClick }: ImageGalleryProps) {
   return (
     <div>
       <div className={classes.wrapper}>
@@ -25,7 +25,7 @@ export function ImageGallery({ images, onClick }: ImageGalleryProps) {
             </div>
           );
         })}
-        <button className={classes.zoomButton} onClick={onClick}>
+        <button className={classes.zoomButton} onClick={onZoomButtonClick}>
           <ZoomIn />
         </button>
       </div>

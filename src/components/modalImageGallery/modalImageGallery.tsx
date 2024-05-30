@@ -1,12 +1,23 @@
+import * as React from 'react';
+
 import Close from '../../assets/images/close.svg';
 import classes from './modalImageGallery.module.scss';
 
-export function ModalImageGallery() {
-  return (
-    <div className={classes.wrapper}>
-      <button className={classes.closeButton}>
-        <Close className={classes.closeImg} />
-      </button>
-    </div>
-  );
+interface ModalImageGalleryProps {
+  open: boolean;
+  onCloseButtonClick: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+export function ModalImageGallery({
+  open,
+  onCloseButtonClick,
+}: ModalImageGalleryProps) {
+  if (open)
+    return (
+      <div className={classes.wrapper}>
+        <button className={classes.closeButton} onClick={onCloseButtonClick}>
+          <Close className={classes.closeImg} />
+        </button>
+      </div>
+    );
 }
