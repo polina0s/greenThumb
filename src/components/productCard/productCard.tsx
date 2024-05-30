@@ -43,7 +43,7 @@ export function ProductCard() {
 
   return (
     <div className={classes.cont}>
-      <ImageGallery images={plant.images} />
+      <ImageGallery images={plant.images} onClick={() => console.log(';;;')} />
       <div className={classes.infoCont}>
         <div className={classes.info}>
           <Text variant="poppinsMedium" className={classes.name}>
