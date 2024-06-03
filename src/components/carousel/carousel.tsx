@@ -4,14 +4,14 @@ import Next from '../../assets/images/next.svg';
 import Previous from '../../assets/images/prev.svg';
 import classes from './carousel.module.scss';
 
-type Img = {
+type Images = {
   src?: string;
   alt?: string;
   id: number;
 };
 
 interface CarouselProps {
-  images: Img[];
+  images: Images[];
 }
 
 export function Carousel({ images }: CarouselProps) {
@@ -29,11 +29,15 @@ export function Carousel({ images }: CarouselProps) {
   };
 
   return (
-    <div>
+    <div className={classes.wrapper}>
       <button className={classes.button} onClick={prevSlide}>
         <Previous className={classes.buttonImg} />
       </button>
-      <img src={images[indexSlide].src} alt="" />
+      <img
+        className={classes.image}
+        src={images[indexSlide].src}
+        alt={images[indexSlide].alt}
+      />
       <button className={classes.button} onClick={nextSlide}>
         <Next className={classes.buttonImg} />
       </button>

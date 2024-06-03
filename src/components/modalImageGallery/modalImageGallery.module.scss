@@ -1,15 +1,25 @@
 .wrapper {
   width: 100%;
   height: calc(100% - 110px);
-  background-color: rgba(80, 128, 107, 0.31);
+  background-color: rgba(80, 128, 107, 0.81);
   position: absolute;
   top: 110px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 70px;
 }
 
 .closeButton {
   background-color: transparent;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
+  position: absolute;
+  right: 70px;
+}
+
+.closeImg {
+  width: 100%;
+  height: 100%;
 }
 

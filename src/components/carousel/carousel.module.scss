@@ -1,3 +1,8 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .button {
   width: 100px;
   height: 100px;
@@ -8,4 +13,9 @@
 .buttonImg {
   width: 100px;
   height: 100px;
+}
+
+.image {
+  width: 650px;
+  height: 650px;
 }
