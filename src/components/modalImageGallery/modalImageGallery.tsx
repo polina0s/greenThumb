@@ -24,10 +24,12 @@ export function ModalImageGallery({
   if (open)
     return (
       <div className={classes.wrapper}>
-        <Carousel images={images} />
-        <button className={classes.closeButton} onClick={onCloseButtonClick}>
-          <Close className={classes.closeImg} />
-        </button>
+        <div className={classes.cont}>
+          <Carousel images={images} />
+          <button className={classes.closeButton} onClick={onCloseButtonClick}>
+            <Close className={classes.closeImg} />
+          </button>
+        </div>
       </div>
     );
 }

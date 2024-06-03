@@ -12,8 +12,12 @@ export function ProductPage() {
   return (
     <div id={id} className={classes.cont}>
       <Header promoTitle="FREE SHIPPING ON ALL FULL SUN PLANTS! FEB. 25–28." />
-      <SectionBanner title="Plant" description="Marble Queen Pothos" />
-      <ProductCard />
+      <div className={classes.sectionBanner}>
+        <SectionBanner title="Plant" description="Marble Queen Pothos" />
+      </div>
+      <div className={classes.card}>
+        <ProductCard />
+      </div>
       <Footer variant="green" />
     </div>
   );
