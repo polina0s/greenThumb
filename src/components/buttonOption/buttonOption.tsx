@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import classes from './buttonOption.module.scss';
 
 interface ButtonOptionProps {

@@ -1,10 +1,9 @@
-import * as React from 'react';
-
-import Close from '../../assets/images/close.svg';
+// import Close from '../../assets/images/close.svg';
 import { Carousel } from '../carousel';
-import classes from './modalImageGallery.module.scss';
+import { Modal } from '../modal/modal';
+// import classes from './modalImageGallery.module.scss';
 
-type Images = {
+export type Image = {
   src?: string;
   alt?: string;
   id: number;
@@ -12,24 +11,18 @@ type Images = {
 
 interface ModalImageGalleryProps {
   open: boolean;
-  images: Images[];
-  onCloseButtonClick: React.MouseEventHandler<HTMLButtonElement>;
+  handleClose: () => void;
+  images: Image[];
 }
 
 export function ModalImageGallery({
   open,
-  onCloseButtonClick,
+  handleClose,
   images,
 }: ModalImageGalleryProps) {
-  if (open)
-    return (
-      <div className={classes.wrapper}>
-        <div className={classes.cont}>
-          <Carousel images={images} />
-          <button className={classes.closeButton} onClick={onCloseButtonClick}>
-            <Close className={classes.closeImg} />
-          </button>
-        </div>
-      </div>
-    );
+  return (
+    <Modal open={open} handleClose={handleClose}>
+      <Carousel images={images} />
+    </Modal>
+  );
 }

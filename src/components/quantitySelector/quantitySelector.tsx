@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import * as React from 'react';
+import { forwardRef, useState } from 'react';
 
 import { Text } from '../text';
 import classes from './quantitySelector.module.scss';
@@ -12,7 +11,7 @@ interface QuantitySelectorProps {
   onChange?: (value: number) => void;
 }
 
-export const QuantitySelector = React.forwardRef<
+export const QuantitySelector = forwardRef<
   HTMLDivElement,
   QuantitySelectorProps
 >(function QuantitySelector({ min, max, defaultValue, onChange, onBlur }, ref) {

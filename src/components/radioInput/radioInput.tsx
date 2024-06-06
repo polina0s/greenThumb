@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import * as React from 'react';
+import { forwardRef } from 'react';
 
 import classes from './radioInput.module.scss';
 
@@ -12,7 +12,7 @@ interface RadioInputProps {
   disabled?: boolean;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
-export const RadioInput = React.forwardRef<HTMLInputElement, RadioInputProps>(
+export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
   function RadioInput({ value, name, label, className, onChange }, ref) {
     const ContClass = classNames(classes.cont, className);
 

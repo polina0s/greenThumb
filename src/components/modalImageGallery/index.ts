@@ -1,1 +1,1 @@
-export { ModalImageGallery } from './modalImageGallery';
+export { Image, ModalImageGallery } from './modalImageGallery';

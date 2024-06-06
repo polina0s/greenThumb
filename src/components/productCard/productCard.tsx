@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import img1 from '../../assets/images/image 10.png';
@@ -46,17 +46,11 @@ export function ProductCard() {
 
   const onSubmit = (data: ProductValues) => console.log(data);
 
-  const [open, setOpen] = React.useState(false);
-  const onZoomButtonClick = () => {
-    const body = document.body;
-    body.style.overflow = 'hidden';
-    setOpen(true);
-  };
+  const [open, setOpen] = useState(false);
   const onCloseButtonClick = () => {
-    const body = document.body;
-    body.style.overflow = '';
     setOpen(false);
   };
+  const onZoomButtonClick = () => setOpen(true);
 
   return (
     <>
@@ -127,7 +121,7 @@ export function ProductCard() {
       </div>
       <ModalImageGallery
         open={open}
-        onCloseButtonClick={onCloseButtonClick}
+        handleClose={onCloseButtonClick}
         images={plant.images}
       />
     </>

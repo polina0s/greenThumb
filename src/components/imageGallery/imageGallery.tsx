@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import ZoomIn from '../../assets/images/zoom-in.svg';
 import classes from './imageGallery.module.scss';
 

@@ -2,16 +2,11 @@ import { useState } from 'react';
 
 import Next from '../../assets/images/next.svg';
 import Previous from '../../assets/images/prev.svg';
+import { Image } from '../modalImageGallery';
 import classes from './carousel.module.scss';
 
-type Images = {
-  src?: string;
-  alt?: string;
-  id: number;
-};
-
 interface CarouselProps {
-  images: Images[];
+  images: Image[];
 }
 
 export function Carousel({ images }: CarouselProps) {
