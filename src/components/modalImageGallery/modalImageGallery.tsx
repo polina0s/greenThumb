@@ -1,7 +1,5 @@
-// import Close from '../../assets/images/close.svg';
 import { Carousel } from '../carousel';
 import { Modal } from '../modal/modal';
-// import classes from './modalImageGallery.module.scss';
 
 export type Image = {
   src?: string;
