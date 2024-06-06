@@ -47,8 +47,16 @@ export function ProductCard() {
   const onSubmit = (data: ProductValues) => console.log(data);
 
   const [open, setOpen] = React.useState(false);
-  const onZoomButtonClick = () => setOpen(true);
-  const onCloseButtonClick = () => setOpen(false);
+  const onZoomButtonClick = () => {
+    const body = document.body;
+    body.style.overflow = 'hidden';
+    setOpen(true);
+  };
+  const onCloseButtonClick = () => {
+    const body = document.body;
+    body.style.overflow = '';
+    setOpen(false);
+  };
 
   return (
     <>

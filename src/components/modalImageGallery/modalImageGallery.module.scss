@@ -4,6 +4,7 @@
   background-color: rgba(0, 0, 0, 0.619);
   position: absolute;
   top: 110px;
+  padding-top: 90px;
   display: flex;
   justify-content: center;
 }
@@ -11,16 +12,21 @@
 .cont {
   width: 800px;
   height: 600px;
+  border-radius: 12px;
   background-color: var(--green-400);
-  display: flex;
   padding: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .closeButton {
   background-color: transparent;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
+  position: absolute;
+  right: 20px;
 }
 
 .closeImg {
