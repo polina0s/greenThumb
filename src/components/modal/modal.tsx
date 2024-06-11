@@ -16,6 +16,7 @@ export function Modal({
 }: React.PropsWithChildren<ModalProps>) {
   useEffect(() => {
     const body = document.body;
+
     if (open) {
       body.style.overflow = 'hidden';
     } else {
@@ -29,14 +30,15 @@ export function Modal({
 
   if (open)
     return createPortal(
-      <div className={classes.wrapper}>
+      <>
         <div className={classes.cont}>
           {children}
           <button className={classes.closeButton} onClick={handleClose}>
             <Close className={classes.closeImg} />
           </button>
         </div>
-      </div>,
+        <div className={classes.div} onClick={handleClose}></div>
+      </>,
       document.getElementById('root'),
     );
 }
