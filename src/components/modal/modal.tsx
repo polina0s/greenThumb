@@ -21,6 +21,10 @@ export function Modal({
     } else {
       body.style.overflow = '';
     }
+
+    return () => {
+      body.style.overflow = '';
+    };
   }, [open]);
 
   if (open)
