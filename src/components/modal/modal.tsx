@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 import Close from '../../assets/images/close.svg';
 import classes from './modal.module.scss';
@@ -23,7 +24,7 @@ export function Modal({
   }, [open]);
 
   if (open)
-    return (
+    return createPortal(
       <div className={classes.wrapper}>
         <div className={classes.cont}>
           {children}
@@ -31,6 +32,7 @@ export function Modal({
             <Close className={classes.closeImg} />
           </button>
         </div>
-      </div>
+      </div>,
+      document.getElementById('root'),
     );
 }
