@@ -16,6 +16,9 @@ export function Modal({
 }: React.PropsWithChildren<ModalProps>) {
   useEffect(() => {
     const body = document.body;
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 'Escape') handleClose();
+    });
 
     if (open) {
       body.style.overflow = 'hidden';
@@ -25,8 +28,11 @@ export function Modal({
 
     return () => {
       body.style.overflow = '';
+      document.removeEventListener('keyup', (e) => {
+        if (e.key === 'Esc') handleClose();
+      });
     };
-  }, [open]);
+  }, [open, handleClose]);
 
   if (open)
     return createPortal(
@@ -37,7 +43,7 @@ export function Modal({
             <Close className={classes.closeImg} />
           </button>
         </div>
-        <div className={classes.div} onClick={handleClose}></div>
+        <div className={classes.backround} onClick={handleClose}></div>
       </>,
       document.getElementById('root'),
     );
