@@ -16,9 +16,12 @@ export function Modal({
 }: React.PropsWithChildren<ModalProps>) {
   useEffect(() => {
     const body = document.body;
-    document.addEventListener('keyup', (e) => {
-      if (e.key === 'Escape') handleClose();
-    });
+    const handleEscapePress = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+    document.addEventListener('keyup', handleEscapePress);
 
     if (open) {
       body.style.overflow = 'hidden';
@@ -28,9 +31,7 @@ export function Modal({
 
     return () => {
       body.style.overflow = '';
-      document.removeEventListener('keyup', (e) => {
-        if (e.key === 'Esc') handleClose();
-      });
+      document.removeEventListener('keyup', handleEscapePress);
     };
   }, [open, handleClose]);
 
