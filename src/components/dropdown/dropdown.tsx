@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 
 import { Box } from '../../components/box';
 import { Text } from '../text';
@@ -14,7 +14,7 @@ export function Dropdown({
   defaultOpen,
   children,
 }: React.PropsWithChildren<DropdownProps>) {
-  const [open, setOpen] = React.useState(defaultOpen);
+  const [open, setOpen] = useState(defaultOpen);
 
   return (
     <Box>

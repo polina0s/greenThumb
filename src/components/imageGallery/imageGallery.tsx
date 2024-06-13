@@ -1,6 +1,7 @@
+import ZoomIn from '../../assets/images/zoom-in.svg';
 import classes from './imageGallery.module.scss';
 
-export type GalleryImg = {
+type GalleryImg = {
   src?: string;
   alt?: string;
   id: number;
@@ -8,18 +9,24 @@ export type GalleryImg = {
 
 interface ImageGalleryProps {
   images: GalleryImg[];
+  onZoomButtonClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export function ImageGallery({ images }: ImageGalleryProps) {
+export function ImageGallery({ images, onZoomButtonClick }: ImageGalleryProps) {
   return (
-    <div className={classes.wrapper}>
-      {images.map((img) => {
-        return (
-          <div key={img.id} className={classes.imgCont}>
-            <img className={classes.img} src={img.src} alt={img.alt} />
-          </div>
-        );
-      })}
+    <div>
+      <div className={classes.wrapper}>
+        {images.map((img) => {
+          return (
+            <div key={img.id} className={classes.imgCont}>
+              <img className={classes.img} src={img.src} alt={img.alt} />
+            </div>
+          );
+        })}
+        <button className={classes.zoomButton} onClick={onZoomButtonClick}>
+          <ZoomIn />
+        </button>
+      </div>
     </div>
   );
 }

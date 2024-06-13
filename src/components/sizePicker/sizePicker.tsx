@@ -1,5 +1,4 @@
 import { forwardRef, useState } from 'react';
-import * as React from 'react';
 
 import { ButtonOption } from '../buttonOption';
 import { Text } from '../text';
