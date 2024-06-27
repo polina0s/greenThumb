@@ -22,8 +22,9 @@
 }
 
 .popover {
-  width: 200px;
+  width: 300px;
   height: 200px;
   border-radius: 10px;
-  background-color: beige;
+  background-color: var(--green-400);
+  padding: 10px;
 }

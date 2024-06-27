@@ -24,7 +24,7 @@ export function Header({ promoTitle }: { promoTitle: string }) {
           </div>
           <Popover
             isOpen={open}
-            positions={['bottom']}
+            positions={['bottom', 'left']}
             align="center"
             content={
               <div className={classes.popover}>Hi! Im popover content.</div>

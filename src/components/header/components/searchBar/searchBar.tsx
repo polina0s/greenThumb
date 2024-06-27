@@ -31,23 +31,3 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
     );
   },
 );
-// export function SearchBar({
-//   basketValue,
-//   handleOnBasketClick,
-// }: SearchBarProps) {
-//   return (
-//     <div className={classes.cont}>
-//       <Input defaultValue="Search" type="text" />
-//       <button className={classes.searchButton}>
-//         <Search />
-//       </button>
-//       <Line />
-//       <button className={classes.basketButton} onClick={handleOnBasketClick}>
-//         <Basket />
-//       </button>
-//       <Text variant="openSansRegularSM" className={classes.basketValue}>
-//         {basketValue}
-//       </Text>
-//     </div>
-//   );
-// }

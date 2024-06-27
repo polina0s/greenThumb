@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.17.19",
+    "@uidotdev/usehooks": "^2.4.1",
     "classnames": "^2.5.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
