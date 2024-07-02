@@ -28,3 +28,34 @@
   background-color: var(--green-400);
   padding: 10px;
 }
+ .basketCard {
+  width: 280px;
+  height: 95px;
+  background-color: var(--green-200);
+  border-radius: 8px;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+ }
+
+ .basketCardImg {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  margin-right: 15px;
+ }
+ 
+ .basketCardName {
+  font: 700 15px var(--openSans);
+  margin-bottom: 5px;
+ }
+
+ .basketCardInfo {
+  display: flex;
+  align-items: center;
+ }
+
+ .basketCardPrice {
+    font: 400 18px var(--openSans);
+    margin-left: 20px;
+ }
