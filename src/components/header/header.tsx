@@ -4,11 +4,16 @@ import { Popover } from 'react-tiny-popover';
 
 import img from '../../assets/images/image 10.png';
 import { Link } from '../link';
-import { QuantitySelector } from '../quantitySelector';
+import { BasketCard } from './components/basketCard';
 import { Logo } from './components/logo';
 import { Promo } from './components/promo';
 import { SearchBar } from './components/searchBar';
 import classes from './header.module.scss';
+
+const basket = [
+  { img: img, price: 350, name: 'Marble Queen Pothos', quantity: 1, id: 1 },
+  { img: img, price: 350, name: 'Marble Queen Pothos', quantity: 8, id: 2 },
+];
 
 export function Header({ promoTitle }: { promoTitle: string }) {
   const [open, setOpen] = useState(false);
@@ -34,23 +39,17 @@ export function Header({ promoTitle }: { promoTitle: string }) {
             align="end"
             content={
               <div className={classes.popover}>
-                <div className={classes.basketCard}>
-                  <img className={classes.basketCardImg} src={img} alt="" />
-                  <div>
-                    <p className={classes.basketCardName}>
-                      Marble Queen Pothos
-                    </p>
-                    <div className={classes.basketCardInfo}>
-                      <QuantitySelector
-                        variant="small"
-                        min={1}
-                        max={10}
-                        defaultValue={1}
-                      />
-                      <p className={classes.basketCardPrice}>$350</p>
-                    </div>
-                  </div>
-                </div>
+                {basket.map((card) => {
+                  return (
+                    <BasketCard
+                      key={card.id}
+                      img={card.img}
+                      price={card.price}
+                      name={card.name}
+                      quantity={card.quantity}
+                    />
+                  );
+                })}
               </div>
             }
           >
