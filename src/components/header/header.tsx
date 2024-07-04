@@ -18,7 +18,7 @@ const basket = [
 export function Header({ promoTitle }: { promoTitle: string }) {
   const [open, setOpen] = useState(false);
 
-  const ref = useClickAway<HTMLElement>(() => setOpen(false));
+  const ref = useClickAway<HTMLDivElement>(() => setOpen(false));
 
   return (
     <div className={classes.header}>
@@ -33,12 +33,11 @@ export function Header({ promoTitle }: { promoTitle: string }) {
             <Link href="#">Contact us</Link>
           </div>
           <Popover
-            ref={ref}
             isOpen={open}
             positions={['bottom', 'left']}
             align="end"
             content={
-              <div className={classes.popover}>
+              <div className={classes.popover} ref={ref}>
                 {basket.map((card) => {
                   return (
                     <BasketCard
