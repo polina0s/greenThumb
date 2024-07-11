@@ -8,12 +8,12 @@ import { Text } from '../../../text';
 import classes from './searchBar.module.scss';
 
 interface SearchBarProps {
-  basketValue: number;
+  basketQuantity: number;
   handleOnBasketClick: () => void;
 }
 
 export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
-  function SearchBar({ basketValue, handleOnBasketClick }, ref) {
+  function SearchBar({ basketQuantity, handleOnBasketClick }, ref) {
     return (
       <div className={classes.cont} ref={ref}>
         <Input defaultValue="Search" type="text" />
@@ -24,8 +24,8 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
         <button className={classes.basketButton} onClick={handleOnBasketClick}>
           <Basket />
         </button>
-        <Text variant="openSansRegularSM" className={classes.basketValue}>
-          {basketValue}
+        <Text variant="openSansRegularSM" className={classes.basketQuantity}>
+          {basketQuantity}
         </Text>
       </div>
     );

@@ -9,6 +9,10 @@ import classes from './productPage.module.scss';
 export function ProductPage() {
   const { id } = useParams();
 
+  // const handleAddItemToBasket = () => {
+
+  // }
+
   return (
     <div id={id} className={classes.cont}>
       <Header promoTitle="FREE SHIPPING ON ALL FULL SUN PLANTS! FEB. 25–28." />
