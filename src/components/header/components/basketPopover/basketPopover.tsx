@@ -16,9 +16,9 @@ type Item = {
 
 interface BasketPopoverProps {
   defaultOpen: boolean;
-  basketItems: Item[];
   handleDeleteItem?: () => void;
   basketQuantity?: number;
+  basketItems?: Item[];
 }
 
 export function BasketPopover({
@@ -29,7 +29,16 @@ export function BasketPopover({
 }: BasketPopoverProps) {
   const [open, setOpen] = useState(defaultOpen);
 
-  const ref = useClickAway<HTMLDivElement>(() => setOpen(false));
+  const ref = useClickAway<HTMLDivElement>((e) => {
+    console.log(e.target);
+    setOpen(false);
+  });
+
+  const handleOnBasketClick = () => {
+    if (open === false) {
+      setOpen(true);
+    }
+  };
 
   return (
     <Popover
@@ -53,10 +62,7 @@ export function BasketPopover({
         </div>
       }
     >
-      <SearchBar
-        basketQuantity={basketQuantity}
-        handleOnBasketClick={() => setOpen(!open)}
-      />
+      <SearchBar basketValue={3} handleOnBasketClick={handleOnBasketClick} />
     </Popover>
   );
 }
