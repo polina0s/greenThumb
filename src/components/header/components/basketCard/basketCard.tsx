@@ -1,3 +1,4 @@
+import Delete from '../../../../assets/images/delete.svg';
 import { QuantitySelector } from '../../../quantitySelector';
 import classes from './basketCard.module.scss';
 
@@ -6,9 +7,16 @@ interface BasketCardProps {
   name?: string;
   price?: number;
   quantity?: number;
+  handleDeleteItem?: () => void;
 }
 
-export function BasketCard({ img, name, price, quantity }: BasketCardProps) {
+export function BasketCard({
+  img,
+  name,
+  price,
+  quantity,
+  handleDeleteItem,
+}: BasketCardProps) {
   return (
     <div className={classes.basketCard}>
       <img className={classes.basketCardImg} src={img} alt={name} />
@@ -22,6 +30,12 @@ export function BasketCard({ img, name, price, quantity }: BasketCardProps) {
             defaultValue={quantity}
           />
           <p className={classes.basketCardPrice}>$ {price}</p>
+          <button className={classes.deleteButton}>
+            <Delete
+              className={classes.deleteButtonImg}
+              onClick={handleDeleteItem}
+            />
+          </button>
         </div>
       </div>
     </div>

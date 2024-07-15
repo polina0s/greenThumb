@@ -16,12 +16,16 @@ type Item = {
 
 interface BasketPopoverProps {
   defaultOpen: boolean;
+  handleDeleteItem?: () => void;
+  basketQuantity?: number;
   basketItems?: Item[];
 }
 
 export function BasketPopover({
   defaultOpen,
   basketItems,
+  handleDeleteItem,
+  basketQuantity,
 }: BasketPopoverProps) {
   const [open, setOpen] = useState(defaultOpen);
 
@@ -51,6 +55,7 @@ export function BasketPopover({
                 price={item.price}
                 name={item.name}
                 quantity={item.quantity}
+                handleDeleteItem={handleDeleteItem}
               />
             );
           })}

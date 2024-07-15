@@ -36,7 +36,11 @@ interface ProductValues {
   quantity: number;
 }
 
-export function ProductCard() {
+interface ProductCardProps {
+  handleAddItemToBasket?: () => void;
+}
+
+export function ProductCard({ handleAddItemToBasket }: ProductCardProps) {
   const { control, handleSubmit } = useForm<ProductValues>({
     defaultValues: {
       defaultSize: 'S',
@@ -91,6 +95,7 @@ export function ProductCard() {
                 size="lg"
                 className={classes.cartButton}
                 type="submit"
+                onClick={handleAddItemToBasket}
               >
                 ADD TO CART
               </Button>
