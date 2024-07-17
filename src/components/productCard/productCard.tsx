@@ -34,21 +34,28 @@ const plant = {
 interface ProductValues {
   defaultSize: string;
   quantity: number;
+  name: string;
+  price: number;
+  img: string;
 }
 
-interface ProductCardProps {
-  handleAddItemToBasket?: () => void;
-}
+export function ProductCard() {
+  const basket = JSON.parse(localStorage.getItem('basket')) || [];
 
-export function ProductCard({ handleAddItemToBasket }: ProductCardProps) {
   const { control, handleSubmit } = useForm<ProductValues>({
     defaultValues: {
       defaultSize: 'S',
       quantity: 1,
+      name: plant.name,
+      price: plant.price,
+      img: plant.images[0].src,
     },
   });
 
-  const onSubmit = (data: ProductValues) => console.log(data);
+  const onSubmit = (data: ProductValues) => {
+    const newBasket = [...basket, data];
+    localStorage.setItem('basket', JSON.stringify(newBasket));
+  };
 
   const [open, setOpen] = useState(false);
   const onCloseButtonClick = () => {
@@ -95,7 +102,6 @@ export function ProductCard({ handleAddItemToBasket }: ProductCardProps) {
                 size="lg"
                 className={classes.cartButton}
                 type="submit"
-                onClick={handleAddItemToBasket}
               >
                 ADD TO CART
               </Button>
