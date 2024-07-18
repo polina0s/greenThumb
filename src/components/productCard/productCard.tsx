@@ -29,6 +29,7 @@ const plant = {
     { value: 'M', disabled: false },
     { value: 'L', disabled: false },
   ],
+  id: 1,
 };
 
 interface ProductValues {
@@ -37,6 +38,7 @@ interface ProductValues {
   name: string;
   price: number;
   img: string;
+  id: number;
 }
 
 export function ProductCard() {
@@ -49,12 +51,24 @@ export function ProductCard() {
       name: plant.name,
       price: plant.price,
       img: plant.images[0].src,
+      id: plant.id,
     },
   });
 
   const onSubmit = (data: ProductValues) => {
-    const newBasket = [...basket, data];
-    localStorage.setItem('basket', JSON.stringify(newBasket));
+    const found = basket.find((item: ProductValues) => item.id === data.id);
+    if (found) {
+      const newQuantity = data.quantity + found.quantity;
+      console.log(newQuantity);
+      data.quantity = found.quantity + data.quantity;
+      const newBasket = basket.map((item: ProductValues) =>
+        item.id === data.id ? data : item,
+      );
+      localStorage.setItem('basket', JSON.stringify(newBasket));
+    } else {
+      const newBasket = [...basket, data];
+      localStorage.setItem('basket', JSON.stringify(newBasket));
+    }
   };
 
   const [open, setOpen] = useState(false);
