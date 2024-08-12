@@ -90,5 +90,9 @@ module.exports = {
     watchFiles: path.resolve(__dirname, './src'),
     port: 8000,
     historyApiFallback: true,
+    static: {
+      directory: path.resolve(__dirname, './public'),
+      publicPath: '/'
+    }
   },
 };
