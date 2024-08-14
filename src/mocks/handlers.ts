@@ -189,12 +189,12 @@ const plants = [
 ];
 
 export const handlers = [
-  http.get('/plants/:id', ({ params }) => {
-    const id = params;
+  http.get('http://localhost:8000/plants/:id', ({ params }) => {
+    const { id } = params;
     const plant = plants.find((el) => el.id === +id);
-    return HttpResponse.json({ el: plant });
+    return HttpResponse.json(plant);
   }),
-  http.get('/plants', () => {
+  http.get('http://localhost:8000/plants', () => {
     return HttpResponse.json({
       items: plants,
     });

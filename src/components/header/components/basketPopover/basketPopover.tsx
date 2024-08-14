@@ -1,5 +1,5 @@
 import { useClickAway } from '@uidotdev/usehooks';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Popover } from 'react-tiny-popover';
 
 import { BasketCard } from '../basketCard';
@@ -40,6 +40,12 @@ export function BasketPopover({
     }
   };
 
+  useEffect(() => {
+    fetch('http://localhost:8000/plants/4', {}).then((res) =>
+      console.log(res.json()),
+    );
+  }, []);
+
   return (
     <Popover
       isOpen={open}
@@ -62,7 +68,10 @@ export function BasketPopover({
         </div>
       }
     >
-      <SearchBar basketValue={3} handleOnBasketClick={handleOnBasketClick} />
+      <SearchBar
+        basketQuantity={basketQuantity}
+        handleOnBasketClick={handleOnBasketClick}
+      />
     </Popover>
   );
 }
