@@ -2,6 +2,8 @@ import { useClickAway } from '@uidotdev/usehooks';
 import { useEffect, useState } from 'react';
 import { Popover } from 'react-tiny-popover';
 
+import { getShopItems } from '../../../store/shopItems/shopItems.actions';
+import { useAppDispatch } from '../../../store/store';
 import { BasketCard } from '../basketCard';
 import { SearchBar } from '../searchBar';
 import classes from './basketPopover.module.scss';
@@ -40,11 +42,11 @@ export function BasketPopover({
     }
   };
 
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
-    fetch('http://localhost:8000/plants/4', {}).then((res) =>
-      console.log(res.json()),
-    );
-  }, []);
+    dispatch(getShopItems());
+  }, [dispatch]);
 
   return (
     <Popover

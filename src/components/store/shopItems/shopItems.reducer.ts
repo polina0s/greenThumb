@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getShopItems } from './shopItem.actions';
+import { getShopItems } from './shopItems.actions';
 
 interface ShopItemsStore {
   isLoading: boolean;
@@ -12,10 +12,10 @@ const initialState: ShopItemsStore = {
   shopItems: [],
 };
 
-const shopItemSlice = createSlice({
-  name: 'shopItem',
+const shopItemsSlice = createSlice({
+  name: 'shopItems',
   initialState,
-
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getShopItems.pending, (state) => {
       state.isLoading = true;
@@ -30,4 +30,4 @@ const shopItemSlice = createSlice({
   },
 });
 
-export const shopItemsReducer = shopItemSlice.reducer;
+export const shopItemsReducer = shopItemsSlice.reducer;
