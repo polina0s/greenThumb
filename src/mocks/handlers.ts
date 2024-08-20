@@ -188,6 +188,15 @@ const plants = [
   },
 ];
 
+const categories = [
+  { id: 1, name: 'Bonsai', img: img1, items: plants },
+  { id: 2, name: 'Cacti', img: img1, items: plants },
+  { id: 3, name: 'Creepers', img: img1, items: plants },
+  { id: 4, name: 'Succulents', img: img1, items: plants },
+  { id: 5, name: 'Seeds', img: img1, items: plants },
+  { id: 6, name: 'Gifts', img: img1, items: plants },
+];
+
 export const handlers = [
   http.get('http://localhost:8000/shopItems/:id', ({ params }) => {
     const { id } = params;
@@ -197,6 +206,11 @@ export const handlers = [
   http.get('http://localhost:8000/shopItems', () => {
     return HttpResponse.json({
       items: plants,
+    });
+  }),
+  http.get('http://localhost:8000/shopItemsCategories', () => {
+    return HttpResponse.json({
+      categories: categories,
     });
   }),
 ];

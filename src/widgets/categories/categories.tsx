@@ -1,6 +1,12 @@
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import img from '../../assets/images/Rectangle 51.png';
 import { CategoryCard } from '../../components/categoryCard';
 import { SectionHeader } from '../../components/sectionHeader';
+import { getShopItemsCategories } from '../../components/store/shopItemsCategories';
+import { allShopItemsCategoriesSelector } from '../../components/store/shopItemsCategories/shopItemsCategories.selectors';
+import { useAppDispatch } from '../../components/store/store';
 import classes from './categories.module.scss';
 
 const cards = [
@@ -13,6 +19,13 @@ const cards = [
 ];
 
 export function Categories() {
+  const dispatch = useAppDispatch();
+  const categories = useSelector(allShopItemsCategoriesSelector);
+
+  useEffect(() => {
+    dispatch(getShopItemsCategories());
+  }, [dispatch]);
+
   return (
     <>
       <div className={classes.headerCont}>
@@ -23,12 +36,12 @@ export function Categories() {
         />
       </div>
       <div className={classes.cards}>
-        {cards.map((card) => {
+        {categories.map((categorie) => {
           return (
             <CategoryCard
-              key={card.id}
-              imgSrc={card.imgSrc}
-              title={card.title}
+              key={categorie.id}
+              imgSrc={categorie.img}
+              title={categorie.name}
             />
           );
         })}

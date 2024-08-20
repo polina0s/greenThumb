@@ -1,20 +1,21 @@
-import img from '../../assets/images/Rectangle 51.png';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import { CatalogCard } from '../../components/catalogCard';
 import { SectionHeader } from '../../components/sectionHeader';
+import { getShopItems } from '../../components/store/shopItems/shopItems.actions';
+import { allShopItemsSelector } from '../../components/store/shopItems/shopItems.selectors';
+import { useAppDispatch } from '../../components/store/store';
 import classes from './hottest.module.scss';
 
-const cards = [
-  { title: 'Marble Queen', price: 350, imgSrc: img, id: '1' },
-  { title: 'Neon Pothos', price: 350, imgSrc: img, id: '2' },
-  { title: 'Syngonium Rayii', price: 350, imgSrc: img, id: '3' },
-  { title: 'Peruvian Cactus', price: 350, imgSrc: img, id: '4' },
-  { title: 'Pineapple', price: 350, imgSrc: img, id: '5' },
-  { title: 'African Milk Tree', price: 350, imgSrc: img, id: '6' },
-  { title: 'Pothos', price: 350, imgSrc: img, id: '7' },
-  { title: 'Chinese Evergreen', price: 350, imgSrc: img, id: '8' },
-];
-
 export function Hottest() {
+  const dispatch = useAppDispatch();
+  const plants = useSelector(allShopItemsSelector);
+
+  useEffect(() => {
+    dispatch(getShopItems());
+  }, [dispatch]);
+
   return (
     <div className={classes.cont}>
       <div className={classes.headerCont}>
@@ -25,13 +26,13 @@ export function Hottest() {
         />
       </div>
       <div className={classes.cards}>
-        {cards.map((card) => {
+        {plants.map((plant) => {
           return (
             <CatalogCard
-              title={card.title}
-              price={card.price}
-              imgSrc={card.imgSrc}
-              key={card.id}
+              title={plant.name}
+              price={plant.price}
+              imgSrc={plant.images[1].src}
+              key={plant.id}
             />
           );
         })}

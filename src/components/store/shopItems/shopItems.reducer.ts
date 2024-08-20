@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getShopItems } from './shopItems.actions';
+import { getShopItems, GetShopItemsResponseData } from './shopItems.actions';
 
 interface ShopItemsStore {
   isLoading: boolean;
-  shopItems: { id: number }[];
+  shopItems: GetShopItemsResponseData[];
 }
 
 const initialState: ShopItemsStore = {
@@ -25,7 +25,7 @@ const shopItemsSlice = createSlice({
     });
     builder.addCase(getShopItems.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.shopItems = [...action.payload.data];
+      state.shopItems = [...action.payload.items];
     });
   },
 });
