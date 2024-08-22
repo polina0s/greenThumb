@@ -1,4 +1,4 @@
-import img1 from '../assets/images/image 10.png';
+import img1 from '../../assets/images/image 10.png';
 import { shopItems } from './shopItemsList';
 
 export const categories = [

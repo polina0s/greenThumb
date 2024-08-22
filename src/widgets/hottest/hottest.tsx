@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 
 import { CatalogCard } from '../../components/catalogCard';
 import { SectionHeader } from '../../components/sectionHeader';
-import { getShopItems } from '../../components/store/shopItems/shopItems.actions';
-import { allShopItemsSelector } from '../../components/store/shopItems/shopItems.selectors';
-import { useAppDispatch } from '../../components/store/store';
+import { getShopItems } from '../../store/shopItems/shopItems.actions';
+import { allShopItemsSelector } from '../../store/shopItems/shopItems.selectors';
+import { useAppDispatch } from '../../store/store';
 import classes from './hottest.module.scss';
 
 export function Hottest() {

@@ -3,17 +3,17 @@ import { useSelector } from 'react-redux';
 
 import { CategoryCard } from '../../components/categoryCard';
 import { SectionHeader } from '../../components/sectionHeader';
-import { getShopItemsCategories } from '../../components/store/shopItemsCategories';
-import { allShopItemsCategoriesSelector } from '../../components/store/shopItemsCategories/shopItemsCategories.selectors';
-import { useAppDispatch } from '../../components/store/store';
+import { getCategories } from '../../store/categories';
+import { allCategoriesSelector } from '../../store/categories/categories.selectors';
+import { useAppDispatch } from '../../store/store';
 import classes from './categories.module.scss';
 
 export function Categories() {
   const dispatch = useAppDispatch();
-  const categories = useSelector(allShopItemsCategoriesSelector);
+  const categories = useSelector(allCategoriesSelector);
 
   useEffect(() => {
-    dispatch(getShopItemsCategories());
+    dispatch(getCategories());
   }, [dispatch]);
 
   return (

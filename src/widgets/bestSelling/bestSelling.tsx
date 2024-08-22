@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 
 import { BestSellCard } from '../../components/bestSellCard';
 import { SectionHeader } from '../../components/sectionHeader';
-import { getBestSellCategories } from '../../components/store/bestSellCategories';
-import { allBestSellCategoriesSelector } from '../../components/store/bestSellCategories/bestSellCategories.selectors';
-import { useAppDispatch } from '../../components/store/store';
+import { getBestSellCategories } from '../../store/bestSellCategories';
+import { allBestSellCategoriesSelector } from '../../store/bestSellCategories/bestSellCategories.selectors';
+import { useAppDispatch } from '../../store/store';
 import classes from './bestSelling.module.scss';
 
 export function BestSelling() {

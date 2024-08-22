@@ -1,4 +1,4 @@
-import img from '../assets/images/Rectangle 51.png';
+import img from '../../assets/images/Rectangle 51.png';
 
 export const bestSelling = [
   { id: '1', name: 'Indoor Plants', img: img },

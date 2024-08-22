@@ -2,8 +2,8 @@ import { useClickAway } from '@uidotdev/usehooks';
 import { useEffect, useState } from 'react';
 import { Popover } from 'react-tiny-popover';
 
-import { getShopItems } from '../../../store/shopItems/shopItems.actions';
-import { useAppDispatch } from '../../../store/store';
+import { getShopItems } from '../../../../store/shopItems/shopItems.actions';
+import { useAppDispatch } from '../../../../store/store';
 import { BasketCard } from '../basketCard';
 import { SearchBar } from '../searchBar';
 import classes from './basketPopover.module.scss';
@@ -32,7 +32,6 @@ export function BasketPopover({
   const [open, setOpen] = useState(defaultOpen);
 
   const ref = useClickAway<HTMLDivElement>((e) => {
-    console.log(e.target);
     setOpen(false);
   });
 

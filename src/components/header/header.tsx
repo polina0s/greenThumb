@@ -9,7 +9,6 @@ export function Header({ promoTitle }: { promoTitle: string }) {
 
   const handleDeleteItem = () => {
     localStorage.setItem('basket', JSON.stringify(basket));
-    console.log(basket);
   };
 
   const basketQuantity = basket.length;
