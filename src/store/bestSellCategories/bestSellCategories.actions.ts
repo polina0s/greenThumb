@@ -1,10 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export type GetBestSellCategoriesResponseData = {
-  id: number;
-  name: string;
-  img: string;
-};
+import { GetBestSellCategoriesResponseData } from './types';
 
 export const getBestSellCategories = createAsyncThunk<{
   categories: GetBestSellCategoriesResponseData[];

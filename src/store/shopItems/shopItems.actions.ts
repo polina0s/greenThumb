@@ -1,23 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-type ShopItemsSizes = {
-  value: string;
-  disabled: boolean;
-};
-
-type ShopItemsImages = {
-  src: string;
-  alt: string;
-};
-
-export type GetShopItemsResponseData = {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-  images: ShopItemsImages[];
-  sizes: ShopItemsSizes[];
-};
+import { GetShopItemsResponseData } from './types';
 
 export const getShopItems = createAsyncThunk<{
   items: GetShopItemsResponseData[];

@@ -1,11 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getShopItems, GetShopItemsResponseData } from './shopItems.actions';
-
-interface ShopItemsStore {
-  isLoading: boolean;
-  shopItems: GetShopItemsResponseData[];
-}
+import { getShopItems } from './shopItems.actions';
+import { ShopItemsStore } from './types';
 
 const initialState: ShopItemsStore = {
   isLoading: false,

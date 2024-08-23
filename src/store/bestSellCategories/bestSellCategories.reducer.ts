@@ -1,14 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import {
-  getBestSellCategories,
-  GetBestSellCategoriesResponseData,
-} from './bestSellCategories.actions';
-
-interface bestSellCategoriesStore {
-  isLoading: boolean;
-  bestSellCategories: GetBestSellCategoriesResponseData[];
-}
+import { getBestSellCategories } from './bestSellCategories.actions';
+import { bestSellCategoriesStore } from './types';
 
 const initialState: bestSellCategoriesStore = {
   isLoading: false,

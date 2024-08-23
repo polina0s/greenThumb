@@ -1,11 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getCategories, GetCategoriesResponseData } from './categories.actions';
-
-interface CategoriesStore {
-  isLoading: boolean;
-  categories: GetCategoriesResponseData[];
-}
+import { getCategories } from './categories.actions';
+import { CategoriesStore } from './types';
 
 const initialState: CategoriesStore = {
   isLoading: false,
