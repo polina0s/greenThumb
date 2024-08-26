@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { bestSellCategoriesReducer } from './bestSellCategories/bestSellCategories.reducer';
 import { categoriesReducer } from './categories/categories.reducer';
+import { saleItemsReducer } from './saleItems';
 import { shopItemsReducer } from './shopItems';
 import { testimonialsReducer } from './testimonials';
 
@@ -11,6 +12,7 @@ const reducer = {
   categories: categoriesReducer,
   bestSellCategories: bestSellCategoriesReducer,
   testimonials: testimonialsReducer,
+  saleItems: saleItemsReducer,
 };
 
 export const store = configureStore({

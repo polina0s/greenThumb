@@ -1,44 +1,21 @@
-import img from '../../assets/images/Rectangle 51.png';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import { SaleCard } from '../../components/saleCard';
 import { SectionHeader } from '../../components/sectionHeader';
+import { getSaleItems } from '../../store/saleItems/saleItems.actions';
+import { allSaleItemsSelector } from '../../store/saleItems/saleItems.selectors';
+import { useAppDispatch } from '../../store/store';
 import classes from './ferntastic.module.scss';
 
-const cards = [
-  {
-    id: '1',
-    saleValue: 25,
-    title: 'String of Hearts',
-    newPrice: 350,
-    oldPrice: 450,
-    imgSrc: img,
-  },
-  {
-    id: '2',
-    saleValue: 25,
-    title: 'Red Secret Alocasia',
-    newPrice: 350,
-    oldPrice: 450,
-    imgSrc: img,
-  },
-  {
-    id: '3',
-    saleValue: 25,
-    title: 'Jewel Alocasia',
-    newPrice: 350,
-    oldPrice: 450,
-    imgSrc: img,
-  },
-  {
-    id: '4',
-    saleValue: 25,
-    title: 'Hoya Retusa',
-    newPrice: 350,
-    oldPrice: 450,
-    imgSrc: img,
-  },
-];
-
 export function Ferntastic() {
+  const dispatch = useAppDispatch();
+  const saleItems = useSelector(allSaleItemsSelector);
+
+  useEffect(() => {
+    dispatch(getSaleItems());
+  }, [dispatch]);
+
   return (
     <>
       <div className={classes.headerCont}>
@@ -49,15 +26,15 @@ export function Ferntastic() {
         />
       </div>
       <div className={classes.cards}>
-        {cards.map((card) => {
+        {saleItems.map((item) => {
           return (
             <SaleCard
-              saleValue={card.saleValue}
-              title={card.title}
-              newPrice={card.newPrice}
-              oldPrice={card.oldPrice}
-              imgSrc={card.imgSrc}
-              key={card.id}
+              saleValue={item.saleValue}
+              title={item.name}
+              newPrice={item.newPrice}
+              oldPrice={item.oldPrice}
+              imgSrc={item.img}
+              key={item.id}
             />
           );
         })}

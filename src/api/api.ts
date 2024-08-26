@@ -33,6 +33,13 @@ class Api {
 
     return json;
   }
+
+  async getSaleItems() {
+    const response = await fetch('/saleItems');
+    const json = await response.json();
+
+    return json;
+  }
 }
 
 export const api = new Api();

@@ -1,6 +1,12 @@
 import { http, HttpResponse } from 'msw';
 
-import { bestSelling, categories, shopItems, testimonials } from './data';
+import {
+  bestSelling,
+  categories,
+  saleItems,
+  shopItems,
+  testimonials,
+} from './data';
 
 export const handlers = [
   http.get('http://localhost:8000/shopItems/:id', ({ params }) => {
@@ -26,6 +32,11 @@ export const handlers = [
   http.get('http://localhost:8000/testimonials', () => {
     return HttpResponse.json({
       testimonials: testimonials,
+    });
+  }),
+  http.get('http://localhost:8000/saleItems', () => {
+    return HttpResponse.json({
+      items: saleItems,
     });
   }),
 ];
