@@ -26,6 +26,13 @@ class Api {
 
     return json;
   }
+
+  async getTestimonials() {
+    const response = await fetch('/testimonials');
+    const json = await response.json();
+
+    return json;
+  }
 }
 
 export const api = new Api();

@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw';
 
-import { bestSelling, categories, shopItems } from './data';
+import { bestSelling, categories, shopItems, testimonials } from './data';
 
 export const handlers = [
   http.get('http://localhost:8000/shopItems/:id', ({ params }) => {
@@ -21,6 +21,11 @@ export const handlers = [
   http.get('http://localhost:8000/bestSellCategories', () => {
     return HttpResponse.json({
       categories: bestSelling,
+    });
+  }),
+  http.get('http://localhost:8000/testimonials', () => {
+    return HttpResponse.json({
+      testimonials: testimonials,
     });
   }),
 ];

@@ -1,25 +1,21 @@
-import img from '../../assets/images/Rectangle 51.png';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import { TestimonialCard } from '../../components/testimonialCard';
 import { Text } from '../../components/text';
+import { useAppDispatch } from '../../store/store';
+import { allTestimonialsSelector } from '../../store/testimonials';
+import { getTestimonials } from '../../store/testimonials/testimonials.actions';
 import classes from './testimonials.module.scss';
 
-const cards = [
-  { imgSrc: img, title: 'Healthy, happy\nplants', name: 'Luisa', id: '1' },
-  {
-    imgSrc: img,
-    title: 'Recommend to all my plant friends',
-    name: 'Edoardo',
-    id: '2',
-  },
-  {
-    imgSrc: img,
-    title: 'I turned my house into my dream jungle',
-    name: 'Mart',
-    id: '3',
-  },
-];
-
 export function Testimonials() {
+  const dispatch = useAppDispatch();
+  const testimonials = useSelector(allTestimonialsSelector);
+
+  useEffect(() => {
+    dispatch(getTestimonials());
+  }, [dispatch]);
+
   return (
     <div className={classes.cont}>
       <div className={classes.headerCont}>
@@ -31,13 +27,13 @@ export function Testimonials() {
         </Text>
       </div>
       <div className={classes.cards}>
-        {cards.map((card) => {
+        {testimonials.map((el) => {
           return (
             <TestimonialCard
-              imgSrc={card.imgSrc}
-              title={card.title}
-              name={card.name}
-              key={card.id}
+              imgSrc={el.img}
+              title={el.title}
+              name={el.name}
+              key={el.id}
             />
           );
         })}

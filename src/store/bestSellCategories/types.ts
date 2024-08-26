@@ -4,7 +4,7 @@ export type GetBestSellCategoriesResponseData = {
   img: string;
 };
 
-export type bestSellCategoriesStore = {
+export type BestSellCategoriesStore = {
   isLoading: boolean;
   bestSellCategories: GetBestSellCategoriesResponseData[];
 };

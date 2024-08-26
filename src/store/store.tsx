@@ -1,14 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { bestSellCategoriesReducer } from './bestSellCategories/bestSellCategories.reducer';
 import { categoriesReducer } from './categories/categories.reducer';
 import { shopItemsReducer } from './shopItems';
+import { testimonialsReducer } from './testimonials';
 
 const reducer = {
   shopItems: shopItemsReducer,
   categories: categoriesReducer,
   bestSellCategories: bestSellCategoriesReducer,
+  testimonials: testimonialsReducer,
 };
 
 export const store = configureStore({

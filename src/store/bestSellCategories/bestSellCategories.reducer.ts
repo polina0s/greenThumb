@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { getBestSellCategories } from './bestSellCategories.actions';
-import { bestSellCategoriesStore } from './types';
+import { BestSellCategoriesStore } from './types';
 
-const initialState: bestSellCategoriesStore = {
+const initialState: BestSellCategoriesStore = {
   isLoading: false,
   bestSellCategories: [],
 };
