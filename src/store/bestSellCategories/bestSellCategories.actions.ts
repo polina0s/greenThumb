@@ -1,14 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+import { api } from '../../api';
 import { GetBestSellCategoriesResponseData } from './types';
 
 export const getBestSellCategories = createAsyncThunk<{
   categories: GetBestSellCategoriesResponseData[];
-}>('/bestSellingItemsCategories/getAll', async (_, { rejectWithValue }) => {
+}>('/bestSellCategories/getAll', async (_, { rejectWithValue }) => {
   try {
-    const response = await fetch('/bestSellingItemsCategories');
-    const result = await response.json();
-    return result;
+    const response = await api.getBestSellCategories();
+    return response;
   } catch (err) {
     return rejectWithValue(err);
   }

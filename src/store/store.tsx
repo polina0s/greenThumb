@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { bestSellCategoriesReducer } from './bestSellCategories/bestSellCategories.reducer';
 import { categoriesReducer } from './categories/categories.reducer';

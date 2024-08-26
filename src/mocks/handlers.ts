@@ -18,7 +18,7 @@ export const handlers = [
       categories: categories,
     });
   }),
-  http.get('http://localhost:8000/bestSellingItemsCategories', () => {
+  http.get('http://localhost:8000/bestSellCategories', () => {
     return HttpResponse.json({
       categories: bestSelling,
     });
