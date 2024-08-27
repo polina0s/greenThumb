@@ -1,5 +1,5 @@
 class Api {
-  async getShopItems() {
+  async getShopItems({ limit }: { limit: number }) {
     const response = await fetch('/shopItems');
     const json = await response.json();
 

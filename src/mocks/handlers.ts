@@ -14,10 +14,11 @@ export const handlers = [
     const plant = shopItems.find((el) => el.id === +id);
     return HttpResponse.json(plant);
   }),
-  http.get('http://localhost:8000/shopItems', () => {
-    return HttpResponse.json({
-      items: shopItems,
-    });
+  http.get('http://localhost:8000/shopItems', ({ request }) => {
+    const url = new URL(request.url);
+    const limit = +url.searchParams.get('limit');
+    const items = shopItems.slice(0, limit);
+    return HttpResponse.json({ items: items });
   }),
   http.get('http://localhost:8000/categories', () => {
     return HttpResponse.json({

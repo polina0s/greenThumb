@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import { Link } from '../link';
 import { BasketPopover } from './components/basketPopover/basketPopover';
 import { Logo } from './components/logo';
@@ -6,6 +8,7 @@ import classes from './header.module.scss';
 
 export function Header({ promoTitle }: { promoTitle: string }) {
   const basket = JSON.parse(localStorage.getItem('basket')) || [];
+  const navigate = useNavigate();
 
   const handleDeleteItem = () => {
     localStorage.setItem('basket', JSON.stringify(basket));
@@ -20,10 +23,10 @@ export function Header({ promoTitle }: { promoTitle: string }) {
         <div className={classes.navContainer}>
           <Logo />
           <div className={classes.navbar}>
-            <Link href="#">Home</Link>
-            <Link href="#">Products</Link>
-            <Link href="#"> About us</Link>
-            <Link href="#">Contact us</Link>
+            <Link onClick={() => navigate('/')}>Home</Link>
+            <Link onClick={() => navigate('catalog')}>Products</Link>
+            <Link> About us</Link>
+            <Link>Contact us</Link>
           </div>
           <BasketPopover
             defaultOpen={false}

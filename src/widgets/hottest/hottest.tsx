@@ -13,7 +13,7 @@ export function Hottest() {
   const plants = useSelector(allShopItemsSelector);
 
   useEffect(() => {
-    dispatch(getShopItems());
+    dispatch(getShopItems({ limit: 8 }));
   }, [dispatch]);
 
   return (

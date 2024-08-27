@@ -5,9 +5,9 @@ import { GetShopItemsResponseData } from './types';
 
 export const getShopItems = createAsyncThunk<{
   items: GetShopItemsResponseData[];
-}>('shopItems/getAll', async (_, { rejectWithValue }) => {
+}>('shopItems/getAll', async (data, { rejectWithValue }) => {
   try {
-    const response = await api.getShopItems();
+    const response = await api.getShopItems(data);
     return response;
   } catch (err) {
     return rejectWithValue(err);
