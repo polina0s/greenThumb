@@ -15,10 +15,12 @@ export const Router = createBrowserRouter(
     {
       path: 'catalog',
       Component: () => <CatalogPage />,
+      errorElement: <ErrorPage />,
     },
     {
       path: '/catalog/:id',
       Component: () => <ProductPage />,
+      errorElement: <ErrorPage />,
     },
   ],
   { basename: '/' },

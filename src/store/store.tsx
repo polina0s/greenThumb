@@ -4,11 +4,13 @@ import { useDispatch } from 'react-redux';
 import { bestSellCategoriesReducer } from './bestSellCategories/bestSellCategories.reducer';
 import { categoriesReducer } from './categories/categories.reducer';
 import { saleItemsReducer } from './saleItems';
+import { shopItemReducer } from './shopItem';
 import { shopItemsReducer } from './shopItems';
 import { testimonialsReducer } from './testimonials';
 
 const reducer = {
   shopItems: shopItemsReducer,
+  shopItem: shopItemReducer,
   categories: categoriesReducer,
   bestSellCategories: bestSellCategoriesReducer,
   testimonials: testimonialsReducer,

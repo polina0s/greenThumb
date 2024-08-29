@@ -8,9 +8,10 @@ interface BannerProps {
   title: string;
   description: string;
   linkText: string;
+  onClick: () => void;
 }
 
-export function Banner({ title, description, linkText }: BannerProps) {
+export function Banner({ title, description, linkText, onClick }: BannerProps) {
   return (
     <>
       <div className={classes.cont}>
@@ -31,7 +32,13 @@ export function Banner({ title, description, linkText }: BannerProps) {
           >
             {description}
           </Text>
-          <Button className={classes.link} size="xl" color="white" element="a">
+          <Button
+            className={classes.link}
+            size="xl"
+            color="white"
+            element="a"
+            onClick={onClick}
+          >
             {linkText}
           </Button>
         </div>

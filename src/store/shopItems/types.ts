@@ -6,6 +6,7 @@ export type ShopItemsSizes = {
 export type ShopItemsImages = {
   src: string;
   alt: string;
+  id: number;
 };
 
 export type GetShopItemsResponseData = {

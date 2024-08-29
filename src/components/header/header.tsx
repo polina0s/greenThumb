@@ -21,7 +21,7 @@ export function Header({ promoTitle }: { promoTitle: string }) {
       <Promo title={promoTitle} />
       <div className={classes.navigation}>
         <div className={classes.navContainer}>
-          <Logo />
+          <Logo onClick={() => navigate('/')} />
           <div className={classes.navbar}>
             <Link onClick={() => navigate('/')}>Home</Link>
             <Link onClick={() => navigate('catalog')}>Products</Link>
