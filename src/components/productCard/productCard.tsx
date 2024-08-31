@@ -36,8 +36,6 @@ export function ProductCard({ item, id }: ProductCardProps) {
     },
   });
 
-  console.log(item);
-
   const onSubmit = (data: ProductValues) => {
     console.log(data);
   };

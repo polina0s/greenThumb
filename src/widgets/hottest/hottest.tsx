@@ -9,9 +9,9 @@ import { allShopItemsSelector } from '../../store/shopItems/shopItems.selectors'
 import { useAppDispatch } from '../../store/store';
 import classes from './hottest.module.scss';
 
-export function Hottest({ isLoading }: { isLoading: boolean }) {
+export function Hottest() {
   const dispatch = useAppDispatch();
-  const plants = useSelector(allShopItemsSelector);
+  const { items, isLoading } = useSelector(allShopItemsSelector);
 
   useEffect(() => {
     dispatch(getShopItems({ limit: 8 }));
@@ -30,13 +30,13 @@ export function Hottest({ isLoading }: { isLoading: boolean }) {
         <Loader />
       ) : (
         <div className={classes.cards}>
-          {plants.map((plant) => {
+          {items.map((item) => {
             return (
               <CatalogCard
-                title={plant.name}
-                price={plant.price}
-                imgSrc={plant.images[1].src}
-                key={plant.id}
+                title={item.name}
+                price={item.price}
+                imgSrc={item.images[1].src}
+                key={item.id}
               />
             );
           })}

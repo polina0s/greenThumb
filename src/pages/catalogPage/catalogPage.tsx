@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { CatalogCard } from '../../components/catalogCard';
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
+import { Loader } from '../../components/loader';
 import { SectionBanner } from '../../components/sectionBanner';
 import { getShopItems } from '../../store/shopItems/shopItems.actions';
 import { allShopItemsSelector } from '../../store/shopItems/shopItems.selectors';
@@ -14,7 +15,7 @@ import classes from './catalogPage.module.scss';
 
 export function CatalogPage() {
   const dispatch = useAppDispatch();
-  const shopItems = useSelector(allShopItemsSelector);
+  const { items, isLoading } = useSelector(allShopItemsSelector);
 
   useEffect(() => {
     dispatch(getShopItems({ limit: 9 }));
@@ -37,16 +38,20 @@ export function CatalogPage() {
           <CatalogFilters />
         </div>
         <div className={classes.cards}>
-          {shopItems.map((item) => {
-            return (
-              <CatalogCard
-                title={item.name}
-                price={item.price}
-                imgSrc={item.images[1].src}
-                key={item.id}
-              />
-            );
-          })}
+          {isLoading ? (
+            <Loader />
+          ) : (
+            items.map((item) => {
+              return (
+                <CatalogCard
+                  title={item.name}
+                  price={item.price}
+                  imgSrc={item.images[1].src}
+                  key={item.id}
+                />
+              );
+            })
+          )}
         </div>
       </div>
       <Footer variant="green" />

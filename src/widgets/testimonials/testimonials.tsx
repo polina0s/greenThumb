@@ -9,9 +9,9 @@ import { allTestimonialsSelector } from '../../store/testimonials';
 import { getTestimonials } from '../../store/testimonials/testimonials.actions';
 import classes from './testimonials.module.scss';
 
-export function Testimonials({ isLoading }: { isLoading: boolean }) {
+export function Testimonials() {
   const dispatch = useAppDispatch();
-  const testimonials = useSelector(allTestimonialsSelector);
+  const { testimonials, isLoading } = useSelector(allTestimonialsSelector);
 
   useEffect(() => {
     dispatch(getTestimonials());

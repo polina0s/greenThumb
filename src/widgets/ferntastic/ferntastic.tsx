@@ -9,9 +9,9 @@ import { allSaleItemsSelector } from '../../store/saleItems/saleItems.selectors'
 import { useAppDispatch } from '../../store/store';
 import classes from './ferntastic.module.scss';
 
-export function Ferntastic({ isLoading }: { isLoading: boolean }) {
+export function Ferntastic() {
   const dispatch = useAppDispatch();
-  const saleItems = useSelector(allSaleItemsSelector);
+  const { items, isLoading } = useSelector(allSaleItemsSelector);
 
   useEffect(() => {
     dispatch(getSaleItems());
@@ -30,7 +30,7 @@ export function Ferntastic({ isLoading }: { isLoading: boolean }) {
         <Loader />
       ) : (
         <div className={classes.cards}>
-          {saleItems.map((item) => {
+          {items.map((item) => {
             return (
               <SaleCard
                 saleValue={item.saleValue}

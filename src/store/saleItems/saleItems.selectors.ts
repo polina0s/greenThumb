@@ -1,4 +1,8 @@
 import { RootState } from '../store';
 
-export const allSaleItemsSelector = (state: RootState) =>
-  state.saleItems.saleItems;
+export const allSaleItemsSelector = (state: RootState) => {
+  return {
+    items: state.saleItems.saleItems,
+    isLoading: state.saleItems.isLoading,
+  };
+};

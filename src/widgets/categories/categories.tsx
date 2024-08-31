@@ -4,14 +4,13 @@ import { useSelector } from 'react-redux';
 import { CategoryCard } from '../../components/categoryCard';
 import { Loader } from '../../components/loader';
 import { SectionHeader } from '../../components/sectionHeader';
-import { getCategories } from '../../store/categories';
-import { allCategoriesSelector } from '../../store/categories/categories.selectors';
+import { allCategoriesSelector, getCategories } from '../../store/categories';
 import { useAppDispatch } from '../../store/store';
 import classes from './categories.module.scss';
 
-export function Categories({ isLoading }: { isLoading: boolean }) {
+export function Categories() {
   const dispatch = useAppDispatch();
-  const categories = useSelector(allCategoriesSelector);
+  const { categories, isLoading } = useSelector(allCategoriesSelector);
 
   useEffect(() => {
     dispatch(getCategories());

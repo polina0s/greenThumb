@@ -1,4 +1,5 @@
 import { RootState } from '../store';
 
-export const allShopItemSelector = (state: RootState) =>
-  state.shopItem.shopItem;
+export const allShopItemSelector = (state: RootState) => {
+  return { item: state.shopItem.shopItem, isLoading: state.shopItem.isLoading };
+};

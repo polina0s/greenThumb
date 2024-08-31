@@ -9,9 +9,9 @@ import { allBestSellCategoriesSelector } from '../../store/bestSellCategories/be
 import { useAppDispatch } from '../../store/store';
 import classes from './bestSelling.module.scss';
 
-export function BestSelling({ isLoading }: { isLoading: boolean }) {
+export function BestSelling() {
   const dispatch = useAppDispatch();
-  const categories = useSelector(allBestSellCategoriesSelector);
+  const { categories, isLoading } = useSelector(allBestSellCategoriesSelector);
 
   useEffect(() => {
     dispatch(getBestSellCategories());

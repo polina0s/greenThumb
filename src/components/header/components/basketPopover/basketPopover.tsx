@@ -29,14 +29,17 @@ export function BasketPopover({
 }: BasketPopoverProps) {
   const [open, setOpen] = useState(defaultOpen);
 
-  const ref = useClickAway<HTMLDivElement>((e) => {
+  const ref = useClickAway<HTMLDivElement>(() => {
     setOpen(false);
   });
 
   const handleOnBasketClick = () => {
-    if (open === false) {
-      setOpen(true);
-    }
+    setOpen((oldState) => {
+      if (!oldState) {
+        return true;
+      }
+      return oldState;
+    });
   };
 
   return (
