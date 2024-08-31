@@ -9,6 +9,17 @@ export type ShopItemsImages = {
   id: number;
 };
 
+export type ShopItemsCare = {
+  watering: string;
+  sunlight: string;
+  soil: string;
+  humidity: string;
+  toxicity: string;
+  benefits: string;
+  story: string;
+  scientific: string;
+};
+
 export type GetShopItemsResponseData = {
   id: number;
   name: string;
@@ -16,6 +27,7 @@ export type GetShopItemsResponseData = {
   description: string;
   images: ShopItemsImages[];
   sizes: ShopItemsSizes[];
+  care: ShopItemsCare[];
 };
 
 export type ShopItemsStore = {
