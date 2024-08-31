@@ -32,7 +32,7 @@ module.exports = {
         use: ['@svgr/webpack'],
       },
       {
-        test: /\.(png|jpg|jpeg)$/i,
+        test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
       {
@@ -88,7 +88,11 @@ module.exports = {
 
   devServer: {
     watchFiles: path.resolve(__dirname, './src'),
-    port: 8000,
+    port: 8001,
     historyApiFallback: true,
+    static: {
+      directory: path.resolve(__dirname, './public'),
+      publicPath: '/'
+    }
   },
 };

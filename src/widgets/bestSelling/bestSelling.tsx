@@ -1,15 +1,22 @@
-import img from '../../assets/images/Rectangle 51.png';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import { BestSellCard } from '../../components/bestSellCard';
+import { Loader } from '../../components/loader';
 import { SectionHeader } from '../../components/sectionHeader';
+import { getBestSellCategories } from '../../store/bestSellCategories';
+import { allBestSellCategoriesSelector } from '../../store/bestSellCategories/bestSellCategories.selectors';
+import { useAppDispatch } from '../../store/store';
 import classes from './bestSelling.module.scss';
 
-const cards = [
-  { imgSrc: img, title: 'Indoor Plants', id: '1' },
-  { imgSrc: img, title: 'Air\u00A0Purifying Plants', id: '2' },
-  { imgSrc: img, title: 'Flowering Plants', id: '3' },
-];
-
 export function BestSelling() {
+  const dispatch = useAppDispatch();
+  const { categories, isLoading } = useSelector(allBestSellCategoriesSelector);
+
+  useEffect(() => {
+    dispatch(getBestSellCategories());
+  }, [dispatch]);
+
   return (
     <>
       <div className={classes.headerCont}>
@@ -19,17 +26,21 @@ export function BestSelling() {
           shopArticle={true}
         />
       </div>
-      <div className={classes.cards}>
-        {cards.map((card) => {
-          return (
-            <BestSellCard
-              title={card.title}
-              imgSrc={card.imgSrc}
-              key={card.id}
-            />
-          );
-        })}
-      </div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div className={classes.cards}>
+          {categories.map((category) => {
+            return (
+              <BestSellCard
+                title={category.name}
+                imgSrc={category.img}
+                key={category.id}
+              />
+            );
+          })}
+        </div>
+      )}
     </>
   );
 }

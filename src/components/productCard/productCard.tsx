@@ -1,10 +1,7 @@
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
-import img1 from '../../assets/images/image 10.png';
-import img2 from '../../assets/images/image 13.png';
-import img4 from '../../assets/images/image 14.png';
-import img3 from '../../assets/images/image 16.png';
+import { GetShopItemsResponseData } from '../../store/shopItems/types';
 import { Button } from '../button';
 import { ImageGallery } from '../imageGallery';
 import { ModalImageGallery } from '../modalImageGallery';
@@ -13,38 +10,35 @@ import { SizePicker } from '../sizePicker';
 import { Text } from '../text';
 import classes from './productCard.module.scss';
 
-const plant = {
-  name: 'Marble Queen Pothos',
-  price: 350,
-  description:
-    'Marble queen pothos is a popular houseplant that is known for its beautiful foliage. It is a relatively easy plant to care for, making it a good choice for beginners.',
-  images: [
-    { src: img1, alt: 'Marble Queen Pothos', id: 1 },
-    { src: img2, alt: 'Marble Queen Pothos', id: 2 },
-    { src: img3, alt: 'Marble Queen Pothos', id: 3 },
-    { src: img4, alt: 'Marble Queen Pothos', id: 4 },
-  ],
-  sizes: [
-    { value: 'S', disabled: false },
-    { value: 'M', disabled: false },
-    { value: 'L', disabled: false },
-  ],
-};
-
 interface ProductValues {
   defaultSize: string;
   quantity: number;
+  name: string;
+  price: number;
+  img: string;
+  id: number;
 }
 
-export function ProductCard() {
+type ProductCardProps = {
+  id: number;
+  item: GetShopItemsResponseData;
+};
+
+export function ProductCard({ item, id }: ProductCardProps) {
   const { control, handleSubmit } = useForm<ProductValues>({
     defaultValues: {
       defaultSize: 'S',
       quantity: 1,
+      name: item.name,
+      price: item.price,
+      img: item.images[0].src,
+      id: +id,
     },
   });
 
-  const onSubmit = (data: ProductValues) => console.log(data);
+  const onSubmit = (data: ProductValues) => {
+    console.log(data);
+  };
 
   const [open, setOpen] = useState(false);
   const onCloseButtonClick = () => {
@@ -56,26 +50,26 @@ export function ProductCard() {
     <>
       <div className={classes.cont}>
         <ImageGallery
-          images={plant.images}
+          images={item.images}
           onZoomButtonClick={onZoomButtonClick}
         />
         <div className={classes.infoCont}>
           <div className={classes.info}>
             <Text variant="poppinsMedium" className={classes.name}>
-              {plant.name}
+              {item.name}
             </Text>
             <Text variant="openSansRegularSM" className={classes.price}>
-              ${plant.price}
+              ${item.price}
             </Text>
             <Text variant="openSansRegularLG" className={classes.description}>
-              {plant.description}
+              {item.description}
             </Text>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Controller
               render={({ field }) => (
                 <SizePicker
-                  sizes={plant.sizes}
+                  sizes={item.sizes}
                   ref={field.ref}
                   defaultSize={field.value}
                   onChange={field.onChange}
@@ -123,7 +117,7 @@ export function ProductCard() {
       <ModalImageGallery
         open={open}
         handleClose={onCloseButtonClick}
-        images={plant.images}
+        images={item.images}
       />
     </>
   );

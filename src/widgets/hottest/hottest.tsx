@@ -1,20 +1,22 @@
-import img from '../../assets/images/Rectangle 51.png';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import { CatalogCard } from '../../components/catalogCard';
+import { Loader } from '../../components/loader';
 import { SectionHeader } from '../../components/sectionHeader';
+import { getShopItems } from '../../store/shopItems/shopItems.actions';
+import { allShopItemsSelector } from '../../store/shopItems/shopItems.selectors';
+import { useAppDispatch } from '../../store/store';
 import classes from './hottest.module.scss';
 
-const cards = [
-  { title: 'Marble Queen', price: 350, imgSrc: img, id: '1' },
-  { title: 'Neon Pothos', price: 350, imgSrc: img, id: '2' },
-  { title: 'Syngonium Rayii', price: 350, imgSrc: img, id: '3' },
-  { title: 'Peruvian Cactus', price: 350, imgSrc: img, id: '4' },
-  { title: 'Pineapple', price: 350, imgSrc: img, id: '5' },
-  { title: 'African Milk Tree', price: 350, imgSrc: img, id: '6' },
-  { title: 'Pothos', price: 350, imgSrc: img, id: '7' },
-  { title: 'Chinese Evergreen', price: 350, imgSrc: img, id: '8' },
-];
-
 export function Hottest() {
+  const dispatch = useAppDispatch();
+  const { items, isLoading } = useSelector(allShopItemsSelector);
+
+  useEffect(() => {
+    dispatch(getShopItems({ limit: 8 }));
+  }, [dispatch]);
+
   return (
     <div className={classes.cont}>
       <div className={classes.headerCont}>
@@ -24,18 +26,22 @@ export function Hottest() {
           shopArticle={true}
         />
       </div>
-      <div className={classes.cards}>
-        {cards.map((card) => {
-          return (
-            <CatalogCard
-              title={card.title}
-              price={card.price}
-              imgSrc={card.imgSrc}
-              key={card.id}
-            />
-          );
-        })}
-      </div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div className={classes.cards}>
+          {items.map((item) => {
+            return (
+              <CatalogCard
+                title={item.name}
+                price={item.price}
+                imgSrc={item.images[1].src}
+                key={item.id}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

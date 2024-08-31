@@ -1,9 +1,13 @@
 import { Text } from '../../../text';
 import classes from './logo.module.scss';
 
-export function Logo() {
+interface LogoProps {
+  onClick: () => void;
+}
+
+export function Logo({ onClick }: LogoProps) {
   return (
-    <div className={classes.cont}>
+    <div className={classes.cont} onClick={onClick}>
       <Text variant="poppinsSemiBold" color="green" className={classes.text}>
         Green
       </Text>

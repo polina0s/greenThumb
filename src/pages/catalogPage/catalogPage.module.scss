@@ -1,0 +1,29 @@
+.banner {
+  margin-bottom: 86px
+}
+
+.selectSort {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 43px;
+  margin-right: 87px;
+}
+
+.catalog {
+  width: 1229px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 121px;
+}
+
+.filters {
+  min-width: 248px;
+  margin-right: 87px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
