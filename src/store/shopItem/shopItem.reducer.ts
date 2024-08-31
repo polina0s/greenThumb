@@ -4,7 +4,7 @@ import { getShopItemById } from './shopItem.actions';
 import { ShopItemStore } from './types';
 
 const initialState: ShopItemStore = {
-  isLoading: false,
+  isLoading: true,
   shopItem: null,
 };
 
@@ -20,8 +20,8 @@ export const shopItemSlice = createSlice({
       state.isLoading = false;
     });
     builder.addCase(getShopItemById.fulfilled, (state, action) => {
-      state.isLoading = false;
       state.shopItem = action.payload;
+      state.isLoading = false;
     });
   },
 });

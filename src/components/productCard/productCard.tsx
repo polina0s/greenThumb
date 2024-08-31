@@ -1,11 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 
-import { getShopItemById } from '../../store/shopItem/shopItem.actions';
-import { allShopItemSelector } from '../../store/shopItem/shopItem.selectors';
-import { useAppDispatch } from '../../store/store';
+import { GetShopItemsResponseData } from '../../store/shopItems/types';
 import { Button } from '../button';
 import { ImageGallery } from '../imageGallery';
 import { ModalImageGallery } from '../modalImageGallery';
@@ -23,17 +19,12 @@ interface ProductValues {
   id: number;
 }
 
-export function ProductCard() {
-  const basket = JSON.parse(localStorage.getItem('basket')) || [];
-  const dispatch = useAppDispatch();
-  const { id } = useParams();
-  const item = useSelector(allShopItemSelector);
-  console.log(item);
+type ProductCardProps = {
+  id: number;
+  item: GetShopItemsResponseData;
+};
 
-  useEffect(() => {
-    dispatch(getShopItemById({ id: +id }));
-  }, [dispatch, id]);
-
+export function ProductCard({ item, id }: ProductCardProps) {
   const { control, handleSubmit } = useForm<ProductValues>({
     defaultValues: {
       defaultSize: 'S',
@@ -45,20 +36,10 @@ export function ProductCard() {
     },
   });
 
+  console.log(item);
+
   const onSubmit = (data: ProductValues) => {
-    const found = basket.find((item: ProductValues) => item.id === data.id);
-    if (found) {
-      const newQuantity = data.quantity + found.quantity;
-      console.log(newQuantity);
-      data.quantity = found.quantity + data.quantity;
-      const newBasket = basket.map((item: ProductValues) =>
-        item.id === data.id ? data : item,
-      );
-      localStorage.setItem('basket', JSON.stringify(newBasket));
-    } else {
-      const newBasket = [...basket, data];
-      localStorage.setItem('basket', JSON.stringify(newBasket));
-    }
+    console.log(data);
   };
 
   const [open, setOpen] = useState(false);
