@@ -21,6 +21,20 @@ export const shopItems = [
       { value: 'M', disabled: false },
       { value: 'L', disabled: false },
     ],
+    care: [
+      { watering: 'Once a week or two.' },
+      { sunlight: 'Bright, indirect sunlight.' },
+      {
+        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+      },
+      { humidity: '40-60%.' },
+      {
+        toxicity:
+          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+      },
+      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
+      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+    ],
   },
   {
     id: 2,
@@ -38,6 +52,20 @@ export const shopItems = [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
       { value: 'L', disabled: false },
+    ],
+    care: [
+      { watering: 'Once a week or two.' },
+      { sunlight: 'Bright, indirect sunlight.' },
+      {
+        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+      },
+      { humidity: '40-60%.' },
+      {
+        toxicity:
+          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+      },
+      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
+      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
     ],
   },
   {
@@ -57,6 +85,20 @@ export const shopItems = [
       { value: 'M', disabled: false },
       { value: 'L', disabled: false },
     ],
+    care: [
+      { watering: 'Once a week or two.' },
+      { sunlight: 'Bright, indirect sunlight.' },
+      {
+        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+      },
+      { humidity: '40-60%.' },
+      {
+        toxicity:
+          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+      },
+      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
+      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+    ],
   },
   {
     id: 4,
@@ -74,6 +116,20 @@ export const shopItems = [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
       { value: 'L', disabled: false },
+    ],
+    care: [
+      { watering: 'Once a week or two.' },
+      { sunlight: 'Bright, indirect sunlight.' },
+      {
+        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+      },
+      { humidity: '40-60%.' },
+      {
+        toxicity:
+          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+      },
+      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
+      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
     ],
   },
   {
@@ -93,6 +149,20 @@ export const shopItems = [
       { value: 'M', disabled: false },
       { value: 'L', disabled: false },
     ],
+    care: [
+      { watering: 'Once a week or two.' },
+      { sunlight: 'Bright, indirect sunlight.' },
+      {
+        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+      },
+      { humidity: '40-60%.' },
+      {
+        toxicity:
+          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+      },
+      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
+      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+    ],
   },
   {
     id: 6,
@@ -110,6 +180,20 @@ export const shopItems = [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
       { value: 'L', disabled: false },
+    ],
+    care: [
+      { watering: 'Once a week or two.' },
+      { sunlight: 'Bright, indirect sunlight.' },
+      {
+        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+      },
+      { humidity: '40-60%.' },
+      {
+        toxicity:
+          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+      },
+      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
+      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
     ],
   },
   {
@@ -129,6 +213,20 @@ export const shopItems = [
       { value: 'M', disabled: false },
       { value: 'L', disabled: false },
     ],
+    care: [
+      { watering: 'Once a week or two.' },
+      { sunlight: 'Bright, indirect sunlight.' },
+      {
+        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+      },
+      { humidity: '40-60%.' },
+      {
+        toxicity:
+          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+      },
+      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
+      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+    ],
   },
   {
     id: 8,
@@ -146,6 +244,20 @@ export const shopItems = [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
       { value: 'L', disabled: false },
+    ],
+    care: [
+      { watering: 'Once a week or two.' },
+      { sunlight: 'Bright, indirect sunlight.' },
+      {
+        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+      },
+      { humidity: '40-60%.' },
+      {
+        toxicity:
+          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+      },
+      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
+      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
     ],
   },
   {
@@ -165,6 +277,20 @@ export const shopItems = [
       { value: 'M', disabled: false },
       { value: 'L', disabled: false },
     ],
+    care: [
+      { watering: 'Once a week or two.' },
+      { sunlight: 'Bright, indirect sunlight.' },
+      {
+        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+      },
+      { humidity: '40-60%.' },
+      {
+        toxicity:
+          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+      },
+      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
+      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+    ],
   },
   {
     id: 10,
@@ -182,6 +308,20 @@ export const shopItems = [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
       { value: 'L', disabled: false },
+    ],
+    care: [
+      { watering: 'Once a week or two.' },
+      { sunlight: 'Bright, indirect sunlight.' },
+      {
+        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+      },
+      { humidity: '40-60%.' },
+      {
+        toxicity:
+          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+      },
+      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
+      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
     ],
   },
 ];
