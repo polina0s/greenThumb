@@ -9,33 +9,33 @@ import {
 } from './data';
 
 export const handlers = [
-  http.get('http://localhost:8000/shopItems/:id', ({ params }) => {
+  http.get('/shopItems/:id', ({ params }) => {
     const { id } = params;
     const plant = shopItems.find((el) => el.id === +id);
     return HttpResponse.json(plant);
   }),
-  http.get('http://localhost:8000/shopItems', ({ request }) => {
+  http.get('/shopItems', ({ request }) => {
     const url = new URL(request.url);
     const limit = +url.searchParams.get('limit');
     const items = shopItems.slice(0, limit);
     return HttpResponse.json({ items: items });
   }),
-  http.get('http://localhost:8000/categories', () => {
+  http.get('/categories', () => {
     return HttpResponse.json({
       categories: categories,
     });
   }),
-  http.get('http://localhost:8000/bestSellCategories', () => {
+  http.get('/bestSellCategories', () => {
     return HttpResponse.json({
       categories: bestSelling,
     });
   }),
-  http.get('http://localhost:8000/testimonials', () => {
+  http.get('/testimonials', () => {
     return HttpResponse.json({
       testimonials: testimonials,
     });
   }),
-  http.get('http://localhost:8000/saleItems', () => {
+  http.get('/saleItems', () => {
     return HttpResponse.json({
       items: saleItems,
     });

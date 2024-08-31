@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
+import { Loader } from '../../components/loader';
 import { TestimonialCard } from '../../components/testimonialCard';
 import { Text } from '../../components/text';
 import { useAppDispatch } from '../../store/store';
@@ -8,7 +9,7 @@ import { allTestimonialsSelector } from '../../store/testimonials';
 import { getTestimonials } from '../../store/testimonials/testimonials.actions';
 import classes from './testimonials.module.scss';
 
-export function Testimonials() {
+export function Testimonials({ isLoading }: { isLoading: boolean }) {
   const dispatch = useAppDispatch();
   const testimonials = useSelector(allTestimonialsSelector);
 
@@ -26,18 +27,22 @@ export function Testimonials() {
           Plant parents love us
         </Text>
       </div>
-      <div className={classes.cards}>
-        {testimonials.map((el) => {
-          return (
-            <TestimonialCard
-              imgSrc={el.img}
-              title={el.title}
-              name={el.name}
-              key={el.id}
-            />
-          );
-        })}
-      </div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div className={classes.cards}>
+          {testimonials.map((el) => {
+            return (
+              <TestimonialCard
+                imgSrc={el.img}
+                title={el.title}
+                name={el.name}
+                key={el.id}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
