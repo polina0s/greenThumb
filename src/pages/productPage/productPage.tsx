@@ -2,22 +2,22 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
+import { CareSection } from '../../components/careSection/careSection';
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
 import { ProductCard } from '../../components/productCard';
 import { SectionBanner } from '../../components/sectionBanner';
+import { allShopItemSelector } from '../../store/shopItem';
 import { getShopItemById } from '../../store/shopItem/shopItem.actions';
-import { RootState, useAppDispatch } from '../../store/store';
+import { useAppDispatch } from '../../store/store';
+import { SaleSection } from '../../widgets/saleSection';
 import classes from './productPage.module.scss';
 
 export function ProductPage() {
   const dispatch = useAppDispatch();
   const { id } = useParams();
 
-  const { isItemLoading, item } = useSelector((state: RootState) => ({
-    item: state.shopItem.shopItem,
-    isItemLoading: state.shopItem.isLoading,
-  }));
+  const { item, isItemLoading } = useSelector(allShopItemSelector);
 
   useEffect(() => {
     dispatch(getShopItemById({ id: +id }));
@@ -29,13 +29,24 @@ export function ProductPage() {
       <div className={classes.sectionBanner}>
         <SectionBanner title="Plant" description="Marble Queen Pothos" />
       </div>
-      <div className={classes.card}>
-        {isItemLoading ? (
-          <div>loader</div>
-        ) : (
-          <ProductCard item={item} id={+id} />
-        )}
-      </div>
+      {isItemLoading ? (
+        <div>loader</div>
+      ) : (
+        <>
+          <div className={classes.card}>
+            <ProductCard item={item} id={+id} />
+          </div>
+          <div className={classes.care}>
+            <CareSection />
+          </div>
+          <div className={classes.sale}>
+            <SaleSection
+              firstWord="You’ll love&nbsp;"
+              secondWord="these too..."
+            />
+          </div>
+        </>
+      )}
       <Footer variant="green" />
     </div>
   );

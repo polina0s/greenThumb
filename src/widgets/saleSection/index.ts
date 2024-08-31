@@ -1,0 +1,1 @@
+export { SaleSection } from './saleSection';

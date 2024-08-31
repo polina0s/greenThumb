@@ -7,9 +7,14 @@ import { SectionHeader } from '../../components/sectionHeader';
 import { getSaleItems } from '../../store/saleItems/saleItems.actions';
 import { allSaleItemsSelector } from '../../store/saleItems/saleItems.selectors';
 import { useAppDispatch } from '../../store/store';
-import classes from './ferntastic.module.scss';
+import classes from './saleSection.module.scss';
 
-export function Ferntastic() {
+type SaleSectionProps = {
+  firstWord: string;
+  secondWord: string;
+};
+
+export function SaleSection({ firstWord, secondWord }: SaleSectionProps) {
   const dispatch = useAppDispatch();
   const { items, isLoading } = useSelector(allSaleItemsSelector);
 
@@ -21,8 +26,8 @@ export function Ferntastic() {
     <>
       <div className={classes.headerCont}>
         <SectionHeader
-          firstWord="Ferntastic&nbsp;"
-          secondWord="Deals"
+          firstWord={firstWord}
+          secondWord={secondWord}
           shopArticle={false}
         />
       </div>
