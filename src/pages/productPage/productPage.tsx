@@ -37,7 +37,7 @@ export function ProductPage() {
             <ProductCard item={item} id={+id} />
           </div>
           <div className={classes.care}>
-            <CareSection />
+            <CareSection options={item.care} />
           </div>
           <div className={classes.sale}>
             <SaleSection

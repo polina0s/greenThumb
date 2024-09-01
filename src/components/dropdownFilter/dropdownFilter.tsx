@@ -5,7 +5,7 @@ import { RadioInput } from '../radioInput';
 import classes from './dropdownFilter.module.scss';
 
 const filters = [
-  { value: 'bonsai', label: 'Bonsa' },
+  { value: 'bonsai', label: 'Bonsai' },
   { value: 'cacti', label: 'Cacti' },
   { value: 'creepers', label: 'Creepers' },
   { value: 'succulents', label: 'Succulents' },

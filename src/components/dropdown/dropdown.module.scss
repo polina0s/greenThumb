@@ -1,4 +1,4 @@
-.button {
+.filterButton {
   width: 100%;
   background: transparent;
   display: flex;
@@ -11,3 +11,19 @@
   letter-spacing: 2.75%;
 }
 
+.listCont {
+  width: 206px;
+  height: 30px;
+}
+
+.listButton {
+  width: 100%;
+  background: transparent;
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 22px;
+} 
+
+.listButtonSymbol {
+  margin-right: 26px;
+}

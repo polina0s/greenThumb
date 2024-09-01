@@ -22,21 +22,33 @@ export const shopItems = [
       { value: 'L', disabled: false },
     ],
     care: [
-      { watering: 'Once a week or two.' },
-      { sunlight: 'Bright, indirect sunlight.' },
+      { id: 1, name: 'Watering', text: 'Once a week or two.' },
+      { id: 2, name: 'Sunlight', text: 'Bright, indirect sunlight.' },
       {
-        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+        id: 3,
+        name: 'Soil & Fertilizing',
+        text: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
       },
-      { humidity: '40-60%.' },
+      { id: 4, name: 'Humidity', text: '40-60%.' },
       {
-        toxicity:
-          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+        id: 5,
+        name: 'Toxicity',
+        text: 'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
       },
-      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
-      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
       {
-        scientific:
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        id: 6,
+        name: 'Benefits',
+        text: 'Help remove formaldehyde and benzene fumes form the air.',
+      },
+      {
+        id: 7,
+        name: 'Origin story',
+        text: 'Traces its roots to the Society Islands of French Polynesia.',
+      },
+      {
+        id: 8,
+        name: 'Scientific',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
       },
     ],
   },
@@ -58,18 +70,34 @@ export const shopItems = [
       { value: 'L', disabled: false },
     ],
     care: [
-      { watering: 'Once a week or two.' },
-      { sunlight: 'Bright, indirect sunlight.' },
+      { id: 1, name: 'Watering', text: 'Once a week or two.' },
+      { id: 2, name: 'Sunlight', text: 'Bright, indirect sunlight.' },
       {
-        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+        id: 3,
+        name: 'Soil & Fertilizing',
+        text: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
       },
-      { humidity: '40-60%.' },
+      { id: 4, name: 'Humidity', text: '40-60%.' },
       {
-        toxicity:
-          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+        id: 5,
+        name: 'Toxicity',
+        text: 'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
       },
-      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
-      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+      {
+        id: 6,
+        name: 'Benefits',
+        text: 'Help remove formaldehyde and benzene fumes form the air.',
+      },
+      {
+        id: 7,
+        name: 'Origin story',
+        text: 'Traces its roots to the Society Islands of French Polynesia.',
+      },
+      {
+        id: 8,
+        name: 'Scientific',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      },
     ],
   },
   {
@@ -90,18 +118,34 @@ export const shopItems = [
       { value: 'L', disabled: false },
     ],
     care: [
-      { watering: 'Once a week or two.' },
-      { sunlight: 'Bright, indirect sunlight.' },
+      { id: 1, name: 'Watering', text: 'Once a week or two.' },
+      { id: 2, name: 'Sunlight', text: 'Bright, indirect sunlight.' },
       {
-        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+        id: 3,
+        name: 'Soil & Fertilizing',
+        text: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
       },
-      { humidity: '40-60%.' },
+      { id: 4, name: 'Humidity', text: '40-60%.' },
       {
-        toxicity:
-          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+        id: 5,
+        name: 'Toxicity',
+        text: 'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
       },
-      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
-      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+      {
+        id: 6,
+        name: 'Benefits',
+        text: 'Help remove formaldehyde and benzene fumes form the air.',
+      },
+      {
+        id: 7,
+        name: 'Origin story',
+        text: 'Traces its roots to the Society Islands of French Polynesia.',
+      },
+      {
+        id: 8,
+        name: 'Scientific',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      },
     ],
   },
   {
@@ -122,18 +166,34 @@ export const shopItems = [
       { value: 'L', disabled: false },
     ],
     care: [
-      { watering: 'Once a week or two.' },
-      { sunlight: 'Bright, indirect sunlight.' },
+      { id: 1, name: 'Watering', text: 'Once a week or two.' },
+      { id: 2, name: 'Sunlight', text: 'Bright, indirect sunlight.' },
       {
-        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+        id: 3,
+        name: 'Soil & Fertilizing',
+        text: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
       },
-      { humidity: '40-60%.' },
+      { id: 4, name: 'Humidity', text: '40-60%.' },
       {
-        toxicity:
-          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+        id: 5,
+        name: 'Toxicity',
+        text: 'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
       },
-      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
-      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+      {
+        id: 6,
+        name: 'Benefits',
+        text: 'Help remove formaldehyde and benzene fumes form the air.',
+      },
+      {
+        id: 7,
+        name: 'Origin story',
+        text: 'Traces its roots to the Society Islands of French Polynesia.',
+      },
+      {
+        id: 8,
+        name: 'Scientific',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      },
     ],
   },
   {
@@ -154,18 +214,34 @@ export const shopItems = [
       { value: 'L', disabled: false },
     ],
     care: [
-      { watering: 'Once a week or two.' },
-      { sunlight: 'Bright, indirect sunlight.' },
+      { id: 1, name: 'Watering', text: 'Once a week or two.' },
+      { id: 2, name: 'Sunlight', text: 'Bright, indirect sunlight.' },
       {
-        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+        id: 3,
+        name: 'Soil & Fertilizing',
+        text: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
       },
-      { humidity: '40-60%.' },
+      { id: 4, name: 'Humidity', text: '40-60%.' },
       {
-        toxicity:
-          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+        id: 5,
+        name: 'Toxicity',
+        text: 'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
       },
-      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
-      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+      {
+        id: 6,
+        name: 'Benefits',
+        text: 'Help remove formaldehyde and benzene fumes form the air.',
+      },
+      {
+        id: 7,
+        name: 'Origin story',
+        text: 'Traces its roots to the Society Islands of French Polynesia.',
+      },
+      {
+        id: 8,
+        name: 'Scientific',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      },
     ],
   },
   {
@@ -186,18 +262,34 @@ export const shopItems = [
       { value: 'L', disabled: false },
     ],
     care: [
-      { watering: 'Once a week or two.' },
-      { sunlight: 'Bright, indirect sunlight.' },
+      { id: 1, name: 'Watering', text: 'Once a week or two.' },
+      { id: 2, name: 'Sunlight', text: 'Bright, indirect sunlight.' },
       {
-        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+        id: 3,
+        name: 'Soil & Fertilizing',
+        text: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
       },
-      { humidity: '40-60%.' },
+      { id: 4, name: 'Humidity', text: '40-60%.' },
       {
-        toxicity:
-          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+        id: 5,
+        name: 'Toxicity',
+        text: 'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
       },
-      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
-      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+      {
+        id: 6,
+        name: 'Benefits',
+        text: 'Help remove formaldehyde and benzene fumes form the air.',
+      },
+      {
+        id: 7,
+        name: 'Origin story',
+        text: 'Traces its roots to the Society Islands of French Polynesia.',
+      },
+      {
+        id: 8,
+        name: 'Scientific',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      },
     ],
   },
   {
@@ -218,18 +310,34 @@ export const shopItems = [
       { value: 'L', disabled: false },
     ],
     care: [
-      { watering: 'Once a week or two.' },
-      { sunlight: 'Bright, indirect sunlight.' },
+      { id: 1, name: 'Watering', text: 'Once a week or two.' },
+      { id: 2, name: 'Sunlight', text: 'Bright, indirect sunlight.' },
       {
-        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+        id: 3,
+        name: 'Soil & Fertilizing',
+        text: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
       },
-      { humidity: '40-60%.' },
+      { id: 4, name: 'Humidity', text: '40-60%.' },
       {
-        toxicity:
-          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+        id: 5,
+        name: 'Toxicity',
+        text: 'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
       },
-      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
-      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+      {
+        id: 6,
+        name: 'Benefits',
+        text: 'Help remove formaldehyde and benzene fumes form the air.',
+      },
+      {
+        id: 7,
+        name: 'Origin story',
+        text: 'Traces its roots to the Society Islands of French Polynesia.',
+      },
+      {
+        id: 8,
+        name: 'Scientific',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      },
     ],
   },
   {
@@ -250,18 +358,34 @@ export const shopItems = [
       { value: 'L', disabled: false },
     ],
     care: [
-      { watering: 'Once a week or two.' },
-      { sunlight: 'Bright, indirect sunlight.' },
+      { id: 1, name: 'Watering', text: 'Once a week or two.' },
+      { id: 2, name: 'Sunlight', text: 'Bright, indirect sunlight.' },
       {
-        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+        id: 3,
+        name: 'Soil & Fertilizing',
+        text: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
       },
-      { humidity: '40-60%.' },
+      { id: 4, name: 'Humidity', text: '40-60%.' },
       {
-        toxicity:
-          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+        id: 5,
+        name: 'Toxicity',
+        text: 'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
       },
-      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
-      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+      {
+        id: 6,
+        name: 'Benefits',
+        text: 'Help remove formaldehyde and benzene fumes form the air.',
+      },
+      {
+        id: 7,
+        name: 'Origin story',
+        text: 'Traces its roots to the Society Islands of French Polynesia.',
+      },
+      {
+        id: 8,
+        name: 'Scientific',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      },
     ],
   },
   {
@@ -282,18 +406,34 @@ export const shopItems = [
       { value: 'L', disabled: false },
     ],
     care: [
-      { watering: 'Once a week or two.' },
-      { sunlight: 'Bright, indirect sunlight.' },
+      { id: 1, name: 'Watering', text: 'Once a week or two.' },
+      { id: 2, name: 'Sunlight', text: 'Bright, indirect sunlight.' },
       {
-        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+        id: 3,
+        name: 'Soil & Fertilizing',
+        text: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
       },
-      { humidity: '40-60%.' },
+      { id: 4, name: 'Humidity', text: '40-60%.' },
       {
-        toxicity:
-          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+        id: 5,
+        name: 'Toxicity',
+        text: 'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
       },
-      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
-      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+      {
+        id: 6,
+        name: 'Benefits',
+        text: 'Help remove formaldehyde and benzene fumes form the air.',
+      },
+      {
+        id: 7,
+        name: 'Origin story',
+        text: 'Traces its roots to the Society Islands of French Polynesia.',
+      },
+      {
+        id: 8,
+        name: 'Scientific',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      },
     ],
   },
   {
@@ -314,18 +454,34 @@ export const shopItems = [
       { value: 'L', disabled: false },
     ],
     care: [
-      { watering: 'Once a week or two.' },
-      { sunlight: 'Bright, indirect sunlight.' },
+      { id: 1, name: 'Watering', text: 'Once a week or two.' },
+      { id: 2, name: 'Sunlight', text: 'Bright, indirect sunlight.' },
       {
-        soil: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
+        id: 3,
+        name: 'Soil & Fertilizing',
+        text: 'A mix with equal parts potting soil, perlite, and peat moss promotes aeration and drainage, crucial to prevent root rot.',
       },
-      { humidity: '40-60%.' },
+      { id: 4, name: 'Humidity', text: '40-60%.' },
       {
-        toxicity:
-          'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
+        id: 5,
+        name: 'Toxicity',
+        text: 'Chewing or biting into this plant will release these crystals causing tissue penetration and irritation the mouth and GI tract.',
       },
-      { benefits: 'Help remove formaldehyde and benzene fumes form the air.' },
-      { story: 'Traces its roots to the Society Islands of French Polynesia.' },
+      {
+        id: 6,
+        name: 'Benefits',
+        text: 'Help remove formaldehyde and benzene fumes form the air.',
+      },
+      {
+        id: 7,
+        name: 'Origin story',
+        text: 'Traces its roots to the Society Islands of French Polynesia.',
+      },
+      {
+        id: 8,
+        name: 'Scientific',
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      },
     ],
   },
 ];

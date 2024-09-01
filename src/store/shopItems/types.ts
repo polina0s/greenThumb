@@ -10,14 +10,9 @@ export type ShopItemsImages = {
 };
 
 export type ShopItemsCare = {
-  watering: string;
-  sunlight: string;
-  soil: string;
-  humidity: string;
-  toxicity: string;
-  benefits: string;
-  story: string;
-  scientific: string;
+  id: number;
+  name: string;
+  text: string;
 };
 
 export type GetShopItemsResponseData = {
