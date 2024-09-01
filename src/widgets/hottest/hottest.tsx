@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { CatalogCard } from '../../components/catalogCard';
 import { Loader } from '../../components/loader';
@@ -10,6 +11,7 @@ import { useAppDispatch } from '../../store/store';
 import classes from './hottest.module.scss';
 
 export function Hottest() {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { items, isLoading } = useSelector(allShopItemsSelector);
 
@@ -33,6 +35,7 @@ export function Hottest() {
           {items.map((item) => {
             return (
               <CatalogCard
+                onClick={() => navigate(`/catalog/${item.id}`)}
                 title={item.name}
                 price={item.price}
                 imgSrc={item.images[1].src}

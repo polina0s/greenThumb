@@ -6,12 +6,18 @@ interface CatalogCardProps {
   title: string;
   price: number;
   imgSrc: string;
+  onClick?: () => void;
 }
 
-export function CatalogCard({ title, price, imgSrc }: CatalogCardProps) {
+export function CatalogCard({
+  title,
+  price,
+  imgSrc,
+  onClick,
+}: CatalogCardProps) {
   return (
     <div className={classes.cont}>
-      <div className={classes.imgCont}>
+      <div className={classes.imgCont} onClick={onClick}>
         <img className={classes.img} src={imgSrc} alt={title} />
       </div>
       <div className={classes.info}>
