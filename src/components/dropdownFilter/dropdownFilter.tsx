@@ -1,37 +1,30 @@
 import { forwardRef } from 'react';
 
+import { GetCategoriesResponseData } from '../../store/categories/types';
 import { Dropdown } from '../dropdown/dropdown';
 import { RadioInput } from '../radioInput';
 import classes from './dropdownFilter.module.scss';
 
-const filters = [
-  { value: 'bonsai', label: 'Bonsai' },
-  { value: 'cacti', label: 'Cacti' },
-  { value: 'creepers', label: 'Creepers' },
-  { value: 'succulents', label: 'Succulents' },
-  { value: 'seeds', label: 'Seeds' },
-  { value: 'gifts', label: 'Gifts' },
-];
-
 interface DropdownFilterProps {
   name: string;
+  options: GetCategoriesResponseData[];
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 export const DropdownFilter = forwardRef<HTMLDivElement, DropdownFilterProps>(
-  function DropdownFilter({ onChange, name }, ref) {
+  function DropdownFilter({ onChange, name, options }, ref) {
     return (
       <Dropdown title="All Categories" defaultOpen={false}>
         <div className={classes.options} ref={ref}>
-          {filters.map((filter) => {
+          {options.map((option) => {
             return (
               <RadioInput
                 name={name}
                 onChange={onChange}
                 className={classes.input}
-                value={filter.value}
-                label={filter.label}
-                key={filter.value}
+                value={option.name}
+                label={option.name}
+                key={option.id}
               />
             );
           })}

@@ -3,9 +3,14 @@ import { Controller, useForm } from 'react-hook-form';
 import { DropdownFilter } from '../../components/dropdownFilter';
 import { RadioFilter } from '../../components/radioFitler';
 import { RangeFilter } from '../../components/rangeFilter';
+import { GetCategoriesResponseData } from '../../store/categories/types';
 import classes from './catalogFilters.module.scss';
 
-export function CatalogFilters() {
+export function CatalogFilters({
+  options,
+}: {
+  options: GetCategoriesResponseData[];
+}) {
   const { control, watch } = useForm({
     defaultValues: {
       category: '',
@@ -18,7 +23,9 @@ export function CatalogFilters() {
     <div>
       <div className={classes.category}>
         <Controller
-          render={({ field }) => <DropdownFilter {...field} />}
+          render={({ field }) => (
+            <DropdownFilter options={options} {...field} />
+          )}
           control={control}
           name="category"
         />

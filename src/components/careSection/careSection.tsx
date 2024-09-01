@@ -13,8 +13,9 @@ export function CareSection({ options }: CareSectionProps) {
   const [header, setHeader] = useState('');
   const [text, setText] = useState('');
 
-  const onOptionClick = (e: React.MouseEvent<HTMLInputElement>) => {
-    e.preventDefault;
+  const onOptionClick = (option: ShopItemsCare) => {
+    setHeader(option.name);
+    setText(option.text);
   };
 
   return (
@@ -29,11 +30,7 @@ export function CareSection({ options }: CareSectionProps) {
                     className={classes.option}
                     key={option.id}
                     type="button"
-                    onClick={(e) => {
-                      onOptionClick(e);
-                      setHeader(option.name);
-                      setText(option.text);
-                    }}
+                    onClick={() => onOptionClick(option)}
                     value={option.name}
                   />
                 );

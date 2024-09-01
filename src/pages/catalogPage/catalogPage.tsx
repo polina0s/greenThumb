@@ -6,6 +6,7 @@ import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
 import { Loader } from '../../components/loader';
 import { SectionBanner } from '../../components/sectionBanner';
+import { allCategoriesSelector, getCategories } from '../../store/categories';
 import { getShopItems } from '../../store/shopItems/shopItems.actions';
 import { allShopItemsSelector } from '../../store/shopItems/shopItems.selectors';
 import { useAppDispatch } from '../../store/store';
@@ -16,9 +17,11 @@ import classes from './catalogPage.module.scss';
 export function CatalogPage() {
   const dispatch = useAppDispatch();
   const { items, isLoading } = useSelector(allShopItemsSelector);
+  const categories = useSelector(allCategoriesSelector);
 
   useEffect(() => {
     dispatch(getShopItems({ limit: 9 }));
+    dispatch(getCategories());
   }, [dispatch]);
 
   return (
@@ -35,7 +38,7 @@ export function CatalogPage() {
       </div>
       <div className={classes.catalog}>
         <div className={classes.filters}>
-          <CatalogFilters />
+          <CatalogFilters options={categories.categories} />
         </div>
         <div className={classes.cards}>
           {isLoading ? (
