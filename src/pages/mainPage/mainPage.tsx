@@ -5,8 +5,8 @@ import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
 import { BestSelling } from '../../widgets/bestSelling';
 import { Categories } from '../../widgets/categories';
-import { Ferntastic } from '../../widgets/ferntastic';
 import { Hottest } from '../../widgets/hottest';
+import { SaleSection } from '../../widgets/saleSection';
 import { Testimonials } from '../../widgets/testimonials';
 import classes from './main.page.module.scss';
 
@@ -35,7 +35,7 @@ export function MainPage() {
           <Hottest />
         </div>
         <div className={classes.ferntastic}>
-          <Ferntastic />
+          <SaleSection firstWord="Ferntastic&nbsp;" secondWord="Deals" />
         </div>
         <div className={classes.testimonials}>
           <Testimonials />

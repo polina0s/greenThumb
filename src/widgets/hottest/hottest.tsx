@@ -36,6 +36,7 @@ export function Hottest() {
                 title={item.name}
                 price={item.price}
                 imgSrc={item.images[1].src}
+                id={item.id}
                 key={item.id}
               />
             );
