@@ -26,13 +26,13 @@ export function CareSection({ options }: CareSectionProps) {
             <div className={classes.options}>
               {options.map((option) => {
                 return (
-                  <input
+                  <button
                     className={classes.option}
                     key={option.id}
-                    type="button"
                     onClick={() => onOptionClick(option)}
-                    value={option.name}
-                  />
+                  >
+                    {option.name}
+                  </button>
                 );
               })}
             </div>

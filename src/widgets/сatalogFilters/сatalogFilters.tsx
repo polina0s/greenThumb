@@ -1,16 +1,18 @@
+import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 
 import { DropdownFilter } from '../../components/dropdownFilter';
 import { RadioFilter } from '../../components/radioFitler';
 import { RangeFilter } from '../../components/rangeFilter';
-import { GetCategoriesResponseData } from '../../store/categories/types';
+import { allCategoriesSelector, getCategories } from '../../store/categories';
+import { useAppDispatch } from '../../store/store';
 import classes from './catalogFilters.module.scss';
 
-export function CatalogFilters({
-  options,
-}: {
-  options: GetCategoriesResponseData[];
-}) {
+export function CatalogFilters() {
+  const dispatch = useAppDispatch();
+  const categories = useSelector(allCategoriesSelector);
+
   const { control, watch } = useForm({
     defaultValues: {
       category: '',
@@ -19,12 +21,16 @@ export function CatalogFilters({
     },
   });
 
+  useEffect(() => {
+    dispatch(getCategories());
+  }, [dispatch]);
+
   return (
     <div>
       <div className={classes.category}>
         <Controller
           render={({ field }) => (
-            <DropdownFilter options={options} {...field} />
+            <DropdownFilter options={categories.categories} {...field} />
           )}
           control={control}
           name="category"
