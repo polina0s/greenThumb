@@ -17,7 +17,12 @@ export const handlers = [
   http.get('/shopItems', ({ request }) => {
     const url = new URL(request.url);
     const limit = +url.searchParams.get('limit');
-    const items = shopItems.slice(0, limit);
+    const price = +url.searchParams.get('price');
+    const category = url.searchParams.get('category');
+    const items = shopItems
+      .slice(0, limit)
+      .filter((item) => item.price <= price)
+      .filter((item) => item.category === category);
     return HttpResponse.json({ items: items });
   }),
   http.get('/categories', () => {

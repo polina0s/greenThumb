@@ -1,8 +1,19 @@
 import queryString from 'query-string';
 
 class Api {
-  async getShopItems({ limit = 10 }: { limit: number }) {
-    const query = queryString.stringify({ limit }, { skipNull: true });
+  async getShopItems({
+    limit,
+    price,
+    category,
+  }: {
+    limit?: number;
+    price?: number;
+    category?: string;
+  }) {
+    const query = queryString.stringify(
+      { limit, price, category },
+      { skipNull: true },
+    );
 
     const response = await fetch(`/shopItems?${query}`);
     const json = await response.json();

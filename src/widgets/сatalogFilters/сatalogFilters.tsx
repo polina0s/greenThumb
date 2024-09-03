@@ -16,7 +16,7 @@ export function CatalogFilters() {
   const { control, watch } = useForm({
     defaultValues: {
       category: '',
-      price: 100,
+      price: 250,
       type: '',
     },
   });
@@ -42,9 +42,9 @@ export function CatalogFilters() {
             <RangeFilter
               {...field}
               title="Price"
-              min={100}
+              min={250}
               max={1000}
-              text={`from 100 to ${watch('price')}`}
+              text={`from 250 to ${watch('price')}`}
             />
           )}
           control={control}
