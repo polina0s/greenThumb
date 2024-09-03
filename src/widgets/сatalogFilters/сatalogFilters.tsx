@@ -21,9 +21,13 @@ export function CatalogFilters() {
     },
   });
 
+  const watchAll = watch();
+
   useEffect(() => {
     dispatch(getCategories());
   }, [dispatch]);
+
+  useEffect(() => {}, [watchAll]);
 
   return (
     <div>
