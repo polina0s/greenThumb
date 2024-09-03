@@ -42,6 +42,7 @@ import img4 from '../../assets/images/image 16.png';
 export const shopItems = [
   {
     id: 1,
+    category: 'bonsai',
     name: 'Marble Queen Pothos',
     price: 350,
     description:
@@ -90,6 +91,7 @@ export const shopItems = [
   },
   {
     id: 2,
+    category: 'bonsai',
     name: 'Neon Pothos',
     price: 450,
     description:
@@ -138,6 +140,7 @@ export const shopItems = [
   },
   {
     id: 3,
+    category: 'cacti',
     name: 'Syngonium Rayii',
     price: 850,
     description:
@@ -186,6 +189,7 @@ export const shopItems = [
   },
   {
     id: 4,
+    category: 'cacti',
     name: 'Peruvian Cactus',
     price: 450,
     description:
@@ -234,6 +238,7 @@ export const shopItems = [
   },
   {
     id: 5,
+    category: 'creepers',
     name: 'Pineapple',
     price: 670,
     description:
@@ -282,6 +287,7 @@ export const shopItems = [
   },
   {
     id: 6,
+    category: 'succulents',
     name: 'African Milk Tree',
     price: 590,
     description:
@@ -330,6 +336,7 @@ export const shopItems = [
   },
   {
     id: 7,
+    category: 'seeds',
     name: 'Pothos',
     price: 990,
     description:
@@ -378,6 +385,7 @@ export const shopItems = [
   },
   {
     id: 8,
+    category: 'gifts',
     name: 'Chinese Evergreen',
     price: 250,
     description:
@@ -426,6 +434,7 @@ export const shopItems = [
   },
   {
     id: 9,
+    category: 'gifts',
     name: 'String of Hearts',
     price: 620,
     description:
