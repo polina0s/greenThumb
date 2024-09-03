@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 import { CatalogCard } from '../../components/catalogCard';
 import { Footer } from '../../components/footer';
@@ -17,7 +16,6 @@ import classes from './catalogPage.module.scss';
 
 export function CatalogPage() {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
   const { items, isLoading } = useSelector(allShopItemsSelector);
   const categories = useSelector(allCategoriesSelector);
 
@@ -49,10 +47,10 @@ export function CatalogPage() {
             items.map((item) => {
               return (
                 <CatalogCard
-                  onClick={() => navigate(`${item.id}`)}
                   title={item.name}
                   price={item.price}
                   imgSrc={item.images[1].src}
+                  id={item.id}
                   key={item.id}
                 />
               );

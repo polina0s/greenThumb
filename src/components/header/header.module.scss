@@ -21,6 +21,11 @@
   font-size: 17px;
 }
 
+.link {
+  text-decoration: none;
+  color: var(--gray-500);
+}
+
 .popover {
   width: 300px;
   border-radius: 10px;

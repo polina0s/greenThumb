@@ -10,10 +10,15 @@
   box-shadow: var(--shadowGreen-200);
 }
 
+.link {
+  text-decoration: none;
+}
+
 .imgCont {
   width: 242px;
   height: 224px;
   border-radius: 8px;
+  margin-bottom: 16px;
 }
 
 .img {
@@ -21,14 +26,4 @@
   height: 100%;
   border-radius: 8px;
   object-fit: cover;
-}
-
-.name {
-  font: 700 20px var(--openSans);
-  color: var(--gray-500);
-}
-
-.price {
-  font: 400 20px var(--openSans);
-  color: var(--gray-500);
 }
