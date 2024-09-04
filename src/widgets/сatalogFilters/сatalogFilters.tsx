@@ -16,12 +16,13 @@ export function CatalogFilters() {
   const { control, watch } = useForm({
     defaultValues: {
       category: '',
-      price: 250,
+      price: 1000,
       type: '',
     },
   });
 
   const watchAll = watch();
+  console.log(watchAll);
 
   useEffect(() => {
     dispatch(getCategories());

@@ -30,29 +30,31 @@ export function CatalogPage() {
           description="Find the perfect plant for your space"
         />
       </div>
-      <div className={classes.selectSort}>
-        <SelectSort />
-      </div>
-      <div className={classes.catalog}>
-        <div className={classes.filters}>
-          <CatalogFilters />
+      <div className={classes.cardsCont}>
+        <div className={classes.selectSort}>
+          <SelectSort />
         </div>
-        <div className={classes.cards}>
-          {isLoading ? (
-            <Loader />
-          ) : (
-            items.map((item) => {
-              return (
-                <CatalogCard
-                  title={item.name}
-                  price={item.price}
-                  imgSrc={item.images[1].src}
-                  id={item.id}
-                  key={item.id}
-                />
-              );
-            })
-          )}
+        <div className={classes.catalog}>
+          <div className={classes.filters}>
+            <CatalogFilters />
+          </div>
+          <div className={classes.cards}>
+            {isLoading ? (
+              <Loader />
+            ) : (
+              items.map((item) => {
+                return (
+                  <CatalogCard
+                    title={item.name}
+                    price={item.price}
+                    imgSrc={item.images[1].src}
+                    id={item.id}
+                    key={item.id}
+                  />
+                );
+              })
+            )}
+          </div>
         </div>
       </div>
       <Footer variant="green" />

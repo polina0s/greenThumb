@@ -37,6 +37,7 @@ export function Testimonials() {
                 imgSrc={el.img}
                 title={el.title}
                 name={el.name}
+                rating={el.rating}
                 key={el.id}
               />
             );

@@ -2,6 +2,7 @@ export type GetTestimonialsResponseData = {
   img: string;
   title: string;
   name: string;
+  rating: number;
   id: number;
 };
 
