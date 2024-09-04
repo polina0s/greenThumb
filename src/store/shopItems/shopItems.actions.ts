@@ -7,7 +7,7 @@ export const getShopItems = createAsyncThunk<
   {
     items: GetShopItemsResponseData[];
   },
-  { limit?: number; price?: number; category?: string }
+  { limit?: number; price?: number; category?: string; type?: string }
 >('shopItems/getAll', async (data, { rejectWithValue }) => {
   try {
     const response = await api.getShopItems(data);

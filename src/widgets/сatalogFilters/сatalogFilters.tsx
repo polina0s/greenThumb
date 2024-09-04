@@ -1,6 +1,8 @@
+import queryString from 'query-string';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 
 import { DropdownFilter } from '../../components/dropdownFilter';
 import { RadioFilter } from '../../components/radioFitler';
@@ -12,30 +14,48 @@ import classes from './catalogFilters.module.scss';
 export function CatalogFilters() {
   const dispatch = useAppDispatch();
   const categories = useSelector(allCategoriesSelector);
+  const [searchParams, setSearchParams] = useSearchParams();
+  console.log(searchParams);
 
   const { control, watch } = useForm({
     defaultValues: {
       category: '',
-      price: 1000,
+      price: searchParams.get('price') || 1000,
       type: '',
     },
   });
 
-  const watchAll = watch();
-  console.log(watchAll);
+  // const watchAll = watch();
 
   useEffect(() => {
     dispatch(getCategories());
   }, [dispatch]);
 
-  useEffect(() => {}, [watchAll]);
+  // useEffect(() => {
+  //   const params = queryString.stringify(watchAll);
+  //   setSearchParams(params);
+  // }, [setSearchParams, watchAll]);
 
   return (
     <div>
       <div className={classes.category}>
         <Controller
           render={({ field }) => (
-            <DropdownFilter options={categories.categories} {...field} />
+            <DropdownFilter
+              options={categories.categories}
+              {...field}
+              defaultChecked={searchParams.get('category')}
+              onChange={(e) => {
+                setSearchParams((prev) => {
+                  console.log(prev);
+                  return queryString.stringify({
+                    ...Object.fromEntries(prev),
+                    category: e.target.value,
+                  });
+                });
+                field.onChange(e);
+              }}
+            />
           )}
           control={control}
           name="category"
@@ -49,7 +69,16 @@ export function CatalogFilters() {
               title="Price"
               min={250}
               max={1000}
-              text={`from 250 to ${watch('price')}`}
+              text={`from 250 to ${watch('price') || 1000}`}
+              onChange={(e) => {
+                setSearchParams((prev) => {
+                  return queryString.stringify({
+                    ...Object.fromEntries(prev),
+                    price: e.target.value,
+                  });
+                });
+                field.onChange(e);
+              }}
             />
           )}
           control={control}
@@ -57,7 +86,22 @@ export function CatalogFilters() {
         />
       </div>
       <Controller
-        render={({ field }) => <RadioFilter {...field} title="Include" />}
+        render={({ field }) => (
+          <RadioFilter
+            {...field}
+            title="Include"
+            defaultChecked={searchParams.get('type')}
+            onChange={(e) => {
+              setSearchParams((prev) => {
+                return queryString.stringify({
+                  ...Object.fromEntries(prev),
+                  type: e.target.value,
+                });
+              });
+              field.onChange(e);
+            }}
+          />
+        )}
         control={control}
         name="type"
       />

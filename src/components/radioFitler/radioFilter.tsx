@@ -14,11 +14,12 @@ const filters = [
 interface FilterProps {
   name: string;
   title: string;
+  defaultChecked: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 export const RadioFilter = forwardRef<HTMLDivElement, FilterProps>(
-  function RadioFilter({ title, onChange, name }, ref) {
+  function RadioFilter({ name, title, defaultChecked, onChange }, ref) {
     return (
       <Box>
         <Text
@@ -32,6 +33,7 @@ export const RadioFilter = forwardRef<HTMLDivElement, FilterProps>(
           {filters.map((filter) => {
             return (
               <RadioInput
+                checked={defaultChecked === filter.value}
                 name={name}
                 className={classes.input}
                 value={filter.value}

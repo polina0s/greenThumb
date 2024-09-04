@@ -13,7 +13,10 @@ interface RadioInputProps {
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
-  function RadioInput({ value, name, label, className, onChange }, ref) {
+  function RadioInput(
+    { value, name, label, className, checked, onChange },
+    ref,
+  ) {
     const ContClass = classNames(classes.cont, className);
 
     return (
@@ -24,6 +27,7 @@ export const RadioInput = forwardRef<HTMLInputElement, RadioInputProps>(
           className={classes.input}
           type="radio"
           value={value}
+          checked={checked}
           id={value}
           onChange={onChange}
         />
