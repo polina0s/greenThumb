@@ -1,8 +1,12 @@
+import { createSelector } from '@reduxjs/toolkit';
+
 import { RootState } from '../store';
 
-export const allTestimonialsSelector = (state: RootState) => {
+const select = (state: RootState) => state;
+
+export const allTestimonialsSelector = createSelector(select, (state) => {
   return {
     testimonials: state.testimonials.testimonials,
     isLoading: state.testimonials.isLoading,
   };
-};
+});
