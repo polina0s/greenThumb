@@ -19,12 +19,16 @@ export const handlers = [
     const limit = +url.searchParams.get('limit');
     const price = +url.searchParams.get('price');
     const category = url.searchParams.get('category');
+    const type = url.searchParams.get('type');
     const items = shopItems.slice(0, limit);
     if (price) {
       items.filter((item) => item.price <= price);
     }
     if (category) {
       items.filter((item) => item.category === category);
+    }
+    if (type) {
+      items.filter((item) => item.type === type);
     }
     return HttpResponse.json({ items: items });
   }),

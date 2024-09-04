@@ -5,13 +5,15 @@ class Api {
     limit,
     price,
     category,
+    type,
   }: {
     limit?: number;
     price?: number;
     category?: string;
+    type?: string;
   }) {
     const query = queryString.stringify(
-      { limit, price, category },
+      { limit, price, category, type },
       { skipNull: true },
     );
 

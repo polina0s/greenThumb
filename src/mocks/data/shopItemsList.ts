@@ -43,6 +43,7 @@ export const shopItems = [
   {
     id: 1,
     category: 'bonsai',
+    type: 'planter',
     name: 'Marble Queen Pothos',
     price: 350,
     description:
@@ -92,6 +93,7 @@ export const shopItems = [
   {
     id: 2,
     category: 'bonsai',
+    type: 'planter',
     name: 'Neon Pothos',
     price: 450,
     description:
@@ -141,6 +143,7 @@ export const shopItems = [
   {
     id: 3,
     category: 'cacti',
+    type: 'flower',
     name: 'Syngonium Rayii',
     price: 850,
     description:
@@ -190,6 +193,7 @@ export const shopItems = [
   {
     id: 4,
     category: 'cacti',
+    type: 'flower',
     name: 'Peruvian Cactus',
     price: 450,
     description:
@@ -239,6 +243,7 @@ export const shopItems = [
   {
     id: 5,
     category: 'creepers',
+    type: 'flower',
     name: 'Pineapple',
     price: 670,
     description:
@@ -288,6 +293,7 @@ export const shopItems = [
   {
     id: 6,
     category: 'succulents',
+    type: 'care',
     name: 'African Milk Tree',
     price: 590,
     description:
@@ -337,6 +343,7 @@ export const shopItems = [
   {
     id: 7,
     category: 'seeds',
+    type: 'care',
     name: 'Pothos',
     price: 990,
     description:
@@ -386,6 +393,7 @@ export const shopItems = [
   {
     id: 8,
     category: 'gifts',
+    type: 'heat pack',
     name: 'Chinese Evergreen',
     price: 250,
     description:
@@ -435,6 +443,7 @@ export const shopItems = [
   {
     id: 9,
     category: 'gifts',
+    type: 'heat pack',
     name: 'String of Hearts',
     price: 620,
     description:
@@ -484,6 +493,7 @@ export const shopItems = [
   {
     id: 10,
     name: 'Red Secret Alocasia',
+    type: 'heat pack',
     price: 350,
     description:
       'Marble queen pothos is a popular houseplant that is known for its beautiful foliage. It is a relatively easy plant to care for, making it a good choice for beginners.',
