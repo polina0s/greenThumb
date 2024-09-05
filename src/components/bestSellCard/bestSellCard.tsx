@@ -7,12 +7,13 @@ import classes from './bestSellCard.module.scss';
 interface CardProps {
   title: string;
   imgSrc: string;
+  onClick?: () => void;
 }
 
-export function BestSellCard({ title, imgSrc }: CardProps) {
+export function BestSellCard({ title, imgSrc, onClick }: CardProps) {
   return (
-    <Link to={'/catalog'} className={classes.link}>
-      <div className={classes.cont}>
+    <div className={classes.cont}>
+      <Link to={'/catalog'} className={classes.link}>
         <div className={classes.imgCont}>
           <img className={classes.img} src={imgSrc} alt={title} />
           <Text
@@ -23,10 +24,10 @@ export function BestSellCard({ title, imgSrc }: CardProps) {
             {title}
           </Text>
         </div>
-        <Button element="a" color="green" size="md">
-          Buy
-        </Button>
-      </div>
-    </Link>
+      </Link>
+      <Button element="a" color="green" size="md" onClick={onClick}>
+        Buy
+      </Button>
+    </div>
   );
 }

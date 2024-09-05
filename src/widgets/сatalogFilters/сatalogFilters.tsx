@@ -36,7 +36,7 @@ export function CatalogFilters() {
             <DropdownFilter
               options={categories.categories}
               {...field}
-              defaultChecked={searchParams.get('category')}
+              value={searchParams.get('category')}
               onChange={(e) => {
                 setSearchParams((prev) => {
                   return queryString.stringify({
@@ -81,7 +81,7 @@ export function CatalogFilters() {
           <RadioFilter
             {...field}
             title="Include"
-            defaultChecked={searchParams.get('type')}
+            value={searchParams.get('type')}
             onChange={(e) => {
               setSearchParams((prev) => {
                 return queryString.stringify({
