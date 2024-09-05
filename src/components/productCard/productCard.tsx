@@ -10,7 +10,7 @@ import { SizePicker } from '../sizePicker';
 import { Text } from '../text';
 import classes from './productCard.module.scss';
 
-interface ProductValues {
+export interface ProductValues {
   defaultSize: string;
   quantity: number;
   name: string;
@@ -22,9 +22,14 @@ interface ProductValues {
 type ProductCardProps = {
   id: number;
   item: GetShopItemsResponseData;
+  handleAddItemToCart: (data: ProductValues) => void;
 };
 
-export function ProductCard({ item, id }: ProductCardProps) {
+export function ProductCard({
+  item,
+  id,
+  handleAddItemToCart,
+}: ProductCardProps) {
   const { control, handleSubmit } = useForm<ProductValues>({
     defaultValues: {
       defaultSize: 'S',
@@ -35,10 +40,6 @@ export function ProductCard({ item, id }: ProductCardProps) {
       id: +id,
     },
   });
-
-  const onSubmit = (data: ProductValues) => {
-    console.log(data);
-  };
 
   const [open, setOpen] = useState(false);
   const onCloseButtonClick = () => {
@@ -65,7 +66,7 @@ export function ProductCard({ item, id }: ProductCardProps) {
               {item.description}
             </Text>
           </div>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(handleAddItemToCart)}>
             <Controller
               render={({ field }) => (
                 <SizePicker

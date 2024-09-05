@@ -34,8 +34,6 @@ export function CartPopover({
     setOpen(false);
   });
 
-  console.log(cartItems);
-
   const handleOnCartClick = () => {
     setOpen((oldState) => {
       if (!oldState) {

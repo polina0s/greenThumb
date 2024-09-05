@@ -54,6 +54,8 @@ export const shopItems = [
       { src: img3, alt: 'Marble Queen Pothos', id: 3 },
       { src: img4, alt: 'Marble Queen Pothos', id: 4 },
     ],
+    img: img1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -104,6 +106,8 @@ export const shopItems = [
       { src: neonPothos3, alt: 'Neon Pothos', id: 3 },
       { src: neonPothos4, alt: 'Neon Pothos', id: 4 },
     ],
+    img: neonPothos1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -154,6 +158,8 @@ export const shopItems = [
       { src: syngonium3, alt: 'Syngonium Rayii', id: 3 },
       { src: syngonium4, alt: 'Syngonium Rayii', id: 4 },
     ],
+    img: syngonium1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -204,6 +210,8 @@ export const shopItems = [
       { src: peruvian3, alt: 'Marble Queen Pothos', id: 3 },
       { src: peruvian4, alt: 'Marble Queen Pothos', id: 4 },
     ],
+    img: peruvian1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -254,6 +262,8 @@ export const shopItems = [
       { src: pineapple3, alt: 'Pineapple', id: 3 },
       { src: pineapple4, alt: 'Pineapple', id: 4 },
     ],
+    img: pineapple1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -304,6 +314,8 @@ export const shopItems = [
       { src: african3, alt: 'African Milk Tree', id: 3 },
       { src: african4, alt: 'African Milk Tree', id: 4 },
     ],
+    img: african1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -354,6 +366,8 @@ export const shopItems = [
       { src: pothos3, alt: 'Pothos', id: 3 },
       { src: pothos4, alt: 'Pothos', id: 4 },
     ],
+    img: pothos1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -404,6 +418,8 @@ export const shopItems = [
       { src: chinese3, alt: 'Chinese Evergreen', id: 3 },
       { src: chinese4, alt: 'Chinese Evergreen', id: 4 },
     ],
+    img: chinese1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -454,6 +470,8 @@ export const shopItems = [
       { src: strings3, alt: 'String of Hearts', id: 3 },
       { src: strings4, alt: 'String of Hearts', id: 4 },
     ],
+    img: strings1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -503,6 +521,8 @@ export const shopItems = [
       { src: red3, alt: 'Red Secret Alocasia', id: 3 },
       { src: red4, alt: 'Red Secret Alocasia', id: 4 },
     ],
+    image: red1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },

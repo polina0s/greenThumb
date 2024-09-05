@@ -6,7 +6,9 @@ import { CareSection } from '../../components/careSection/careSection';
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
 import { ProductCard } from '../../components/productCard';
+import { ProductValues } from '../../components/productCard/productCard';
 import { SectionBanner } from '../../components/sectionBanner';
+import { addItemToCart } from '../../store/cart/cart.actions';
 import { allShopItemSelector } from '../../store/shopItem';
 import { getShopItemById } from '../../store/shopItem/shopItem.actions';
 import { useAppDispatch } from '../../store/store';
@@ -18,6 +20,10 @@ export function ProductPage() {
   const { id } = useParams();
 
   const { item, isItemLoading } = useSelector(allShopItemSelector);
+
+  const handleAddItemToCart = (data: ProductValues) => {
+    dispatch(addItemToCart(data.id));
+  };
 
   useEffect(() => {
     dispatch(getShopItemById({ id: +id }));
@@ -34,7 +40,11 @@ export function ProductPage() {
       ) : (
         <>
           <div className={classes.card}>
-            <ProductCard item={item} id={+id} />
+            <ProductCard
+              item={item}
+              id={+id}
+              handleAddItemToCart={handleAddItemToCart}
+            />
           </div>
           <div className={classes.care}>
             <CareSection options={item.care} />

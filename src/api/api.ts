@@ -53,6 +53,20 @@ class Api {
 
     return json;
   }
+
+  async addItemToCart(id: number) {
+    await fetch('/cart', {
+      method: 'POST',
+      body: JSON.stringify({ id: id }),
+    });
+  }
+
+  async getCartItems() {
+    const response = await fetch('/cart');
+    const json = await response.json();
+
+    return json;
+  }
 }
 
 export const api = new Api();

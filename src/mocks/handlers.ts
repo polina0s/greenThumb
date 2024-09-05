@@ -1,5 +1,6 @@
 import { http, HttpResponse } from 'msw';
 
+import { GetCartItemResponseData } from '../store/cart/types';
 import {
   bestSelling,
   categories,
@@ -7,6 +8,8 @@ import {
   shopItems,
   testimonials,
 } from './data';
+
+const cartItems: GetCartItemResponseData[] = [];
 
 export const handlers = [
   http.get('/shopItems/:id', ({ params }) => {
@@ -49,5 +52,14 @@ export const handlers = [
     return HttpResponse.json({
       items: saleItems,
     });
+  }),
+  http.post<unknown, { id: number }>('/cart', async ({ request }) => {
+    const body = await request.json();
+    const item = shopItems.find((item) => item.id === body.id);
+    if (item) cartItems.push(item);
+    return HttpResponse.json({ status: 204 });
+  }),
+  http.get('/cart', () => {
+    return HttpResponse.json({ items: cartItems });
   }),
 ];
