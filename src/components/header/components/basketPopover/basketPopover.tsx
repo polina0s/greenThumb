@@ -2,6 +2,7 @@ import { useClickAway } from '@uidotdev/usehooks';
 import { useState } from 'react';
 import { Popover } from 'react-tiny-popover';
 
+import { Text } from '../../../text';
 import { BasketCard } from '../basketCard';
 import { SearchBar } from '../searchBar';
 import classes from './basketPopover.module.scss';
@@ -33,6 +34,8 @@ export function BasketPopover({
     setOpen(false);
   });
 
+  console.log(basketItems);
+
   const handleOnBasketClick = () => {
     setOpen((oldState) => {
       if (!oldState) {
@@ -49,18 +52,28 @@ export function BasketPopover({
       align="end"
       content={
         <div className={classes.popover} ref={ref}>
-          {basketItems.map((item) => {
-            return (
-              <BasketCard
-                key={item.id}
-                img={item.img}
-                price={item.price}
-                name={item.name}
-                quantity={item.quantity}
-                handleDeleteItem={handleDeleteItem}
-              />
-            );
-          })}
+          {basketItems.length > 0 ? (
+            <div>
+              {basketItems.map((item) => {
+                return (
+                  <BasketCard
+                    key={item.id}
+                    img={item.img}
+                    price={item.price}
+                    name={item.name}
+                    quantity={item.quantity}
+                    handleDeleteItem={handleDeleteItem}
+                  />
+                );
+              })}
+            </div>
+          ) : (
+            <div className={classes.basketMessage}>
+              <Text variant="poppinsMedium" color="white">
+                Cart is empty
+              </Text>
+            </div>
+          )}
         </div>
       }
     >
