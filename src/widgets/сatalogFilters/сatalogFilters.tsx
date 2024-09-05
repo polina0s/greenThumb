@@ -15,7 +15,6 @@ export function CatalogFilters() {
   const dispatch = useAppDispatch();
   const categories = useSelector(allCategoriesSelector);
   const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams);
 
   const { control, watch } = useForm({
     defaultValues: {
@@ -25,16 +24,9 @@ export function CatalogFilters() {
     },
   });
 
-  // const watchAll = watch();
-
   useEffect(() => {
     dispatch(getCategories());
   }, [dispatch]);
-
-  // useEffect(() => {
-  //   const params = queryString.stringify(watchAll);
-  //   setSearchParams(params);
-  // }, [setSearchParams, watchAll]);
 
   return (
     <div>
@@ -47,7 +39,6 @@ export function CatalogFilters() {
               defaultChecked={searchParams.get('category')}
               onChange={(e) => {
                 setSearchParams((prev) => {
-                  console.log(prev);
                   return queryString.stringify({
                     ...Object.fromEntries(prev),
                     category: e.target.value,

@@ -143,7 +143,7 @@ export const shopItems = [
   {
     id: 3,
     category: 'cacti',
-    type: 'flower',
+    type: 'flowers',
     name: 'Syngonium Rayii',
     price: 850,
     description:
@@ -193,7 +193,7 @@ export const shopItems = [
   {
     id: 4,
     category: 'cacti',
-    type: 'flower',
+    type: 'flowers',
     name: 'Peruvian Cactus',
     price: 450,
     description:
@@ -243,7 +243,7 @@ export const shopItems = [
   {
     id: 5,
     category: 'creepers',
-    type: 'flower',
+    type: 'flowers',
     name: 'Pineapple',
     price: 670,
     description:

@@ -20,11 +20,11 @@ export const DropdownFilter = forwardRef<HTMLDivElement, DropdownFilterProps>(
           {options.map((option) => {
             return (
               <RadioInput
-                checked={defaultChecked === option.name}
+                checked={defaultChecked === option.value}
                 name={name}
                 onChange={onChange}
                 className={classes.input}
-                value={option.name}
+                value={option.value}
                 label={option.name}
                 key={option.id}
               />

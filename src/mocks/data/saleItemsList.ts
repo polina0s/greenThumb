@@ -1,4 +1,7 @@
-import img from '../../assets/images/Rectangle 51.png';
+import retusa from '../../assets/images/1-Peruvian.png';
+import alocasia from '../../assets/images/1-Red-Secret-Alocasia.png';
+import string from '../../assets/images/1-String-Of-Hearts.png';
+import alocasia2 from '../../assets/images/2-Red-Secret-Alocasia.png';
 
 export const saleItems = [
   {
@@ -7,7 +10,7 @@ export const saleItems = [
     name: 'String of Hearts',
     newPrice: 350,
     oldPrice: 450,
-    img: img,
+    img: string,
   },
   {
     id: '2',
@@ -15,7 +18,7 @@ export const saleItems = [
     name: 'Red Secret Alocasia',
     newPrice: 350,
     oldPrice: 450,
-    img: img,
+    img: alocasia,
   },
   {
     id: '3',
@@ -23,7 +26,7 @@ export const saleItems = [
     name: 'Jewel Alocasia',
     newPrice: 350,
     oldPrice: 450,
-    img: img,
+    img: alocasia2,
   },
   {
     id: '4',
@@ -31,6 +34,6 @@ export const saleItems = [
     name: 'Hoya Retusa',
     newPrice: 350,
     oldPrice: 450,
-    img: img,
+    img: retusa,
   },
 ];

@@ -20,16 +20,17 @@ export const handlers = [
     const price = +url.searchParams.get('price');
     const category = url.searchParams.get('category');
     const type = url.searchParams.get('type');
-    const items = shopItems.slice(0, limit);
-    if (price) {
-      items.filter((item) => item.price <= price);
+    const items = shopItems;
+
+    if (limit) {
+      let result = items.slice(0, limit);
+      if (price) result = result.filter((item) => item.price <= price);
+      if (category)
+        result = result.filter((item) => item.category === category);
+      if (type) result = result.filter((item) => item.type === type);
+      return HttpResponse.json({ items: result });
     }
-    if (category) {
-      items.filter((item) => item.category === category);
-    }
-    if (type) {
-      items.filter((item) => item.type === type);
-    }
+
     return HttpResponse.json({ items: items });
   }),
   http.get('/categories', () => {

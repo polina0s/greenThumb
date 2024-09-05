@@ -1,5 +1,7 @@
+import queryString from 'query-string';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 
 import { CatalogCard } from '../../components/catalogCard';
 import { Footer } from '../../components/footer';
@@ -16,10 +18,24 @@ import classes from './catalogPage.module.scss';
 export function CatalogPage() {
   const dispatch = useAppDispatch();
   const { items, isLoading } = useSelector(allShopItemsSelector);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const category = searchParams.get('category');
+  const price = +searchParams.get('price');
+  const type = searchParams.get('type');
 
   useEffect(() => {
-    dispatch(getShopItems({ limit: 9 }));
-  }, [dispatch]);
+    setSearchParams((prev) => {
+      return queryString.stringify({
+        ...Object.fromEntries(prev),
+        category: category,
+        price: price,
+        type: type,
+      });
+    });
+    dispatch(
+      getShopItems({ limit: 9, category: category, price: price, type: type }),
+    );
+  }, [dispatch, category, price, type, setSearchParams]);
 
   return (
     <div className={classes.wrapper}>
