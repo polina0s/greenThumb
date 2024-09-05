@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { Popover } from 'react-tiny-popover';
 
 import { Text } from '../../../text';
-import { BasketCard } from '../basketCard';
+import { CartCard } from '../cartCard';
 import { SearchBar } from '../searchBar';
-import classes from './basketPopover.module.scss';
+import classes from './cartPopover.module.scss';
 
 type Item = {
   price?: number;
@@ -15,28 +15,28 @@ type Item = {
   quantity?: number;
 };
 
-interface BasketPopoverProps {
+interface CartPopoverProps {
   defaultOpen: boolean;
   handleDeleteItem?: () => void;
-  basketQuantity?: number;
-  basketItems?: Item[];
+  cartQuantity?: number;
+  cartItems?: Item[];
 }
 
-export function BasketPopover({
+export function CartPopover({
   defaultOpen,
-  basketItems,
+  cartItems,
   handleDeleteItem,
-  basketQuantity,
-}: BasketPopoverProps) {
+  cartQuantity,
+}: CartPopoverProps) {
   const [open, setOpen] = useState(defaultOpen);
 
   const ref = useClickAway<HTMLDivElement>(() => {
     setOpen(false);
   });
 
-  console.log(basketItems);
+  console.log(cartItems);
 
-  const handleOnBasketClick = () => {
+  const handleOnCartClick = () => {
     setOpen((oldState) => {
       if (!oldState) {
         return true;
@@ -52,11 +52,11 @@ export function BasketPopover({
       align="end"
       content={
         <div className={classes.popover} ref={ref}>
-          {basketItems.length > 0 ? (
+          {cartItems.length > 0 ? (
             <div>
-              {basketItems.map((item) => {
+              {cartItems.map((item) => {
                 return (
-                  <BasketCard
+                  <CartCard
                     key={item.id}
                     img={item.img}
                     price={item.price}
@@ -68,7 +68,7 @@ export function BasketPopover({
               })}
             </div>
           ) : (
-            <div className={classes.basketMessage}>
+            <div className={classes.cartMessage}>
               <Text variant="poppinsMedium" color="white">
                 Cart is empty
               </Text>
@@ -78,8 +78,8 @@ export function BasketPopover({
       }
     >
       <SearchBar
-        basketQuantity={basketQuantity}
-        handleOnBasketClick={handleOnBasketClick}
+        cartQuantity={cartQuantity}
+        handleOnCartClick={handleOnCartClick}
       />
     </Popover>
   );

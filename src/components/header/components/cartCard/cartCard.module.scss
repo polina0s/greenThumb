@@ -1,4 +1,4 @@
-.basketCard {
+.cartCard {
   width: 280px;
   height: 95px;
   background-color: var(--green-200);
@@ -8,24 +8,24 @@
   align-items: center;
  }
 
- .basketCardImg {
+ .cartCardImg {
   width: 70px;
   height: 70px;
   border-radius: 8px;
   margin-right: 15px;
  }
  
- .basketCardName {
+ .cartCardName {
   font: 700 15px var(--openSans);
   margin-bottom: 3px;
  }
 
- .basketCardInfo {
+ .cartCardInfo {
   display: flex;
   align-items: center;
  }
 
- .basketCardPrice {
+ .cartCardPrice {
     font: 400 20px var(--openSans);
     margin-left: 20px;
     margin-right: 5px;

@@ -2,19 +2,19 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { Link } from '../link';
 import { Text } from '../text';
-import { BasketPopover } from './components/basketPopover/basketPopover';
+import { CartPopover } from './components/cartPopover';
 import { Logo } from './components/logo';
 import { Promo } from './components/promo';
 import classes from './header.module.scss';
 
 export function Header({ promoTitle }: { promoTitle: string }) {
-  const basket = JSON.parse(localStorage.getItem('basket')) || [];
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   const handleDeleteItem = () => {
-    localStorage.setItem('basket', JSON.stringify(basket));
+    localStorage.setItem('cart', JSON.stringify(cart));
   };
 
-  const basketQuantity = basket.length;
+  const cartQuantity = cart.length;
 
   return (
     <div className={classes.header}>
@@ -34,10 +34,10 @@ export function Header({ promoTitle }: { promoTitle: string }) {
             <Link> About us</Link>
             <Link>Contact us</Link>
           </div>
-          <BasketPopover
+          <CartPopover
             defaultOpen={false}
-            basketItems={basket}
-            basketQuantity={basketQuantity}
+            cartItems={cart}
+            cartQuantity={cartQuantity}
             handleDeleteItem={handleDeleteItem}
           />
         </div>
