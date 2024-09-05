@@ -1,6 +1,7 @@
 import { Link as RouterLink } from 'react-router-dom';
 
 import { Link } from '../link';
+import { Text } from '../text';
 import { BasketPopover } from './components/basketPopover/basketPopover';
 import { Logo } from './components/logo';
 import { Promo } from './components/promo';
@@ -25,10 +26,10 @@ export function Header({ promoTitle }: { promoTitle: string }) {
           </RouterLink>
           <div className={classes.navbar}>
             <RouterLink to={'/'} className={classes.link}>
-              <Link>Home</Link>
+              <Text variant="openSansRegularSM">Home</Text>
             </RouterLink>
             <RouterLink to={'/catalog'} className={classes.link}>
-              <Link>Products</Link>
+              <Text variant="openSansRegularSM">Products</Text>
             </RouterLink>
             <Link> About us</Link>
             <Link>Contact us</Link>

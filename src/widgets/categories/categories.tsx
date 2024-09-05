@@ -29,12 +29,13 @@ export function Categories() {
         <Loader />
       ) : (
         <div className={classes.cards}>
-          {categories.map((categorie) => {
+          {categories.map((category) => {
             return (
               <CategoryCard
-                key={categorie.id}
-                imgSrc={categorie.img}
-                title={categorie.name}
+                key={category.id}
+                title={category.name}
+                value={category.value}
+                imgSrc={category.img}
               />
             );
           })}

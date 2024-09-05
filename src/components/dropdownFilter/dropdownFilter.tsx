@@ -7,22 +7,24 @@ import classes from './dropdownFilter.module.scss';
 
 interface DropdownFilterProps {
   name: string;
+  value?: string;
   options: GetCategoriesResponseData[];
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 export const DropdownFilter = forwardRef<HTMLDivElement, DropdownFilterProps>(
-  function DropdownFilter({ onChange, name, options }, ref) {
+  function DropdownFilter({ onChange, name, value, options }, ref) {
     return (
       <Dropdown title="All Categories" defaultOpen={false}>
         <div className={classes.options} ref={ref}>
           {options.map((option) => {
             return (
               <RadioInput
+                checked={value === option.value}
                 name={name}
                 onChange={onChange}
                 className={classes.input}
-                value={option.name}
+                value={option.value}
                 label={option.name}
                 key={option.id}
               />

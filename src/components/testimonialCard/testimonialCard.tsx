@@ -6,16 +6,22 @@ interface ReviewCardProps {
   imgSrc: string;
   title: string;
   name: string;
+  rating: number;
 }
 
-export function TestimonialCard({ imgSrc, title, name }: ReviewCardProps) {
+export function TestimonialCard({
+  imgSrc,
+  title,
+  name,
+  rating,
+}: ReviewCardProps) {
   return (
     <div className={classes.card}>
       <div className={classes.imgCont}>
         <img className={classes.img} src={imgSrc} alt={name} />
       </div>
       <div className={classes.rating}>
-        <Rating value={2.5} />
+        <Rating value={rating} />
       </div>
       <Text color="darkGray" variant="poppinsRegular" className={classes.title}>
         {title}

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { BestSellCard } from '../../components/bestSellCard';
 import { Loader } from '../../components/loader';
@@ -11,6 +12,7 @@ import classes from './bestSelling.module.scss';
 
 export function BestSelling() {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const { categories, isLoading } = useSelector(allBestSellCategoriesSelector);
 
   useEffect(() => {
@@ -36,6 +38,7 @@ export function BestSelling() {
                 title={category.name}
                 imgSrc={category.img}
                 key={category.id}
+                onClick={() => navigate('/catalog')}
               />
             );
           })}

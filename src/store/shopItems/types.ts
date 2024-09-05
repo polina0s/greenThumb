@@ -17,6 +17,8 @@ export type ShopItemsCare = {
 
 export type GetShopItemsResponseData = {
   id: number;
+  category: string;
+  type: string;
   name: string;
   price: number;
   description: string;
