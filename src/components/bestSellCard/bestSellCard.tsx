@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Button } from '../button';
 import { Text } from '../text';
 import classes from './bestSellCard.module.scss';
@@ -9,20 +11,22 @@ interface CardProps {
 
 export function BestSellCard({ title, imgSrc }: CardProps) {
   return (
-    <div className={classes.cont}>
-      <div className={classes.imgCont}>
-        <img className={classes.img} src={imgSrc} alt={title} />
-        <Text
-          variant="openSansSemiBold"
-          color="white"
-          className={classes.title}
-        >
-          {title}
-        </Text>
+    <Link to={'/catalog'} className={classes.link}>
+      <div className={classes.cont}>
+        <div className={classes.imgCont}>
+          <img className={classes.img} src={imgSrc} alt={title} />
+          <Text
+            variant="openSansSemiBold"
+            color="white"
+            className={classes.title}
+          >
+            {title}
+          </Text>
+        </div>
+        <Button element="a" color="green" size="md">
+          Buy
+        </Button>
       </div>
-      <Button element="a" color="green" size="md">
-        Buy
-      </Button>
-    </div>
+    </Link>
   );
 }

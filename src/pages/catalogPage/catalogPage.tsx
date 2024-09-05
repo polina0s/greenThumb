@@ -18,24 +18,16 @@ import classes from './catalogPage.module.scss';
 export function CatalogPage() {
   const dispatch = useAppDispatch();
   const { items, isLoading } = useSelector(allShopItemsSelector);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const category = searchParams.get('category');
   const price = +searchParams.get('price');
   const type = searchParams.get('type');
 
   useEffect(() => {
-    setSearchParams((prev) => {
-      return queryString.stringify({
-        ...Object.fromEntries(prev),
-        category: category,
-        price: price,
-        type: type,
-      });
-    });
     dispatch(
       getShopItems({ limit: 9, category: category, price: price, type: type }),
     );
-  }, [dispatch, category, price, type, setSearchParams]);
+  }, [dispatch, category, price, type]);
 
   return (
     <div className={classes.wrapper}>

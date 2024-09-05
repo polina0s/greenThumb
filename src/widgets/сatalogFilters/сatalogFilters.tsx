@@ -18,9 +18,9 @@ export function CatalogFilters() {
 
   const { control, watch } = useForm({
     defaultValues: {
-      category: '',
+      category: searchParams.get('category') || null,
       price: searchParams.get('price') || 1000,
-      type: '',
+      type: searchParams.get('type') || null,
     },
   });
 

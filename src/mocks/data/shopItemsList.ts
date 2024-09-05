@@ -393,7 +393,7 @@ export const shopItems = [
   {
     id: 8,
     category: 'gifts',
-    type: 'heat pack',
+    type: 'heatPack',
     name: 'Chinese Evergreen',
     price: 250,
     description:
@@ -443,7 +443,7 @@ export const shopItems = [
   {
     id: 9,
     category: 'gifts',
-    type: 'heat pack',
+    type: 'heatPack',
     name: 'String of Hearts',
     price: 620,
     description:
@@ -493,7 +493,7 @@ export const shopItems = [
   {
     id: 10,
     name: 'Red Secret Alocasia',
-    type: 'heat pack',
+    type: 'heatPack',
     price: 350,
     description:
       'Marble queen pothos is a popular houseplant that is known for its beautiful foliage. It is a relatively easy plant to care for, making it a good choice for beginners.',
