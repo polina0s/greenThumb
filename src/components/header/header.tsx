@@ -1,5 +1,10 @@
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
 
+import { allCartSelector } from '../../store/cart';
+import { getCartItems } from '../../store/cart/cart.actions';
+import { useAppDispatch } from '../../store/store';
 import { Link } from '../link';
 import { Text } from '../text';
 import { CartPopover } from './components/cartPopover';
@@ -8,13 +13,18 @@ import { Promo } from './components/promo';
 import classes from './header.module.scss';
 
 export function Header({ promoTitle }: { promoTitle: string }) {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const dispatch = useAppDispatch();
+  const cart = useSelector(allCartSelector);
 
   const handleDeleteItem = () => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log(cart);
   };
 
-  const cartQuantity = cart.length;
+  const cartQuantity = cart.items.length;
+
+  useEffect(() => {
+    dispatch(getCartItems());
+  }, [dispatch]);
 
   return (
     <div className={classes.header}>
@@ -36,7 +46,7 @@ export function Header({ promoTitle }: { promoTitle: string }) {
           </div>
           <CartPopover
             defaultOpen={false}
-            cartItems={cart}
+            cartItems={cart.items}
             cartQuantity={cartQuantity}
             handleDeleteItem={handleDeleteItem}
           />
