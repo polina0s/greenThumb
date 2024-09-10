@@ -3,8 +3,8 @@ import { forwardRef } from 'react';
 import Cart from '../../../../assets/images/cart.svg';
 import Line from '../../../../assets/images/line.svg';
 import Search from '../../../../assets/images/search.svg';
-import { Input } from '../../../input';
-import { Text } from '../../../text';
+import { Input } from '../../../../components/input';
+import { Text } from '../../../../components/text';
 import classes from './searchBar.module.scss';
 
 interface SearchBarProps {

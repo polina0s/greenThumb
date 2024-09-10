@@ -1,30 +1,22 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { allCartSelector } from '../../store/cart';
-import { getCartItems } from '../../store/cart/cart.actions';
-import { useAppDispatch } from '../../store/store';
-import { Link } from '../link';
-import { Text } from '../text';
+// import { allCartSelector } from '../../store/cart';
+import { Link } from '../../components/link';
+import { Text } from '../../components/text';
 import { CartPopover } from './components/cartPopover';
 import { Logo } from './components/logo';
 import { Promo } from './components/promo';
 import classes from './header.module.scss';
 
 export function Header({ promoTitle }: { promoTitle: string }) {
-  const dispatch = useAppDispatch();
-  const cart = useSelector(allCartSelector);
+  // const cart = useSelector(allCartSelector);
 
   const handleDeleteItem = () => {
-    console.log(cart);
+    console.log('a');
   };
 
-  const cartQuantity = cart.items.length;
-
-  useEffect(() => {
-    dispatch(getCartItems());
-  }, [dispatch]);
+  // const cartQuantity = cart.items.length;
 
   return (
     <div className={classes.header}>
@@ -46,8 +38,8 @@ export function Header({ promoTitle }: { promoTitle: string }) {
           </div>
           <CartPopover
             defaultOpen={false}
-            cartItems={cart.items}
-            cartQuantity={cartQuantity}
+            // cartItems={cart.items}
+            // cartQuantity={cartQuantity}
             handleDeleteItem={handleDeleteItem}
           />
         </div>

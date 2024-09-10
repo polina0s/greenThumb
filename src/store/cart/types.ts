@@ -1,6 +1,6 @@
 export type CartStore = {
   isLoading: boolean;
-  items: [];
+  items: GetCartItemResponseData[];
 };
 
 export type GetCartItemResponseData = {

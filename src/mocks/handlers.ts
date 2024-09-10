@@ -56,7 +56,19 @@ export const handlers = [
   http.post<unknown, { id: number }>('/cart', async ({ request }) => {
     const body = await request.json();
     const item = shopItems.find((item) => item.id === body.id);
-    if (item) cartItems.push(item);
+    const found = cartItems.find((item) => item.id === body.id);
+    if (item) {
+      if (found) {
+        const newCart = cartItems.map((item) => {
+          if (item.id === body.id) {
+            item.quantity = item.quantity + 1;
+            // console.log(item.quantity + 1);
+          }
+          console.log(newCart);
+          // cartItems = newCart;
+        });
+      } else cartItems.push(item);
+    }
     return HttpResponse.json({ status: 204 });
   }),
   http.get('/cart', () => {

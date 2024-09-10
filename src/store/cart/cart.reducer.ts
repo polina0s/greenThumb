@@ -30,7 +30,7 @@ const cartSlice = createSlice({
     });
     builder.addCase(getCartItems.fulfilled, (state, action) => {
       state.isLoading = false;
-      console.log(action);
+      state.items = [...action.payload.items];
     });
   },
 });

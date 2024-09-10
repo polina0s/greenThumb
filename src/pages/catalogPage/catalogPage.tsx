@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import { CatalogCard } from '../../components/catalogCard';
 import { Footer } from '../../components/footer';
-import { Header } from '../../components/header';
+import { Header } from '../../widgets/header';
 import { Loader } from '../../components/loader';
 import { SectionBanner } from '../../components/sectionBanner';
 import { getShopItems } from '../../store/shopItems/shopItems.actions';

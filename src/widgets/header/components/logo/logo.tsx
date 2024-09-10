@@ -1,4 +1,4 @@
-import { Text } from '../../../text';
+import { Text } from '../../../../components/text';
 import classes from './logo.module.scss';
 
 export function Logo() {

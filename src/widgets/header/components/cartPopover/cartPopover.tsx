@@ -1,8 +1,12 @@
 import { useClickAway } from '@uidotdev/usehooks';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Popover } from 'react-tiny-popover';
 
-import { Text } from '../../../text';
+import { Text } from '../../../../components/text';
+import { allCartSelector } from '../../../../store/cart';
+import { getCartItems } from '../../../../store/cart/cart.actions';
+import { useAppDispatch } from '../../../../store/store';
 import { CartCard } from '../cartCard';
 import { SearchBar } from '../searchBar';
 import classes from './cartPopover.module.scss';
@@ -24,15 +28,25 @@ interface CartPopoverProps {
 
 export function CartPopover({
   defaultOpen,
-  cartItems,
+  // cartItems,
   handleDeleteItem,
-  cartQuantity,
+  // cartQuantity,
 }: CartPopoverProps) {
   const [open, setOpen] = useState(defaultOpen);
+  const cart = useSelector(allCartSelector);
+  const dispatch = useAppDispatch();
+  const cartQuantity = cart.items.length;
+  const cartItems = cart.items;
 
   const ref = useClickAway<HTMLDivElement>(() => {
     setOpen(false);
   });
+
+  useEffect(() => {
+    if (open) {
+      dispatch(getCartItems());
+    }
+  }, [dispatch, open]);
 
   const handleOnCartClick = () => {
     setOpen((oldState) => {

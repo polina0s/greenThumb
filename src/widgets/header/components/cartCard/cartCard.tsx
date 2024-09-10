@@ -1,5 +1,5 @@
 import Delete from '../../../../assets/images/delete.svg';
-import { QuantitySelector } from '../../../quantitySelector';
+import { QuantitySelector } from '../../../../components/quantitySelector';
 import classes from './cartCard.module.scss';
 
 interface CartCardProps {
