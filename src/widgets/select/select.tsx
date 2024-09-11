@@ -1,3 +1,5 @@
+import queryString from 'query-string';
+import { useSearchParams } from 'react-router-dom';
 import Select, {
   components,
   ControlProps,
@@ -43,11 +45,14 @@ const SingleValue = ({ children, ...props }: SingleValueProps) => (
 );
 
 export function SelectSort() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const current = searchParams.get('sortBy') || null;
+
   return (
     <Select
       options={options}
       className={classes.cont}
-      defaultValue={options[0]}
+      defaultValue={current}
       components={{
         DropdownIndicator,
         IndicatorSeparator,
@@ -55,6 +60,14 @@ export function SelectSort() {
         SingleValue,
       }}
       classNamePrefix="react-select"
+      onChange={(e: { value: string }) => {
+        setSearchParams((prev) => {
+          return queryString.stringify({
+            ...Object.fromEntries(prev),
+            sortBy: e.value,
+          });
+        });
+      }}
       theme={(theme) => ({
         ...theme,
         borderRadius: 0,

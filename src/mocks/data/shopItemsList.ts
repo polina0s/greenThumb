@@ -42,6 +42,7 @@ import img4 from '../../assets/images/image 16.png';
 export const shopItems = [
   {
     id: 1,
+    popular: 2,
     category: 'bonsai',
     type: 'planter',
     name: 'Marble Queen Pothos',
@@ -94,6 +95,7 @@ export const shopItems = [
   },
   {
     id: 2,
+    popular: 4,
     category: 'bonsai',
     type: 'planter',
     name: 'Neon Pothos',
@@ -146,6 +148,7 @@ export const shopItems = [
   },
   {
     id: 3,
+    popular: 3,
     category: 'cacti',
     type: 'flowers',
     name: 'Syngonium Rayii',
@@ -198,6 +201,7 @@ export const shopItems = [
   },
   {
     id: 4,
+    popular: 10,
     category: 'cacti',
     type: 'flowers',
     name: 'Peruvian Cactus',
@@ -250,6 +254,7 @@ export const shopItems = [
   },
   {
     id: 5,
+    popular: 7,
     category: 'creepers',
     type: 'flowers',
     name: 'Pineapple',
@@ -302,6 +307,7 @@ export const shopItems = [
   },
   {
     id: 6,
+    popular: 9,
     category: 'succulents',
     type: 'care',
     name: 'African Milk Tree',
@@ -354,6 +360,7 @@ export const shopItems = [
   },
   {
     id: 7,
+    popular: 2,
     category: 'seeds',
     type: 'care',
     name: 'Pothos',
@@ -406,6 +413,7 @@ export const shopItems = [
   },
   {
     id: 8,
+    popular: 8,
     category: 'gifts',
     type: 'heatPack',
     name: 'Chinese Evergreen',
@@ -458,6 +466,7 @@ export const shopItems = [
   },
   {
     id: 9,
+    popular: 10,
     category: 'gifts',
     type: 'heatPack',
     name: 'String of Hearts',
@@ -510,6 +519,7 @@ export const shopItems = [
   },
   {
     id: 10,
+    popular: 1,
     name: 'Red Secret Alocasia',
     type: 'heatPack',
     price: 350,

@@ -5,11 +5,18 @@ export type GetShopItemsParams = {
   price?: number;
   category?: string;
   type?: string;
+  sortBy?: string;
 };
 class Api {
-  async getShopItems({ limit, price, category, type }: GetShopItemsParams) {
+  async getShopItems({
+    limit,
+    price,
+    category,
+    type,
+    sortBy,
+  }: GetShopItemsParams) {
     const query = queryString.stringify(
-      { limit, price, category, type },
+      { limit, price, category, type, sortBy },
       { skipNull: true },
     );
 

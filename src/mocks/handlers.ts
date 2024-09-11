@@ -23,12 +23,21 @@ export const handlers = [
     const price = +url.searchParams.get('price');
     const category = url.searchParams.get('category');
     const type = url.searchParams.get('type');
+    const sortBy = url.searchParams.get('sortBy');
     let result = shopItems;
 
     if (limit) result = result.slice(0, limit);
     if (price) result = result.filter((item) => item.price <= price);
     if (category) result = result.filter((item) => item.category === category);
     if (type) result = result.filter((item) => item.type === type);
+    if (sortBy) {
+      if (sortBy === 'popular')
+        result = result.sort((a, b) => b.popular - a.popular);
+      if (sortBy === 'priceToLow')
+        result = result.sort((a, b) => b.price - a.price);
+      if (sortBy === 'priceToHigh')
+        result = result.sort((a, b) => a.price - b.price);
+    }
 
     return HttpResponse.json({ items: result });
   }),
