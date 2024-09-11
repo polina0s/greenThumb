@@ -57,6 +57,7 @@ export function CartPopover({
     });
   };
 
+  console.log(cart);
   return (
     <Popover
       isOpen={open}
@@ -69,7 +70,7 @@ export function CartPopover({
               {cartItems.map((item) => {
                 return (
                   <CartCard
-                    key={item.id}
+                    key={item.id + '_' + item.quantity}
                     img={item.img}
                     price={item.price}
                     name={item.name}

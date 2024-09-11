@@ -38,6 +38,7 @@ export function SaleSection({ firstWord, secondWord }: SaleSectionProps) {
           {items.map((item) => {
             return (
               <SaleCard
+                id={item.id}
                 saleValue={item.saleValue}
                 title={item.name}
                 newPrice={item.newPrice}
