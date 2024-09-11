@@ -96,7 +96,7 @@ export function ProductCard({
                     ref={field.ref}
                     min={1}
                     max={10}
-                    defaultValue={field.value}
+                    value={field.value}
                     onChange={field.onChange}
                     onBlur={field.onBlur}
                   />

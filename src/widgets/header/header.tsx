@@ -2,8 +2,6 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { Link } from '../../components/link';
 import { Text } from '../../components/text';
-import { deleteItemFromCart } from '../../store/cart/cart.actions';
-import { useAppDispatch } from '../../store/store';
 import { CartPopover } from './components/cartPopover';
 import { Logo } from './components/logo';
 import { Promo } from './components/promo';

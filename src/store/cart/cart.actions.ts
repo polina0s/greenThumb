@@ -3,16 +3,16 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { api } from '../../api';
 import { GetCartItemResponseData } from './types';
 
-export const addItemToCart = createAsyncThunk<null, number>(
-  'cart/addItem',
-  async (data, { rejectWithValue }) => {
-    try {
-      await api.addItemToCart(data);
-    } catch (err) {
-      return rejectWithValue(err);
-    }
-  },
-);
+export const addItemToCart = createAsyncThunk<
+  null,
+  { id: number; quantity: number }
+>('cart/addItem', async (data, { rejectWithValue }) => {
+  try {
+    await api.addItemToCart({ id: data.id, quantity: data.quantity });
+  } catch (err) {
+    return rejectWithValue(err);
+  }
+});
 
 export const deleteItemFromCart = createAsyncThunk<null, number>(
   'cart/deleteItem',

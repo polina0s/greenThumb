@@ -54,10 +54,10 @@ class Api {
     return json;
   }
 
-  async addItemToCart(id: number) {
+  async addItemToCart({ id, quantity }: { id: number; quantity: number }) {
     await fetch('/cart', {
       method: 'POST',
-      body: JSON.stringify({ id: id }),
+      body: JSON.stringify({ id: id, quantity: quantity }),
     });
   }
 

@@ -53,21 +53,24 @@ export const handlers = [
       items: saleItems,
     });
   }),
-  http.post<unknown, { id: number }>('/cart', async ({ request }) => {
-    const body = await request.json();
-    const item = shopItems.find((item) => item.id === body.id);
-    const found = cartItems.find((item) => item.id === body.id);
-    if (item) {
-      if (found) {
-        cartItems.map((item) => {
-          if (item.id === body.id) {
-            item.quantity = item.quantity + 1;
-          }
-        });
-      } else cartItems.push(item);
-    }
-    return HttpResponse.json({ status: 204 });
-  }),
+  http.post<unknown, { id: number; quantity: number }>(
+    '/cart',
+    async ({ request }) => {
+      const body = await request.json();
+      const item = shopItems.find((item) => item.id === body.id);
+      const found = cartItems.find((item) => item.id === body.id);
+      if (item) {
+        if (found) {
+          cartItems.forEach((item) => {
+            if (item.id === body.id) {
+              item.quantity = item.quantity + body.quantity;
+            }
+          });
+        } else cartItems.push(item);
+      }
+      return HttpResponse.json({ status: 204 });
+    },
+  ),
   http.get('/cart', () => {
     return HttpResponse.json({
       items: cartItems,

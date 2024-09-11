@@ -24,7 +24,7 @@ export function ProductPage() {
 
   const { item, isItemLoading } = useSelector(allShopItemSelector);
   const handleAddItemToCart = (data: ProductValues) => {
-    dispatch(addItemToCart(data.id));
+    dispatch(addItemToCart({ id: data.id, quantity: data.quantity }));
   };
 
   useEffect(() => {

@@ -23,12 +23,7 @@ export function CartCard({
       <div>
         <p className={classes.cartCardName}>{name}</p>
         <div className={classes.cartCardInfo}>
-          <QuantitySelector
-            variant="small"
-            min={1}
-            max={10}
-            defaultValue={quantity}
-          />
+          <QuantitySelector variant="small" min={1} max={10} value={quantity} />
           <p className={classes.cartCardPrice}>$ {price}</p>
           <button className={classes.deleteButton}>
             <Delete
