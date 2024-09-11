@@ -63,7 +63,10 @@ export const handlers = [
         if (found) {
           cartItems.forEach((item) => {
             if (item.id === body.id) {
-              item.quantity = item.quantity + body.quantity;
+              const newQuantity = item.quantity + body.quantity;
+              if (newQuantity >= 10) {
+                item.quantity = 10;
+              } else item.quantity = newQuantity;
             }
           });
         } else cartItems.push(item);
