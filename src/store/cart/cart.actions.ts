@@ -14,6 +14,17 @@ export const addItemToCart = createAsyncThunk<null, number>(
   },
 );
 
+export const deleteItemFromCart = createAsyncThunk<null, number>(
+  'cart/deleteItem',
+  async (data, { rejectWithValue }) => {
+    try {
+      await api.deleteItemFromCart(data);
+    } catch (err) {
+      return rejectWithValue(err);
+    }
+  },
+);
+
 export const getCartItems = createAsyncThunk<{
   items: GetCartItemResponseData[];
 }>('cart/getItems', async (_, { rejectWithValue }) => {

@@ -5,7 +5,10 @@ import { Popover } from 'react-tiny-popover';
 
 import { Text } from '../../../../components/text';
 import { allCartSelector } from '../../../../store/cart';
-import { getCartItems } from '../../../../store/cart/cart.actions';
+import {
+  deleteItemFromCart,
+  getCartItems,
+} from '../../../../store/cart/cart.actions';
 import { useAppDispatch } from '../../../../store/store';
 import { CartCard } from '../cartCard';
 import { SearchBar } from '../searchBar';
@@ -21,15 +24,11 @@ type Item = {
 
 interface CartPopoverProps {
   defaultOpen: boolean;
-  handleDeleteItem?: () => void;
   cartQuantity?: number;
   cartItems?: Item[];
 }
 
-export function CartPopover({
-  defaultOpen,
-  handleDeleteItem,
-}: CartPopoverProps) {
+export function CartPopover({ defaultOpen }: CartPopoverProps) {
   const [open, setOpen] = useState(defaultOpen);
   const cart = useSelector(allCartSelector);
   const dispatch = useAppDispatch();
@@ -55,6 +54,10 @@ export function CartPopover({
     });
   };
 
+  const handleDeleteItemFromCart = (id: number) => {
+    dispatch(deleteItemFromCart(id));
+  };
+
   return (
     <Popover
       isOpen={open}
@@ -72,7 +75,7 @@ export function CartPopover({
                     price={item.price}
                     name={item.name}
                     quantity={item.quantity}
-                    handleDeleteItem={handleDeleteItem}
+                    handleDeleteItem={() => handleDeleteItemFromCart(item.id)}
                   />
                 );
               })}

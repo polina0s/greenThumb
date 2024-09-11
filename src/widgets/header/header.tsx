@@ -2,17 +2,14 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { Link } from '../../components/link';
 import { Text } from '../../components/text';
+import { deleteItemFromCart } from '../../store/cart/cart.actions';
+import { useAppDispatch } from '../../store/store';
 import { CartPopover } from './components/cartPopover';
 import { Logo } from './components/logo';
 import { Promo } from './components/promo';
 import classes from './header.module.scss';
 
 export function Header({ promoTitle }: { promoTitle: string }) {
-
-  const handleDeleteItem = () => {
-    console.log('a');
-  };
-
   return (
     <div className={classes.header}>
       <Promo title={promoTitle} />
@@ -31,10 +28,7 @@ export function Header({ promoTitle }: { promoTitle: string }) {
             <Link> About us</Link>
             <Link>Contact us</Link>
           </div>
-          <CartPopover
-            defaultOpen={false}
-            handleDeleteItem={handleDeleteItem}
-          />
+          <CartPopover defaultOpen={false} />
         </div>
       </div>
     </div>

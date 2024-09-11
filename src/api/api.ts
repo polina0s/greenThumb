@@ -67,6 +67,13 @@ class Api {
 
     return json;
   }
+
+  async deleteItemFromCart(id: number) {
+    await fetch('/cart', {
+      method: 'DELETE',
+      body: JSON.stringify({ id: id }),
+    });
+  }
 }
 
 export const api = new Api();

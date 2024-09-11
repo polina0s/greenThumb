@@ -1,6 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { addItemToCart, getCartItems } from './cart.actions';
+import {
+  addItemToCart,
+  deleteItemFromCart,
+  getCartItems,
+} from './cart.actions';
 import { CartStore } from './types';
 
 const initialState: CartStore = {
@@ -33,6 +37,15 @@ const cartSlice = createSlice({
       state.isLoading = false;
       state.items = [...action.payload.items];
       state.itemsQuantity = action.payload.items.length;
+    });
+    builder.addCase(deleteItemFromCart.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(deleteItemFromCart.rejected, (state) => {
+      state.isLoading = false;
+    });
+    builder.addCase(deleteItemFromCart.fulfilled, (state) => {
+      state.isLoading = false;
     });
   },
 });
