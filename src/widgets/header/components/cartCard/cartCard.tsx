@@ -1,5 +1,5 @@
 import Delete from '../../../../assets/images/delete.svg';
-import { QuantitySelector } from '../../../../components/quantitySelector';
+import { Text } from '../../../../components/text';
 import classes from './cartCard.module.scss';
 
 interface CartCardProps {
@@ -23,7 +23,9 @@ export function CartCard({
       <div>
         <p className={classes.cartCardName}>{name}</p>
         <div className={classes.cartCardInfo}>
-          <QuantitySelector variant="small" min={1} max={10} value={quantity} />
+          <Text variant="openSansSemiBold" className={classes.quantity}>
+            Quantity: {quantity}
+          </Text>
           <p className={classes.cartCardPrice}>$ {price}</p>
           <button className={classes.deleteButton}>
             <Delete

@@ -71,7 +71,8 @@ export const handlers = [
           });
         } else cartItems.push(item);
       }
-      return HttpResponse.json({ status: 204 });
+      console.log(cartItems.length);
+      return HttpResponse.json({ itemQuantity: cartItems.length });
     },
   ),
   http.get('/cart', () => {
@@ -85,6 +86,9 @@ export const handlers = [
     cartItems.forEach((item, i) => {
       if (item.id === body.id) cartItems.splice(i, 1);
     });
-    return HttpResponse.json({ status: 204 });
+    return HttpResponse.json({
+      items: cartItems,
+      itemQuantity: cartItems.length,
+    });
   }),
 ];

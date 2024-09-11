@@ -55,10 +55,13 @@ class Api {
   }
 
   async addItemToCart({ id, quantity }: { id: number; quantity: number }) {
-    await fetch('/cart', {
+    const response = await fetch('/cart', {
       method: 'POST',
       body: JSON.stringify({ id: id, quantity: quantity }),
     });
+    const json = await response.json();
+
+    return json;
   }
 
   async getCartItems() {
@@ -69,10 +72,13 @@ class Api {
   }
 
   async deleteItemFromCart(id: number) {
-    await fetch('/cart', {
+    const response = await fetch('/cart', {
       method: 'DELETE',
       body: JSON.stringify({ id: id }),
     });
+    const json = await response.json();
+
+    return json;
   }
 }
 
