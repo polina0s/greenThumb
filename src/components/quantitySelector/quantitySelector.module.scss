@@ -1,9 +1,4 @@
-.title--sm {
-  font-size: 12px;
-  margin-bottom: 3px;
-}
-
-.title--lg {
+.title {
   font-size: 18px;
   margin-bottom: 8px;
 }
@@ -14,21 +9,12 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--gray-100);
-}
-
-.cont--sm {
-  width: 80px;
-  height: 30px;
-  padding: 0 5px;
-  border-radius: 8px;
-}
-
-.cont--lg {
   width: 100px;
   height: 50px;
   padding: 0 10px;
   border-radius: 12px;
 }
+
 
 .pickerButton {
   width: 20px;
@@ -39,17 +25,10 @@
   cursor: pointer;
 }
 
-.quantity--sm {
-  font: 400 12px var(--openSans);
-}
-
-.quantity--lg {
-  font: 400 18px var(--openSans);
-}
-
 .quantity {
   text-align: center;
   color: var(--gray-700);
+  font: 400 18px var(--openSans);
 
   &::-webkit-outer-spin-button,
 	&::-webkit-inner-spin-button {

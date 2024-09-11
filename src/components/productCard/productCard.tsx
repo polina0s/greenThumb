@@ -92,7 +92,6 @@ export function ProductCard({
               <Controller
                 render={({ field }) => (
                   <QuantitySelector
-                    variant="large"
                     ref={field.ref}
                     min={1}
                     max={10}

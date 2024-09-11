@@ -80,7 +80,6 @@ export const handlers = [
           });
         } else cartItems.push(item);
       }
-      console.log(cartItems.length);
       return HttpResponse.json({ itemQuantity: cartItems.length });
     },
   ),

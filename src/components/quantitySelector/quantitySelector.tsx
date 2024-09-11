@@ -1,4 +1,3 @@
-import * as classNames from 'classnames';
 import { forwardRef } from 'react';
 
 import { Text } from '../text';
@@ -7,7 +6,6 @@ import classes from './quantitySelector.module.scss';
 interface QuantitySelectorProps {
   min: number;
   max: number;
-  variant?: 'small' | 'large';
   value: number;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onChange?: (value: number) => void;
@@ -16,27 +14,7 @@ interface QuantitySelectorProps {
 export const QuantitySelector = forwardRef<
   HTMLDivElement,
   QuantitySelectorProps
->(function QuantitySelector(
-  { min, max, variant, value, onChange, onBlur },
-  ref,
-) {
-  const contClasses = classNames({
-    [classes.cont]: true,
-    [classes['cont--sm']]: variant === 'small',
-    [classes['cont--lg']]: variant === 'large',
-  });
-
-  const quantityClasses = classNames({
-    [classes.quantity]: true,
-    [classes['quantity--sm']]: variant === 'small',
-    [classes['quantity--lg']]: variant === 'large',
-  });
-
-  const titleClasses = classNames({
-    [classes['title--sm']]: variant === 'small',
-    [classes['title--lg']]: variant === 'large',
-  });
-
+>(function QuantitySelector({ min, max, value, onChange, onBlur }, ref) {
   const decreaseQuantity = () => {
     const decrement = value - 1;
     const newValue = decrement < min ? min : decrement;
@@ -64,10 +42,14 @@ export const QuantitySelector = forwardRef<
 
   return (
     <div ref={ref}>
-      <Text variant="poppinsRegular" color="lightGray" className={titleClasses}>
+      <Text
+        variant="poppinsRegular"
+        color="lightGray"
+        className={classes.title}
+      >
         Quantity
       </Text>
-      <div className={contClasses}>
+      <div className={classes.cont}>
         <button
           className={classes.pickerButton}
           onClick={decreaseQuantity}
@@ -76,7 +58,7 @@ export const QuantitySelector = forwardRef<
           &ndash;
         </button>
         <input
-          className={quantityClasses}
+          className={classes.quantity}
           type="number"
           name="productQuantity"
           min={min}
