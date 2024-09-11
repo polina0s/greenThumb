@@ -74,4 +74,11 @@ export const handlers = [
       itemsQuantity: cartItems.length,
     });
   }),
+  http.delete<unknown, { id: number }>('/cart', async ({ request }) => {
+    const body = await request.json();
+    cartItems.forEach((item, i) => {
+      if (item.id === body.id) cartItems.splice(i, 1);
+    });
+    return HttpResponse.json({ status: 204 });
+  }),
 ];

@@ -28,9 +28,7 @@ interface CartPopoverProps {
 
 export function CartPopover({
   defaultOpen,
-  // cartItems,
   handleDeleteItem,
-  // cartQuantity,
 }: CartPopoverProps) {
   const [open, setOpen] = useState(defaultOpen);
   const cart = useSelector(allCartSelector);
@@ -57,7 +55,6 @@ export function CartPopover({
     });
   };
 
-  console.log(cart);
   return (
     <Popover
       isOpen={open}
