@@ -59,19 +59,19 @@ export const handlers = [
     const found = cartItems.find((item) => item.id === body.id);
     if (item) {
       if (found) {
-        const newCart = cartItems.map((item) => {
+        cartItems.map((item) => {
           if (item.id === body.id) {
             item.quantity = item.quantity + 1;
-            // console.log(item.quantity + 1);
           }
-          console.log(newCart);
-          // cartItems = newCart;
         });
       } else cartItems.push(item);
     }
     return HttpResponse.json({ status: 204 });
   }),
   http.get('/cart', () => {
-    return HttpResponse.json({ items: cartItems });
+    return HttpResponse.json({
+      items: cartItems,
+      itemsQuantity: cartItems.length,
+    });
   }),
 ];

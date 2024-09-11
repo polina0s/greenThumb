@@ -6,6 +6,7 @@ import { CartStore } from './types';
 const initialState: CartStore = {
   isLoading: false,
   items: [],
+  itemsQuantity: 0,
 };
 
 const cartSlice = createSlice({
@@ -31,6 +32,7 @@ const cartSlice = createSlice({
     builder.addCase(getCartItems.fulfilled, (state, action) => {
       state.isLoading = false;
       state.items = [...action.payload.items];
+      state.itemsQuantity = action.payload.items.length;
     });
   },
 });

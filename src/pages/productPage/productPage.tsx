@@ -1,12 +1,15 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
+import Arrow from '../../assets/images/arrow-left.svg';
 import { CareSection } from '../../components/careSection/careSection';
 import { Footer } from '../../components/footer';
+import { Loader } from '../../components/loader';
 import { ProductCard } from '../../components/productCard';
 import { ProductValues } from '../../components/productCard/productCard';
 import { SectionBanner } from '../../components/sectionBanner';
+import { Text } from '../../components/text';
 import { addItemToCart } from '../../store/cart/cart.actions';
 import { allShopItemSelector } from '../../store/shopItem';
 import { getShopItemById } from '../../store/shopItem/shopItem.actions';
@@ -34,8 +37,16 @@ export function ProductPage() {
       <div className={classes.sectionBanner}>
         <SectionBanner title="Plant" description="Marble Queen Pothos" />
       </div>
+      <Link to={'/catalog'} className={classes.link}>
+        <div className={classes.linkCont}>
+          <Arrow className={classes.linkArrow} />
+          <Text variant="poppinsRegular" color="gray">
+            Back to Search
+          </Text>
+        </div>
+      </Link>
       {isItemLoading ? (
-        <div>loader</div>
+        <Loader />
       ) : (
         <>
           <div className={classes.card}>

@@ -35,7 +35,7 @@ export function CartPopover({
   const [open, setOpen] = useState(defaultOpen);
   const cart = useSelector(allCartSelector);
   const dispatch = useAppDispatch();
-  const cartQuantity = cart.items.length;
+  const cartQuantity = cart.itemsQuantity;
   const cartItems = cart.items;
 
   const ref = useClickAway<HTMLDivElement>(() => {
@@ -66,7 +66,7 @@ export function CartPopover({
       content={
         <div className={classes.popover} ref={ref}>
           {cartItems.length > 0 ? (
-            <div>
+            <div className={classes.cardsCont}>
               {cartItems.map((item) => {
                 return (
                   <CartCard

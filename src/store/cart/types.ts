@@ -1,6 +1,7 @@
 export type CartStore = {
   isLoading: boolean;
   items: GetCartItemResponseData[];
+  itemsQuantity: number;
 };
 
 export type GetCartItemResponseData = {
