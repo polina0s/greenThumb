@@ -1,21 +1,13 @@
 import { Link as RouterLink } from 'react-router-dom';
 
-import { Link } from '../link';
-import { Text } from '../text';
-import { BasketPopover } from './components/basketPopover/basketPopover';
+import { Link } from '../../components/link';
+import { Text } from '../../components/text';
+import { CartPopover } from './components/cartPopover';
 import { Logo } from './components/logo';
 import { Promo } from './components/promo';
 import classes from './header.module.scss';
 
 export function Header({ promoTitle }: { promoTitle: string }) {
-  const basket = JSON.parse(localStorage.getItem('basket')) || [];
-
-  const handleDeleteItem = () => {
-    localStorage.setItem('basket', JSON.stringify(basket));
-  };
-
-  const basketQuantity = basket.length;
-
   return (
     <div className={classes.header}>
       <Promo title={promoTitle} />
@@ -34,12 +26,7 @@ export function Header({ promoTitle }: { promoTitle: string }) {
             <Link> About us</Link>
             <Link>Contact us</Link>
           </div>
-          <BasketPopover
-            defaultOpen={false}
-            basketItems={basket}
-            basketQuantity={basketQuantity}
-            handleDeleteItem={handleDeleteItem}
-          />
+          <CartPopover defaultOpen={false} />
         </div>
       </div>
     </div>

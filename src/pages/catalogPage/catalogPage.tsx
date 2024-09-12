@@ -1,16 +1,15 @@
-import queryString from 'query-string';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
 import { CatalogCard } from '../../components/catalogCard';
 import { Footer } from '../../components/footer';
-import { Header } from '../../components/header';
 import { Loader } from '../../components/loader';
 import { SectionBanner } from '../../components/sectionBanner';
 import { getShopItems } from '../../store/shopItems/shopItems.actions';
 import { allShopItemsSelector } from '../../store/shopItems/shopItems.selectors';
 import { useAppDispatch } from '../../store/store';
+import { Header } from '../../widgets/header';
 import { SelectSort } from '../../widgets/select';
 import { CatalogFilters } from '../../widgets/сatalogFilters/сatalogFilters';
 import classes from './catalogPage.module.scss';
@@ -22,12 +21,19 @@ export function CatalogPage() {
   const category = searchParams.get('category');
   const price = +searchParams.get('price');
   const type = searchParams.get('type');
+  const sortBy = searchParams.get('sortBy');
 
   useEffect(() => {
     dispatch(
-      getShopItems({ limit: 9, category: category, price: price, type: type }),
+      getShopItems({
+        limit: 9,
+        category: category,
+        price: price,
+        type: type,
+        sortBy: sortBy,
+      }),
     );
-  }, [dispatch, category, price, type]);
+  }, [dispatch, category, price, type, sortBy]);
 
   return (
     <div className={classes.wrapper}>

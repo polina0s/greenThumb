@@ -42,6 +42,7 @@ import img4 from '../../assets/images/image 16.png';
 export const shopItems = [
   {
     id: 1,
+    popular: 2,
     category: 'bonsai',
     type: 'planter',
     name: 'Marble Queen Pothos',
@@ -54,6 +55,8 @@ export const shopItems = [
       { src: img3, alt: 'Marble Queen Pothos', id: 3 },
       { src: img4, alt: 'Marble Queen Pothos', id: 4 },
     ],
+    img: img1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -92,6 +95,7 @@ export const shopItems = [
   },
   {
     id: 2,
+    popular: 4,
     category: 'bonsai',
     type: 'planter',
     name: 'Neon Pothos',
@@ -104,6 +108,8 @@ export const shopItems = [
       { src: neonPothos3, alt: 'Neon Pothos', id: 3 },
       { src: neonPothos4, alt: 'Neon Pothos', id: 4 },
     ],
+    img: neonPothos1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -142,6 +148,7 @@ export const shopItems = [
   },
   {
     id: 3,
+    popular: 3,
     category: 'cacti',
     type: 'flowers',
     name: 'Syngonium Rayii',
@@ -154,6 +161,8 @@ export const shopItems = [
       { src: syngonium3, alt: 'Syngonium Rayii', id: 3 },
       { src: syngonium4, alt: 'Syngonium Rayii', id: 4 },
     ],
+    img: syngonium1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -192,6 +201,7 @@ export const shopItems = [
   },
   {
     id: 4,
+    popular: 10,
     category: 'cacti',
     type: 'flowers',
     name: 'Peruvian Cactus',
@@ -204,6 +214,8 @@ export const shopItems = [
       { src: peruvian3, alt: 'Marble Queen Pothos', id: 3 },
       { src: peruvian4, alt: 'Marble Queen Pothos', id: 4 },
     ],
+    img: peruvian1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -242,6 +254,7 @@ export const shopItems = [
   },
   {
     id: 5,
+    popular: 7,
     category: 'creepers',
     type: 'flowers',
     name: 'Pineapple',
@@ -254,6 +267,8 @@ export const shopItems = [
       { src: pineapple3, alt: 'Pineapple', id: 3 },
       { src: pineapple4, alt: 'Pineapple', id: 4 },
     ],
+    img: pineapple1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -292,6 +307,7 @@ export const shopItems = [
   },
   {
     id: 6,
+    popular: 9,
     category: 'succulents',
     type: 'care',
     name: 'African Milk Tree',
@@ -304,6 +320,8 @@ export const shopItems = [
       { src: african3, alt: 'African Milk Tree', id: 3 },
       { src: african4, alt: 'African Milk Tree', id: 4 },
     ],
+    img: african1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -342,6 +360,7 @@ export const shopItems = [
   },
   {
     id: 7,
+    popular: 2,
     category: 'seeds',
     type: 'care',
     name: 'Pothos',
@@ -354,6 +373,8 @@ export const shopItems = [
       { src: pothos3, alt: 'Pothos', id: 3 },
       { src: pothos4, alt: 'Pothos', id: 4 },
     ],
+    img: pothos1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -392,6 +413,7 @@ export const shopItems = [
   },
   {
     id: 8,
+    popular: 8,
     category: 'gifts',
     type: 'heatPack',
     name: 'Chinese Evergreen',
@@ -404,6 +426,8 @@ export const shopItems = [
       { src: chinese3, alt: 'Chinese Evergreen', id: 3 },
       { src: chinese4, alt: 'Chinese Evergreen', id: 4 },
     ],
+    img: chinese1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -442,6 +466,7 @@ export const shopItems = [
   },
   {
     id: 9,
+    popular: 10,
     category: 'gifts',
     type: 'heatPack',
     name: 'String of Hearts',
@@ -454,6 +479,8 @@ export const shopItems = [
       { src: strings3, alt: 'String of Hearts', id: 3 },
       { src: strings4, alt: 'String of Hearts', id: 4 },
     ],
+    img: strings1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },
@@ -492,6 +519,7 @@ export const shopItems = [
   },
   {
     id: 10,
+    popular: 1,
     name: 'Red Secret Alocasia',
     type: 'heatPack',
     price: 350,
@@ -503,6 +531,8 @@ export const shopItems = [
       { src: red3, alt: 'Red Secret Alocasia', id: 3 },
       { src: red4, alt: 'Red Secret Alocasia', id: 4 },
     ],
+    image: red1,
+    quantity: 1,
     sizes: [
       { value: 'S', disabled: false },
       { value: 'M', disabled: false },

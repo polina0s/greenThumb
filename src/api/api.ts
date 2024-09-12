@@ -1,15 +1,17 @@
 import queryString from 'query-string';
 
-export type GetShopItemsParams = {
-  limit?: number;
-  price?: number;
-  category?: string;
-  type?: string;
-};
+import { GetCartItemParams, GetShopItemsParams } from './types';
+
 class Api {
-  async getShopItems({ limit, price, category, type }: GetShopItemsParams) {
+  async getShopItems({
+    limit,
+    price,
+    category,
+    type,
+    sortBy,
+  }: GetShopItemsParams) {
     const query = queryString.stringify(
-      { limit, price, category, type },
+      { limit, price, category, type, sortBy },
       { skipNull: true },
     );
 
@@ -49,6 +51,33 @@ class Api {
 
   async getSaleItems() {
     const response = await fetch('/saleItems');
+    const json = await response.json();
+
+    return json;
+  }
+
+  async addItemToCartBody({ id, quantity }: GetCartItemParams) {
+    const response = await fetch('/cart', {
+      method: 'POST',
+      body: JSON.stringify({ id: id, quantity: quantity }),
+    });
+    const json = await response.json();
+
+    return json;
+  }
+
+  async getCartItems() {
+    const response = await fetch('/cart');
+    const json = await response.json();
+
+    return json;
+  }
+
+  async deleteItemFromCart(id: number) {
+    const response = await fetch('/cart', {
+      method: 'DELETE',
+      body: JSON.stringify({ id: id }),
+    });
     const json = await response.json();
 
     return json;

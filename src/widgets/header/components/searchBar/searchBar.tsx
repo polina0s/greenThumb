@@ -1,19 +1,19 @@
 import { forwardRef } from 'react';
 
-import Basket from '../../../../assets/images/basket.svg';
+import Cart from '../../../../assets/images/cart.svg';
 import Line from '../../../../assets/images/line.svg';
 import Search from '../../../../assets/images/search.svg';
-import { Input } from '../../../input';
-import { Text } from '../../../text';
+import { Input } from '../../../../components/input';
+import { Text } from '../../../../components/text';
 import classes from './searchBar.module.scss';
 
 interface SearchBarProps {
-  basketQuantity: number;
-  handleOnBasketClick: () => void;
+  cartQuantity: number;
+  handleOnCartClick: () => void;
 }
 
 export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
-  function SearchBar({ basketQuantity, handleOnBasketClick }, ref) {
+  function SearchBar({ cartQuantity, handleOnCartClick }, ref) {
     return (
       <div className={classes.cont} ref={ref}>
         <Input defaultValue="Search" type="text" />
@@ -21,11 +21,11 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
           <Search />
         </button>
         <Line />
-        <button className={classes.basketButton} onClick={handleOnBasketClick}>
-          <Basket />
+        <button className={classes.cartButton} onClick={handleOnCartClick}>
+          <Cart />
         </button>
-        <Text variant="openSansRegularSM" className={classes.basketQuantity}>
-          {basketQuantity}
+        <Text variant="openSansRegularSM" className={classes.cartQuantity}>
+          {cartQuantity}
         </Text>
       </div>
     );

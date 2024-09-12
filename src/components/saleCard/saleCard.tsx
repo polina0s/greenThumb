@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import star from '../../assets/images/Star 1.png';
 import { Button } from '../button';
 import { Text } from '../text';
@@ -9,6 +11,7 @@ interface SaleCardProps {
   newPrice: number;
   oldPrice: number;
   imgSrc: string;
+  id: number;
 }
 
 export function SaleCard({
@@ -17,41 +20,44 @@ export function SaleCard({
   newPrice,
   oldPrice,
   imgSrc,
+  id,
 }: SaleCardProps) {
   return (
     <div className={classes.cont}>
-      <div className={classes.imgWrap}>
-        <div className={classes.imgCont}>
-          <img className={classes.img} src={imgSrc} alt={title} />
-        </div>
-        <div className={classes.saleLabelCont}>
-          <div className={classes.saleStar}>
-            <img src={star} alt="" />
+      <Link to={`/catalog/${id}`} className={classes.link}>
+        <div className={classes.imgWrap}>
+          <div className={classes.imgCont}>
+            <img className={classes.img} src={imgSrc} alt={title} />
           </div>
-          <Text
-            variant="openSansBold"
-            color="white"
-            className={classes.saleValue}
-          >
-            {saleValue}% off
-          </Text>
+          <div className={classes.saleLabelCont}>
+            <div className={classes.saleStar}>
+              <img src={star} alt="" />
+            </div>
+            <Text
+              variant="openSansBold"
+              color="white"
+              className={classes.saleValue}
+            >
+              {saleValue}% off
+            </Text>
+          </div>
         </div>
-      </div>
-      <div className={classes.info}>
-        <Text variant="openSansBold" color="gray">
-          {title}
-        </Text>
-        <div className={classes.price}>
-          <Text variant="openSansRegularLG">$ {newPrice}</Text>
-          <Text
-            variant="openSansSemiBold"
-            color="red"
-            className={classes.oldPrice}
-          >
-            $ {oldPrice}
+        <div className={classes.info}>
+          <Text variant="openSansBold" color="gray">
+            {title}
           </Text>
+          <div className={classes.price}>
+            <Text variant="openSansRegularLG">$ {newPrice}</Text>
+            <Text
+              variant="openSansSemiBold"
+              color="red"
+              className={classes.oldPrice}
+            >
+              $ {oldPrice}
+            </Text>
+          </div>
         </div>
-      </div>
+      </Link>
       <Button size="sm" color="green">
         Buy
       </Button>

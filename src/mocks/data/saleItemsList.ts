@@ -1,11 +1,11 @@
-import retusa from '../../assets/images/1-Peruvian.png';
+import cactus from '../../assets/images/1-Peruvian.png';
+import pothos from '../../assets/images/1-Pothos.png';
 import alocasia from '../../assets/images/1-Red-Secret-Alocasia.png';
 import string from '../../assets/images/1-String-Of-Hearts.png';
-import alocasia2 from '../../assets/images/2-Red-Secret-Alocasia.png';
 
 export const saleItems = [
   {
-    id: '1',
+    id: '9',
     saleValue: 25,
     name: 'String of Hearts',
     newPrice: 350,
@@ -13,7 +13,7 @@ export const saleItems = [
     img: string,
   },
   {
-    id: '2',
+    id: '10',
     saleValue: 25,
     name: 'Red Secret Alocasia',
     newPrice: 350,
@@ -21,19 +21,19 @@ export const saleItems = [
     img: alocasia,
   },
   {
-    id: '3',
+    id: '1',
     saleValue: 25,
-    name: 'Jewel Alocasia',
+    name: 'Marble Queen Pothos',
     newPrice: 350,
     oldPrice: 450,
-    img: alocasia2,
+    img: pothos,
   },
   {
     id: '4',
     saleValue: 25,
-    name: 'Hoya Retusa',
+    name: 'Peruvian Cactus',
     newPrice: 350,
     oldPrice: 450,
-    img: retusa,
+    img: cactus,
   },
 ];

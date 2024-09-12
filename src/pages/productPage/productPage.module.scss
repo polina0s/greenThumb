@@ -12,3 +12,17 @@
 .sale {
   margin-bottom: 120px;
 }
+
+.link {
+  text-decoration: none;
+}
+
+.linkCont {
+  margin: 0px 0px 90px 103px;
+  display: flex;
+  align-items: center;
+  color: var(--gray-500);
+}
+ .linkArrow {
+  margin-right: 8px;
+ }

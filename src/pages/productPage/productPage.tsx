@@ -1,15 +1,20 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
+import Arrow from '../../assets/images/arrow-left.svg';
 import { CareSection } from '../../components/careSection/careSection';
 import { Footer } from '../../components/footer';
-import { Header } from '../../components/header';
+import { Loader } from '../../components/loader';
 import { ProductCard } from '../../components/productCard';
+import { ProductValues } from '../../components/productCard/productCard';
 import { SectionBanner } from '../../components/sectionBanner';
+import { Text } from '../../components/text';
+import { addItemToCartBody } from '../../store/cart/cart.actions';
 import { allShopItemSelector } from '../../store/shopItem';
 import { getShopItemById } from '../../store/shopItem/shopItem.actions';
 import { useAppDispatch } from '../../store/store';
+import { Header } from '../../widgets/header';
 import { SaleSection } from '../../widgets/saleSection';
 import classes from './productPage.module.scss';
 
@@ -18,6 +23,9 @@ export function ProductPage() {
   const { id } = useParams();
 
   const { item, isItemLoading } = useSelector(allShopItemSelector);
+  const handleAddItemToCartBody = (data: ProductValues) => {
+    dispatch(addItemToCartBody(data));
+  };
 
   useEffect(() => {
     dispatch(getShopItemById({ id: +id }));
@@ -29,12 +37,24 @@ export function ProductPage() {
       <div className={classes.sectionBanner}>
         <SectionBanner title="Plant" description="Marble Queen Pothos" />
       </div>
+      <Link to={'/catalog'} className={classes.link}>
+        <div className={classes.linkCont}>
+          <Arrow className={classes.linkArrow} />
+          <Text variant="poppinsRegular" color="gray">
+            Back to Search
+          </Text>
+        </div>
+      </Link>
       {isItemLoading ? (
-        <div>loader</div>
+        <Loader />
       ) : (
         <>
           <div className={classes.card}>
-            <ProductCard item={item} id={+id} />
+            <ProductCard
+              item={item}
+              id={+id}
+              handleAddItemToCartBody={handleAddItemToCartBody}
+            />
           </div>
           <div className={classes.care}>
             <CareSection options={item.care} />
