@@ -30,14 +30,12 @@ export const handlers = [
     if (price) result = result.filter((item) => item.price <= price);
     if (category) result = result.filter((item) => item.category === category);
     if (type) result = result.filter((item) => item.type === type);
-    if (sortBy) {
-      if (sortBy === 'popular')
-        result = result.sort((a, b) => b.popular - a.popular);
-      if (sortBy === 'priceToLow')
-        result = result.sort((a, b) => b.price - a.price);
-      if (sortBy === 'priceToHigh')
-        result = result.sort((a, b) => a.price - b.price);
-    }
+    if (sortBy === 'popular')
+      result = result.sort((a, b) => b.popular - a.popular);
+    if (sortBy === 'priceToLow')
+      result = result.sort((a, b) => b.price - a.price);
+    if (sortBy === 'priceToHigh')
+      result = result.sort((a, b) => a.price - b.price);
 
     return HttpResponse.json({ items: result });
   }),
@@ -80,6 +78,7 @@ export const handlers = [
           });
         } else cartItems.push(item);
       }
+
       return HttpResponse.json({ itemQuantity: cartItems.length });
     },
   ),
@@ -91,9 +90,9 @@ export const handlers = [
   }),
   http.delete<unknown, { id: number }>('/cart', async ({ request }) => {
     const body = await request.json();
-    cartItems.forEach((item, i) => {
-      if (item.id === body.id) cartItems.splice(i, 1);
-    });
+    const foundItemIndex = cartItems.findIndex((item) => item.id === body.id);
+    cartItems.splice(foundItemIndex, 1);
+
     return HttpResponse.json({
       items: cartItems,
       itemQuantity: cartItems.length,

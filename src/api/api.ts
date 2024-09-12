@@ -1,12 +1,7 @@
 import queryString from 'query-string';
 
-export type GetShopItemsParams = {
-  limit?: number;
-  price?: number;
-  category?: string;
-  type?: string;
-  sortBy?: string;
-};
+import { GetCartItemParams, GetShopItemsParams } from './types';
+
 class Api {
   async getShopItems({
     limit,
@@ -61,7 +56,7 @@ class Api {
     return json;
   }
 
-  async addItemToCart({ id, quantity }: { id: number; quantity: number }) {
+  async addItemToCartBody({ id, quantity }: GetCartItemParams) {
     const response = await fetch('/cart', {
       method: 'POST',
       body: JSON.stringify({ id: id, quantity: quantity }),

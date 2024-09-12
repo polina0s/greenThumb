@@ -10,7 +10,7 @@ import { ProductCard } from '../../components/productCard';
 import { ProductValues } from '../../components/productCard/productCard';
 import { SectionBanner } from '../../components/sectionBanner';
 import { Text } from '../../components/text';
-import { addItemToCart } from '../../store/cart/cart.actions';
+import { addItemToCartBody } from '../../store/cart/cart.actions';
 import { allShopItemSelector } from '../../store/shopItem';
 import { getShopItemById } from '../../store/shopItem/shopItem.actions';
 import { useAppDispatch } from '../../store/store';
@@ -23,8 +23,8 @@ export function ProductPage() {
   const { id } = useParams();
 
   const { item, isItemLoading } = useSelector(allShopItemSelector);
-  const handleAddItemToCart = (data: ProductValues) => {
-    dispatch(addItemToCart({ id: data.id, quantity: data.quantity }));
+  const handleAddItemToCartBody = (data: ProductValues) => {
+    dispatch(addItemToCartBody(data));
   };
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export function ProductPage() {
             <ProductCard
               item={item}
               id={+id}
-              handleAddItemToCart={handleAddItemToCart}
+              handleAddItemToCartBody={handleAddItemToCartBody}
             />
           </div>
           <div className={classes.care}>

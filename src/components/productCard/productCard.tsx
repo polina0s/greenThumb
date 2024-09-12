@@ -22,13 +22,13 @@ export interface ProductValues {
 type ProductCardProps = {
   id: number;
   item: GetShopItemsResponseData;
-  handleAddItemToCart: (data: ProductValues) => void;
+  handleAddItemToCartBody: (data: ProductValues) => void;
 };
 
 export function ProductCard({
   item,
   id,
-  handleAddItemToCart,
+  handleAddItemToCartBody,
 }: ProductCardProps) {
   const { control, handleSubmit } = useForm<ProductValues>({
     defaultValues: {
@@ -66,7 +66,7 @@ export function ProductCard({
               {item.description}
             </Text>
           </div>
-          <form onSubmit={handleSubmit(handleAddItemToCart)}>
+          <form onSubmit={handleSubmit(handleAddItemToCartBody)}>
             <Controller
               render={({ field }) => (
                 <SizePicker
