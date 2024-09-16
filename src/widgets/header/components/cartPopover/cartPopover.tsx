@@ -1,8 +1,6 @@
 import { useClickAway } from '@uidotdev/usehooks';
-import queryString from 'query-string';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Popover } from 'react-tiny-popover';
 
 import { Loader } from '../../../../components/loader';
@@ -26,18 +24,11 @@ interface CartPopoverProps {
 
 export function CartPopover({ defaultOpen }: CartPopoverProps) {
   const [open, setOpen] = useState(defaultOpen);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [searchValue, setSearchValue] = useState(
-    searchParams.get('search' || null),
-  );
-  const navigate = useNavigate();
   const cart = useSelector(allCartSelector);
   const dispatch = useAppDispatch();
   const cartQuantity = cart.itemsQuantity;
   const cartItems = cart.items;
   const isLoading = cart.isLoading;
-
-  console.log(searchParams);
 
   const ref = useClickAway<HTMLDivElement>(() => {
     setOpen(false);
@@ -100,20 +91,7 @@ export function CartPopover({ defaultOpen }: CartPopoverProps) {
     >
       <SearchBar
         cartQuantity={cartQuantity}
-        searchValue={searchValue}
         handleOnCartClick={handleOnCartClick}
-        handleOnSearchButtonClick={() => {
-          navigate('/catalog');
-          setSearchParams((prev) => {
-            return queryString.stringify({
-              ...Object.fromEntries(prev),
-              search: searchValue,
-            });
-          });
-        }}
-        handleChangeInputValue={(e) => {
-          setSearchValue(e.target.value);
-        }}
       />
     </Popover>
   );
