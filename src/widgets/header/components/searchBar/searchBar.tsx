@@ -9,17 +9,42 @@ import classes from './searchBar.module.scss';
 
 interface SearchBarProps {
   cartQuantity: number;
-  handleOnCartClick: () => void;
+  searchValue?: string;
+  handleOnCartClick?: () => void;
+  handleOnSearchButtonClick?: () => void;
+  handleChangeInputValue?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
-  function SearchBar({ cartQuantity, handleOnCartClick }, ref) {
+  function SearchBar(
+    {
+      cartQuantity,
+      searchValue,
+      handleOnCartClick,
+      handleOnSearchButtonClick,
+      handleChangeInputValue,
+    },
+    ref,
+  ) {
     return (
       <div className={classes.cont} ref={ref}>
-        <Input defaultValue="Search" type="text" />
-        <button className={classes.searchButton}>
-          <Search />
-        </button>
+        <div>
+          <Input
+            id="search"
+            description="Search"
+            type="text"
+            value={searchValue}
+            onChange={handleChangeInputValue}
+            rightIcon={
+              <button
+                className={classes.searchButton}
+                onClick={handleOnSearchButtonClick}
+              >
+                <Search />
+              </button>
+            }
+          />
+        </div>
         <Line />
         <button className={classes.cartButton} onClick={handleOnCartClick}>
           <Cart />

@@ -22,6 +22,7 @@ export function CatalogPage() {
   const price = +searchParams.get('price');
   const type = searchParams.get('type');
   const sortBy = searchParams.get('sortBy');
+  const search = searchParams.get('search');
 
   useEffect(() => {
     dispatch(
@@ -31,9 +32,10 @@ export function CatalogPage() {
         price: price,
         type: type,
         sortBy: sortBy,
+        search: search,
       }),
     );
-  }, [dispatch, category, price, type, sortBy]);
+  }, [dispatch, category, price, type, sortBy, search]);
 
   return (
     <div className={classes.wrapper}>

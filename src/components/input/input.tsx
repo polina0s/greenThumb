@@ -1,12 +1,28 @@
+import { forwardRef, ReactNode } from 'react';
+
 import classes from './input.module.scss';
 
-interface InputProps {
-  defaultValue: string;
-  type: string;
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  id?: string;
+  description?: string;
+  type?: string;
+  rightIcon?: ReactNode;
 }
 
-export function Input({ defaultValue, type }: InputProps) {
+export const Input = forwardRef<HTMLDivElement, InputProps>(function Input(
+  { id, description, type, rightIcon, ...props },
+  ref,
+) {
   return (
-    <input className={classes.input} type={type} defaultValue={defaultValue} />
+    <div ref={ref} className={classes.cont}>
+      <input
+        id={id}
+        className={classes.input}
+        type={type}
+        placeholder={description}
+        {...props}
+      />
+      {rightIcon}
+    </div>
   );
-}
+});

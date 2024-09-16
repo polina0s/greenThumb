@@ -9,9 +9,10 @@ class Api {
     category,
     type,
     sortBy,
+    search,
   }: GetShopItemsParams) {
     const query = queryString.stringify(
-      { limit, price, category, type, sortBy },
+      { limit, price, category, type, sortBy, search },
       { skipNull: true },
     );
 

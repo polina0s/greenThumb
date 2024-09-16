@@ -13,6 +13,7 @@ export const getShopItems = createAsyncThunk<
     category?: string;
     type?: string;
     sortBy?: string;
+    search?: string;
   }
 >('shopItems/getAll', async (data, { rejectWithValue }) => {
   try {
