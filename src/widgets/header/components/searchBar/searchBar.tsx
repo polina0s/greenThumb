@@ -34,7 +34,7 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
     }, [navigate, searchValue, setSearchParams]);
 
     useEffect(() => {
-      searchButton?.addEventListener('keyup', (e) => {
+      window.addEventListener('keyup', (e) => {
         if (e.key === 'Enter' || e.key === '13') {
           onSearchButtonClick();
         }
