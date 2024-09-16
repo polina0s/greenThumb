@@ -26,26 +26,28 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
     );
     const navigate = useNavigate();
 
-    const onSearchButtonClick = useCallback(
-      (e: KeyboardEvent) => {
-        if (e.key === 'Enter' || e.key === '13') {
-          navigate('/catalog');
-          setSearchParams((prev) => {
-            return queryString.stringify({
-              ...Object.fromEntries(prev),
-              search: searchValue,
-            });
+    const onSearchButtonClick = useCallback(() => {
+      if (isLoading === false) {
+        navigate('/catalog');
+        setSearchParams((prev) => {
+          return queryString.stringify({
+            ...Object.fromEntries(prev),
+            search: searchValue,
           });
-        }
-      },
-      [navigate, searchValue, setSearchParams],
-    );
+        });
+      }
+    }, [navigate, searchValue, setSearchParams, isLoading]);
 
     useEffect(() => {
-      window.addEventListener('keyup', (e) => onSearchButtonClick(e));
-      return () =>
-        window.removeEventListener('keyup', (e) => onSearchButtonClick(e));
-    }, [onSearchButtonClick, isLoading]);
+      function handleKeyUp(e: KeyboardEvent) {
+        if (e.key === 'Enter' || e.key === '13') {
+          onSearchButtonClick();
+        }
+      }
+
+      window.addEventListener('keyup', (e) => handleKeyUp(e));
+      return () => window.removeEventListener('keyup', (e) => handleKeyUp(e));
+    }, [onSearchButtonClick]);
 
     return (
       <div className={classes.cont} ref={ref}>
@@ -62,15 +64,7 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
               <button
                 id="searchButton"
                 className={classes.searchButton}
-                onClick={() => {
-                  navigate('/catalog');
-                  setSearchParams((prev) => {
-                    return queryString.stringify({
-                      ...Object.fromEntries(prev),
-                      search: searchValue,
-                    });
-                  });
-                }}
+                onClick={() => onSearchButtonClick()}
               >
                 <Search />
               </button>
