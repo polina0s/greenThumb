@@ -1,7 +1,7 @@
 import queryString from 'query-string';
 import { forwardRef, useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
 import Cart from '../../../../assets/images/cart.svg';
 import Line from '../../../../assets/images/line.svg';
@@ -20,23 +20,37 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
   function SearchBar({ cartQuantity, handleOnCartClick }, ref) {
     const [searchParams, setSearchParams] = useSearchParams();
     const { isLoading } = useSelector(allShopItemsSelector);
+    const location = useLocation();
 
+    const searchParam = searchParams.get('search');
     const [searchValue, setSearchValue] = useState(
-      searchParams.get('search' || null),
+      searchParams.get('search') || '',
     );
+    // console.log(searchParams.get('search'))
     const navigate = useNavigate();
+
+    useEffect(() => {
+      if (searchParam) {
+        setSearchValue(searchParam);
+      }
+    }, [searchParam]);
 
     const onSearchButtonClick = useCallback(() => {
       if (isLoading === false) {
-        navigate('/catalog');
-        setSearchParams((prev) => {
-          return queryString.stringify({
-            ...Object.fromEntries(prev),
-            search: searchValue,
+        if (location.pathname === '/catalog') {
+          setSearchParams((prev) => {
+            return queryString.stringify({
+              ...Object.fromEntries(prev),
+              search: searchValue,
+            });
           });
-        });
+        } else
+          navigate({
+            pathname: '/catalog',
+            search: queryString.stringify({ search: searchValue }),
+          });
       }
-    }, [navigate, searchValue, setSearchParams, isLoading]);
+    }, [isLoading, navigate, searchValue, setSearchParams, location.pathname]);
 
     useEffect(() => {
       function handleKeyUp(e: KeyboardEvent) {
@@ -56,7 +70,7 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
             id="search"
             description="Search"
             type="text"
-            value={searchValue === null ? '' : searchValue}
+            value={searchValue}
             onChange={(e) => {
               setSearchValue(e.target.value);
             }}
@@ -64,7 +78,7 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
               <button
                 id="searchButton"
                 className={classes.searchButton}
-                onClick={() => onSearchButtonClick()}
+                onClick={onSearchButtonClick}
               >
                 <Search />
               </button>
