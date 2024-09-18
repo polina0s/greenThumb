@@ -20,19 +20,17 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
   function SearchBar({ cartQuantity, handleOnCartClick }, ref) {
     const [searchParams, setSearchParams] = useSearchParams();
     const { isLoading } = useSelector(allShopItemsSelector);
-    const searchParam = searchParams.get('search');
+    const searchQuery = searchParams.get('search') || '';
     const location = useLocation();
     const navigate = useNavigate();
 
-    const [searchValue, setSearchValue] = useState(
-      searchParams.get('search') || '',
-    );
+    const [searchValue, setSearchValue] = useState(searchQuery);
 
     useEffect(() => {
-      if (searchParam) {
-        setSearchValue(searchParam);
+      if (searchQuery) {
+        setSearchValue(searchQuery);
       }
-    }, [searchParam]);
+    }, [searchQuery]);
 
     const onSearchButtonClick = useCallback(() => {
       if (isLoading === false) {

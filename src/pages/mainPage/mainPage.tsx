@@ -10,39 +10,6 @@ import { SaleSection } from '../../widgets/saleSection';
 import { Testimonials } from '../../widgets/testimonials';
 import classes from './main.page.module.scss';
 
-const plants = [
-  { id: 1, name: 'Marble Queen Pothos' },
-  { id: 2, name: 'Neon Pothos' },
-  { id: 3, name: 'Syngonium Rayii' },
-  { id: 4, name: 'Peruvian Cactus' },
-  { id: 5, name: 'Pineapple' },
-  { id: 6, name: 'African Milk Tree' },
-  { id: 7, name: 'Pothos' },
-  { id: 8, name: 'Chinese Evergreen' },
-  { id: 9, name: 'String of Hearts' },
-  { id: 10, name: 'Red Secret Alocasia' },
-];
-type PlantsProps = {
-  id: number;
-  name: string;
-};
-
-export function searchPlant({
-  array,
-  string,
-}: {
-  array: PlantsProps[];
-  string: string;
-}) {
-  const found: PlantsProps[] = array.filter((plant) => {
-    return plant.name.toLowerCase().includes(string.toLowerCase());
-  });
-
-  return found;
-}
-
-searchPlant({ array: plants, string: 'marble' });
-
 export function MainPage() {
   const navigate = useNavigate();
 
