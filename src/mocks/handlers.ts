@@ -24,6 +24,7 @@ export const handlers = [
     const category = url.searchParams.get('category');
     const type = url.searchParams.get('type');
     const sortBy = url.searchParams.get('sortBy');
+    const search = url.searchParams.get('search');
     let result = shopItems;
 
     if (limit) result = result.slice(0, limit);
@@ -36,6 +37,10 @@ export const handlers = [
       result = result.sort((a, b) => b.price - a.price);
     if (sortBy === 'priceToHigh')
       result = result.sort((a, b) => a.price - b.price);
+    if (search)
+      result = result.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase()),
+      );
 
     return HttpResponse.json({ items: result });
   }),

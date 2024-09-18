@@ -4,6 +4,7 @@ export type GetShopItemsParams = {
   category?: string;
   type?: string;
   sortBy?: string;
+  search?: string;
 };
 
 export type GetCartItemParams = {

@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { Banner } from '../../components/banner/banner';
 import { Footer } from '../../components/footer';
-import { Header } from '../../widgets/header';
 import { BestSelling } from '../../widgets/bestSelling';
 import { Categories } from '../../widgets/categories';
+import { Header } from '../../widgets/header';
 import { Hottest } from '../../widgets/hottest';
 import { SaleSection } from '../../widgets/saleSection';
 import { Testimonials } from '../../widgets/testimonials';
